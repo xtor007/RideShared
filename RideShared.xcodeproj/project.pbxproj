@@ -13,6 +13,7 @@
 		FFD92122294E13E700B89B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92121294E13E700B89B35 /* Images.xcassets */; };
 		FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92123294E13FA00B89B35 /* Colors.xcassets */; };
 		FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92125294E168D00B89B35 /* Assets.xcassets */; };
+		FFD92129294E1A4800B89B35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212B294E1A4800B89B35 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FFD92121294E13E700B89B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFD92123294E13FA00B89B35 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FFD92125294E168D00B89B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFD9212A294E1A4800B89B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				FFD92125294E168D00B89B35 /* Assets.xcassets */,
 				FFD92121294E13E700B89B35 /* Images.xcassets */,
 				FFD92123294E13FA00B89B35 /* Colors.xcassets */,
+				FFD9212B294E1A4800B89B35 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD92129294E1A4800B89B35 /* Localizable.strings in Resources */,
 				FFD92122294E13E700B89B35 /* Images.xcassets in Resources */,
 				FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */,
 				FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */,
@@ -207,6 +211,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFD9212B294E1A4800B89B35 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFD9212A294E1A4800B89B35 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FFD92113294E12CF00B89B35 /* Debug */ = {
