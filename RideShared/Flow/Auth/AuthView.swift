@@ -13,6 +13,7 @@ struct AuthView: View {
             Spacer()
             Text(Strings.General.title)
                 .font(.title)
+                .foregroundColor(Color(Asset.Colors.textColor.color))
             Spacer()
             Button {
                 print("1")

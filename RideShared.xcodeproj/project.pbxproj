@@ -17,6 +17,7 @@
 		FFD9212D294E1E3F00B89B35 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212C294E1E3F00B89B35 /* swiftgen.yml */; };
 		FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9212F294E219100B89B35 /* Assets.generated.swift */; };
 		FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92130294E219100B89B35 /* Strings.generated.swift */; };
+		FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		FFD9212C294E1E3F00B89B35 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		FFD9212F294E219100B89B35 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		FFD92130294E219100B89B35 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
+		FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFD92135294E27C200B89B35 /* GoogleAuthButton */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +142,14 @@
 				FFD9211F294E137E00B89B35 /* AuthView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		FFD92135294E27C200B89B35 /* GoogleAuthButton */ = {
+			isa = PBXGroup;
+			children = (
+				FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */,
+			);
+			path = GoogleAuthButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
