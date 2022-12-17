@@ -9,7 +9,18 @@ import SwiftUI
 
 struct AuthView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Text(Strings.General.title)
+                .font(.title)
+            Spacer()
+            Button {
+                print("1")
+            } label: {
+                Text("Sing in with Google")
+            }
+        }
+        .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
     }
 }
 

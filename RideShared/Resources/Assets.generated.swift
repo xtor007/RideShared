@@ -28,6 +28,7 @@ internal enum Asset {
   }
   internal enum Colors {
     internal static let accentColor = ColorAsset(name: "AccentColor")
+    internal static let backgroundColor = ColorAsset(name: "backgroundColor")
     internal static let sampleColor = ColorAsset(name: "sampleColor")
   }
   internal enum Images {
