@@ -9,7 +9,18 @@ import SwiftUI
 
 struct AuthView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Text(Strings.General.title)
+                .font(.title)
+                .foregroundColor(Color(Asset.Colors.textColor.color))
+            Spacer()
+            GoogleAuthButton { _ in 
+                print(1)
+            }
+            .padding(.horizontal, Paddings.padding16)
+        }
+        .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
     }
 }
 
