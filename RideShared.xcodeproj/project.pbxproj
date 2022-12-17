@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
-		FFD9210D294E12CA00B89B35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210C294E12CA00B89B35 /* ContentView.swift */; };
-		FFD9210F294E12CF00B89B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD9210E294E12CF00B89B35 /* Assets.xcassets */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
+		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
+		FFD92122294E13E700B89B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92121294E13E700B89B35 /* Images.xcassets */; };
+		FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92123294E13FA00B89B35 /* Colors.xcassets */; };
+		FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92125294E168D00B89B35 /* Assets.xcassets */; };
+		FFD92129294E1A4800B89B35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212B294E1A4800B89B35 /* Localizable.strings */; };
+		FFD9212D294E1E3F00B89B35 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212C294E1E3F00B89B35 /* swiftgen.yml */; };
+		FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9212F294E219100B89B35 /* Assets.generated.swift */; };
+		FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92130294E219100B89B35 /* Strings.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
-		FFD9210C294E12CA00B89B35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FFD9210E294E12CF00B89B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFD9211F294E137E00B89B35 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		FFD92121294E13E700B89B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFD92123294E13FA00B89B35 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		FFD92125294E168D00B89B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFD9212A294E1A4800B89B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFD9212C294E1E3F00B89B35 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		FFD9212F294E219100B89B35 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
+		FFD92130294E219100B89B35 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,7 @@
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
+				FFD9212C294E1E3F00B89B35 /* swiftgen.yml */,
 				FFD92109294E12CA00B89B35 /* RideShared */,
 				FFD92108294E12CA00B89B35 /* Products */,
 			);
@@ -51,9 +64,12 @@
 		FFD92109294E12CA00B89B35 /* RideShared */ = {
 			isa = PBXGroup;
 			children = (
-				FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */,
-				FFD9210C294E12CA00B89B35 /* ContentView.swift */,
-				FFD9210E294E12CF00B89B35 /* Assets.xcassets */,
+				FFD9211D294E134300B89B35 /* Manager */,
+				FFD9211C294E133D00B89B35 /* Model */,
+				FFD9211B294E133600B89B35 /* View */,
+				FFD9211A294E133000B89B35 /* Flow */,
+				FFD92119294E12EE00B89B35 /* Resources */,
+				FFD92118294E12DD00B89B35 /* App */,
 				FFD92110294E12CF00B89B35 /* Preview Content */,
 			);
 			path = RideShared;
@@ -67,6 +83,64 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FFD92118294E12DD00B89B35 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFD92119294E12EE00B89B35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9212F294E219100B89B35 /* Assets.generated.swift */,
+				FFD92130294E219100B89B35 /* Strings.generated.swift */,
+				FFD92125294E168D00B89B35 /* Assets.xcassets */,
+				FFD92121294E13E700B89B35 /* Images.xcassets */,
+				FFD92123294E13FA00B89B35 /* Colors.xcassets */,
+				FFD9212B294E1A4800B89B35 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFD9211A294E133000B89B35 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9211E294E137000B89B35 /* Auth */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		FFD9211B294E133600B89B35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFD9211C294E133D00B89B35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFD9211D294E134300B89B35 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FFD9211E294E137000B89B35 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9211F294E137E00B89B35 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFD92115294E12CF00B89B35 /* Build configuration list for PBXNativeTarget "RideShared" */;
 			buildPhases = (
+				FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */,
 				FFD92103294E12CA00B89B35 /* Sources */,
 				FFD92104294E12CA00B89B35 /* Frameworks */,
 				FFD92105294E12CA00B89B35 /* Resources */,
@@ -125,24 +200,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD92129294E1A4800B89B35 /* Localizable.strings in Resources */,
+				FFD92122294E13E700B89B35 /* Images.xcassets in Resources */,
+				FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */,
+				FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */,
 				FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */,
-				FFD9210F294E12CF00B89B35 /* Assets.xcassets in Resources */,
+				FFD9212D294E1E3F00B89B35 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftGen]  Generate Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFD92103294E12CA00B89B35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD9210D294E12CA00B89B35 /* ContentView.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
+				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
+				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
+				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFD9212B294E1A4800B89B35 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFD9212A294E1A4800B89B35 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FFD92113294E12CF00B89B35 /* Debug */ = {
@@ -275,6 +389,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
