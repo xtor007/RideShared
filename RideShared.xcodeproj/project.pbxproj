@@ -14,6 +14,9 @@
 		FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92123294E13FA00B89B35 /* Colors.xcassets */; };
 		FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92125294E168D00B89B35 /* Assets.xcassets */; };
 		FFD92129294E1A4800B89B35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212B294E1A4800B89B35 /* Localizable.strings */; };
+		FFD9212D294E1E3F00B89B35 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFD9212C294E1E3F00B89B35 /* swiftgen.yml */; };
+		FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9212F294E219100B89B35 /* Assets.generated.swift */; };
+		FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92130294E219100B89B35 /* Strings.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		FFD92123294E13FA00B89B35 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FFD92125294E168D00B89B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFD9212A294E1A4800B89B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFD9212C294E1E3F00B89B35 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		FFD9212F294E219100B89B35 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
+		FFD92130294E219100B89B35 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
+				FFD9212C294E1E3F00B89B35 /* swiftgen.yml */,
 				FFD92109294E12CA00B89B35 /* RideShared */,
 				FFD92108294E12CA00B89B35 /* Products */,
 			);
@@ -87,6 +94,8 @@
 		FFD92119294E12EE00B89B35 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFD9212F294E219100B89B35 /* Assets.generated.swift */,
+				FFD92130294E219100B89B35 /* Strings.generated.swift */,
 				FFD92125294E168D00B89B35 /* Assets.xcassets */,
 				FFD92121294E13E700B89B35 /* Images.xcassets */,
 				FFD92123294E13FA00B89B35 /* Colors.xcassets */,
@@ -139,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFD92115294E12CF00B89B35 /* Build configuration list for PBXNativeTarget "RideShared" */;
 			buildPhases = (
+				FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */,
 				FFD92103294E12CA00B89B35 /* Sources */,
 				FFD92104294E12CA00B89B35 /* Frameworks */,
 				FFD92105294E12CA00B89B35 /* Resources */,
@@ -195,10 +205,33 @@
 				FFD92124294E13FA00B89B35 /* Colors.xcassets in Resources */,
 				FFD92126294E168D00B89B35 /* Assets.xcassets in Resources */,
 				FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */,
+				FFD9212D294E1E3F00B89B35 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftGen]  Generate Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFD92103294E12CA00B89B35 /* Sources */ = {
@@ -206,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
+				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
+				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +389,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

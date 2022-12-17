@@ -1,0 +1,14 @@
+xcassets:
+  - inputs:
+    - RideShared/Resources
+    outputs:
+      - templateName: swift5
+        output: RideShared/Resources/Assets.generated.swift
+
+strings:
+  inputs: RideShared/Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: RideShared/Resources/Strings.generated.swift
+      params:
+        enumName: Strings
