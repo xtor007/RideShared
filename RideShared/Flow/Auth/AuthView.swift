@@ -15,11 +15,10 @@ struct AuthView: View {
                 .font(.title)
                 .foregroundColor(Color(Asset.Colors.textColor.color))
             Spacer()
-            Button {
-                print("1")
-            } label: {
-                Text("Sing in with Google")
+            GoogleAuthButton { _ in 
+                print(1)
             }
+            .padding(.horizontal, Paddings.padding16)
         }
         .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
     }
