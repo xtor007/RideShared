@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
 		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
+		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
+		FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */; };
+		FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B73294F241B00CA2B84 /* BigButton.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
 		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
+		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlock.swift; sourceTree = "<group>"; };
+		FF4D9B73294F241B00CA2B84 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */,
+				FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -75,8 +82,17 @@
 			isa = PBXGroup;
 			children = (
 				FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */,
+				FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FF4D9B72294F23E400CA2B84 /* BigButton */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B73294F241B00CA2B84 /* BigButton.swift */,
+			);
+			path = BigButton;
 			sourceTree = "<group>";
 		};
 		FFD920FE294E12CA00B89B35 = {
@@ -152,6 +168,7 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF4D9B72294F23E400CA2B84 /* BigButton */,
 				FFD92135294E27C200B89B35 /* GoogleAuthButton */,
 			);
 			path = View;
@@ -286,13 +303,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
+				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
+				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
+				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
 				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

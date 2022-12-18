@@ -6,3 +6,12 @@
 "importance.low" = "Low";
 "importance.medium" = "Medium";
 "importance.hight" = "Hight";
+
+"questionnaire.title" = "Fill out the questionnaire for a better driver selection";
+"questionnaire.music" = "Music";
+"questionnaire.gender" = "Driver gender";
+"questionnaire.age" = "Driver age";
+"questionnaire.speed" = "Speed";
+"questionnaire.color" = "Car color";
+
+"button.finish" = "Finish";
