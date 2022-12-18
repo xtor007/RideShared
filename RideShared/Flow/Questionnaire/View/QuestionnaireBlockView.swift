@@ -32,7 +32,7 @@ struct QuestionnaireBlockView: View {
             .pickerStyle(.segmented)
             if selectedIndex != 0 {
                 contentView
-                    .transition(.opacity.animation(.default))
+                    .transition(.scale.animation(.default))
             }
         }
         .onChange(of: selectedIndex) { newValue in

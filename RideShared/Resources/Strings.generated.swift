@@ -32,6 +32,10 @@ internal enum Strings {
     /// Not Matter
     internal static let notMatter = Strings.tr("Localizable", "importance.notMatter", fallback: "Not Matter")
   }
+  internal enum MusicBlock {
+    /// Write your music wishes
+    internal static let placeholder = Strings.tr("Localizable", "musicBlock.placeholder", fallback: "Write your music wishes")
+  }
   internal enum Questionnaire {
     /// Driver age
     internal static let age = Strings.tr("Localizable", "questionnaire.age", fallback: "Driver age")

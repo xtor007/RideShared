@@ -25,9 +25,20 @@ enum QuestionnaireBlock {
     }
     
     var content: AnyView {
-        return AnyView(Text(self.title))
+        switch self {
+        case .music(let musicalPreferences):
+            return AnyView(MusicBlockView(musicalPreferences: musicalPreferences))
+        case .driverGender:
+            return AnyView(Text(self.title))
+        case .driverAge:
+            return AnyView(Text(self.title))
+        case .speed:
+            return AnyView(Text(self.title))
+        case .carColor:
+            return AnyView(Text(self.title))
+        }
     }
     
-    case music, driverGender, driverAge, speed, carColor
+    case music(Binding<String>), driverGender, driverAge, speed, carColor
     
 }

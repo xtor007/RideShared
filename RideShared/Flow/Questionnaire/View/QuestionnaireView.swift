@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct QuestionnaireView: View {
+    
+    @State var musicalPreferences = ""
 
     var body: some View {
         
         let blocks: [QuestionnaireBlock] = [
-            .music,
+            .music($musicalPreferences),
             .driverGender,
             .driverAge,
             .speed,
@@ -42,7 +44,13 @@ struct QuestionnaireView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, Paddings.padding16)
         .padding(.top, Paddings.padding20)
-        .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
+        .background(
+            Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    // Close keyboard
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+        )
         
     }
 
