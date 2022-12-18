@@ -56,6 +56,14 @@ internal enum Strings {
     /// Fill out the questionnaire for a better driver selection
     internal static let title = Strings.tr("Localizable", "questionnaire.title", fallback: "Fill out the questionnaire for a better driver selection")
   }
+  internal enum SpeedBlock {
+    /// Fast
+    internal static let fast = Strings.tr("Localizable", "speedBlock.fast", fallback: "Fast")
+    /// Medium
+    internal static let medium = Strings.tr("Localizable", "speedBlock.medium", fallback: "Medium")
+    /// Slow
+    internal static let slow = Strings.tr("Localizable", "speedBlock.slow", fallback: "Slow")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

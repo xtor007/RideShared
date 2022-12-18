@@ -11,6 +11,7 @@ struct QuestionnaireView: View {
     
     @State var musicalPreferences = ""
     @State var genderIndex = 0
+    @State var speedIndex = 0
 
     var body: some View {
         
@@ -18,7 +19,7 @@ struct QuestionnaireView: View {
             .music($musicalPreferences),
             .driverGender($genderIndex),
             .driverAge,
-            .speed,
+            .speed($speedIndex),
             .carColor
         ]
         

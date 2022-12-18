@@ -20,3 +20,7 @@
 
 "genderBlock.male" = "Male";
 "genderBlock.female" = "Female";
+
+"speedBlock.slow" = "Slow";
+"speedBlock.medium" = "Medium";
+"speedBlock.fast" = "Fast";

@@ -32,13 +32,13 @@ enum QuestionnaireBlock {
             return AnyView(GenderBlockView(genderIndex: genderIndex))
         case .driverAge:
             return AnyView(Text(self.title))
-        case .speed:
-            return AnyView(Text(self.title))
+        case .speed(let speedIndex):
+            return AnyView(SpeedBlockView(speedIndex: speedIndex))
         case .carColor:
             return AnyView(Text(self.title))
         }
     }
     
-    case music(Binding<String>), driverGender(Binding<Int>), driverAge, speed, carColor
+    case music(Binding<String>), driverGender(Binding<Int>), driverAge, speed(Binding<Int>), carColor
     
 }
