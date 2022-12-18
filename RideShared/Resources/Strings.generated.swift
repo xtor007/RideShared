@@ -18,6 +18,16 @@ internal enum Strings {
     /// Sing in with Google
     internal static let singIn = Strings.tr("Localizable", "google.singIn", fallback: "Sing in with Google")
   }
+  internal enum Importance {
+    /// Hight
+    internal static let hight = Strings.tr("Localizable", "importance.hight", fallback: "Hight")
+    /// Low
+    internal static let low = Strings.tr("Localizable", "importance.low", fallback: "Low")
+    /// Medium
+    internal static let medium = Strings.tr("Localizable", "importance.medium", fallback: "Medium")
+    /// Not Matter
+    internal static let notMatter = Strings.tr("Localizable", "importance.notMatter", fallback: "Not Matter")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

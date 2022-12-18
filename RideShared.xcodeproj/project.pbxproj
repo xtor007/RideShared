@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
+		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -50,6 +54,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF4D9B67294F101000CA2B84 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B6B294F13D300CA2B84 /* Model */,
+				FF4D9B6A294F13C500CA2B84 /* View */,
+			);
+			path = Questionnaire;
+			sourceTree = "<group>";
+		};
+		FF4D9B6A294F13C500CA2B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF4D9B6B294F13D300CA2B84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +143,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FF4D9B67294F101000CA2B84 /* Questionnaire */,
 				FFD9211E294E137000B89B35 /* Auth */,
 			);
 			path = Flow;
@@ -259,9 +289,11 @@
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
+				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
+				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

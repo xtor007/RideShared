@@ -1,3 +1,8 @@
 "general.title" = "RideShared";
 
 "google.singIn" = "Sing in with Google";
+
+"importance.notMatter" = "Not Matter";
+"importance.low" = "Low";
+"importance.medium" = "Medium";
+"importance.hight" = "Hight";
