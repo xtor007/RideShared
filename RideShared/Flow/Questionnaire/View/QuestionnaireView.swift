@@ -10,12 +10,13 @@ import SwiftUI
 struct QuestionnaireView: View {
     
     @State var musicalPreferences = ""
+    @State var genderIndex = 0
 
     var body: some View {
         
         let blocks: [QuestionnaireBlock] = [
             .music($musicalPreferences),
-            .driverGender,
+            .driverGender($genderIndex),
             .driverAge,
             .speed,
             .carColor

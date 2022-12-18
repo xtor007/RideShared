@@ -14,6 +14,12 @@ internal enum Strings {
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
   }
+  internal enum GenderBlock {
+    /// Female
+    internal static let female = Strings.tr("Localizable", "genderBlock.female", fallback: "Female")
+    /// Male
+    internal static let male = Strings.tr("Localizable", "genderBlock.male", fallback: "Male")
+  }
   internal enum General {
     /// RideShared
     internal static let title = Strings.tr("Localizable", "general.title", fallback: "RideShared")

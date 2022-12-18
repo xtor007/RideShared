@@ -17,3 +17,6 @@
 "button.finish" = "Finish";
 
 "musicBlock.placeholder" = "Write your music wishes";
+
+"genderBlock.male" = "Male";
+"genderBlock.female" = "Female";

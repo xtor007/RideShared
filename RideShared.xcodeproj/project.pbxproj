@@ -13,6 +13,8 @@
 		FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */; };
 		FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B73294F241B00CA2B84 /* BigButton.swift */; };
 		FF4D9B77294F2CCF00CA2B84 /* MusicBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */; };
+		FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */; };
+		FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B7A294F387400CA2B84 /* Gender.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -35,6 +37,8 @@
 		FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlock.swift; sourceTree = "<group>"; };
 		FF4D9B73294F241B00CA2B84 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B7A294F387400CA2B84 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			children = (
 				FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */,
 				FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */,
+				FF4D9B7A294F387400CA2B84 /* Gender.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */,
+				FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */,
 			);
 			path = BlocksView;
 			sourceTree = "<group>";
@@ -319,9 +325,11 @@
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
+				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
+				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
 				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
 				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,

@@ -28,8 +28,8 @@ enum QuestionnaireBlock {
         switch self {
         case .music(let musicalPreferences):
             return AnyView(MusicBlockView(musicalPreferences: musicalPreferences))
-        case .driverGender:
-            return AnyView(Text(self.title))
+        case .driverGender(let genderIndex):
+            return AnyView(GenderBlockView(genderIndex: genderIndex))
         case .driverAge:
             return AnyView(Text(self.title))
         case .speed:
@@ -39,6 +39,6 @@ enum QuestionnaireBlock {
         }
     }
     
-    case music(Binding<String>), driverGender, driverAge, speed, carColor
+    case music(Binding<String>), driverGender(Binding<Int>), driverAge, speed, carColor
     
 }
