@@ -1,3 +1,34 @@
 "general.title" = "RideShared";
 
 "google.singIn" = "Sing in with Google";
+
+"importance.notMatter" = "Not Matter";
+"importance.low" = "Low";
+"importance.medium" = "Medium";
+"importance.hight" = "Hight";
+
+"questionnaire.title" = "Fill out the questionnaire for a better driver selection";
+"questionnaire.music" = "Music";
+"questionnaire.gender" = "Driver gender";
+"questionnaire.age" = "Driver age";
+"questionnaire.speed" = "Speed";
+"questionnaire.color" = "Car color";
+
+"button.finish" = "Finish";
+"button.close" = "Close";
+
+"musicBlock.placeholder" = "Write your music wishes";
+
+"genderBlock.male" = "Male";
+"genderBlock.female" = "Female";
+
+"speedBlock.slow" = "Slow";
+"speedBlock.medium" = "Medium";
+"speedBlock.fast" = "Fast";
+
+"carColor.white" = "White";
+"carColor.light" = "Light";
+"carColor.black" = "Black";
+
+"error.questionnaire.title" = "Error in filling";
+"error.questionnaire.musicField" = "You must set value for music preferences";
