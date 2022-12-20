@@ -14,6 +14,14 @@ internal enum Strings {
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
   }
+  internal enum CarColor {
+    /// Black
+    internal static let black = Strings.tr("Localizable", "carColor.black", fallback: "Black")
+    /// Light
+    internal static let light = Strings.tr("Localizable", "carColor.light", fallback: "Light")
+    /// White
+    internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
+  }
   internal enum GenderBlock {
     /// Female
     internal static let female = Strings.tr("Localizable", "genderBlock.female", fallback: "Female")

@@ -24,3 +24,7 @@
 "speedBlock.slow" = "Slow";
 "speedBlock.medium" = "Medium";
 "speedBlock.fast" = "Fast";
+
+"carColor.white" = "White";
+"carColor.light" = "Light";
+"carColor.black" = "Black";

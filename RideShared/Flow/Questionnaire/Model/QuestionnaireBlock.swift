@@ -30,15 +30,15 @@ enum QuestionnaireBlock {
             return AnyView(MusicBlockView(musicalPreferences: musicalPreferences))
         case .driverGender(let genderIndex):
             return AnyView(GenderBlockView(genderIndex: genderIndex))
-        case .driverAge:
-            return AnyView(Text(self.title))
+        case .driverAge(let leftIndex, let rightIndex):
+            return AnyView(DoublePointSliderView(data: 18...99, leftIndex: leftIndex, rightIndex: rightIndex).padding(.bottom, 50))
         case .speed(let speedIndex):
             return AnyView(SpeedBlockView(speedIndex: speedIndex))
-        case .carColor:
-            return AnyView(Text(self.title))
+        case .carColor(let colorIndex):
+            return AnyView(CarColorBlockView(colorIndex: colorIndex))
         }
     }
     
-    case music(Binding<String>), driverGender(Binding<Int>), driverAge, speed(Binding<Int>), carColor
+    case music(Binding<String>), driverGender(Binding<Int>), driverAge(left: Binding<Int>, right: Binding<Int>), speed(Binding<Int>), carColor(Binding<Int>)
     
 }

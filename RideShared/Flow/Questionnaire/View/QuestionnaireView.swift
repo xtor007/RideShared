@@ -12,15 +12,18 @@ struct QuestionnaireView: View {
     @State var musicalPreferences = ""
     @State var genderIndex = 0
     @State var speedIndex = 0
+    @State var carColorIndex = 0
+    @State var leftIndex = 18
+    @State var rightIndex = 99
 
     var body: some View {
         
         let blocks: [QuestionnaireBlock] = [
             .music($musicalPreferences),
             .driverGender($genderIndex),
-            .driverAge,
+            .driverAge(left: $leftIndex, right: $rightIndex),
             .speed($speedIndex),
-            .carColor
+            .carColor($carColorIndex)
         ]
         
         VStack {
@@ -44,7 +47,7 @@ struct QuestionnaireView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, Paddings.padding16)
+        .padding(.horizontal, Paddings.padding24)
         .padding(.top, Paddings.padding20)
         .background(
             Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all)
