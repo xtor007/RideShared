@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
 		FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */; };
 		FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
 		FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorBlockView.swift; sourceTree = "<group>"; };
 		FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD92136294E284D00B89B35 /* User.swift */,
+				FF31E04E29521EA300CC56BC /* SelectionParameters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
+				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,

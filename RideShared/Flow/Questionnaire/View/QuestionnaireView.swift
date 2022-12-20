@@ -9,19 +9,23 @@ import SwiftUI
 
 struct QuestionnaireView: View {
     
+    @Binding var user: User
+    
     @State var musicalPreferences = ""
     @State var genderIndex = 0
     @State var speedIndex = 0
     @State var carColorIndex = 0
-    @State var leftIndex = 18
-    @State var rightIndex = 99
+    @State var leftAgeIndex = 18
+    @State var rightAgeIndex = 99
+    
+    @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
 
     var body: some View {
         
         let blocks: [QuestionnaireBlock] = [
             .music($musicalPreferences),
             .driverGender($genderIndex),
-            .driverAge(left: $leftIndex, right: $rightIndex),
+            .driverAge(left: $leftAgeIndex, right: $rightAgeIndex),
             .speed($speedIndex),
             .carColor($carColorIndex)
         ]
@@ -37,13 +41,29 @@ struct QuestionnaireView: View {
                         QuestionnaireBlockView(
                             blockName: blocks[blockIndex].title.lowercased(),
                             contentView: blocks[blockIndex].content,
-                            priority: .constant(.medium)
+                            priority: $priorities[blockIndex]
                         )
                     }
                 }
             }
             BigButton(title: Strings.Button.finish.uppercased()) {
-                print("1")
+                if musicalPreferences.isEmpty {
+                    print("Error")
+                } else {
+                    user.selectionParametrs = SelectionParametrs(
+                        musicalPreferences: musicalPreferences,
+                        musicalPrioritet: priorities[0].rawValue,
+                        driverGenderIndex: genderIndex,
+                        genderPrioritet: priorities[1].rawValue,
+                        driverMinAge: leftAgeIndex,
+                        driverMaxAge: rightAgeIndex,
+                        agePrioritet: priorities[2].rawValue,
+                        speedIndex: speedIndex,
+                        speedPrioritet: priorities[3].rawValue,
+                        carColorIndex: carColorIndex,
+                        colorPrioritet: priorities[4].rawValue
+                    )
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -63,6 +83,6 @@ struct QuestionnaireView: View {
 
 struct QuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionnaireView()
+        QuestionnaireView(user: .constant(User()))
     }
 }
