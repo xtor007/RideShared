@@ -50,23 +50,23 @@ struct QuestionnaireView: View {
                 }
             }
             BigButton(title: Strings.Button.finish.uppercased()) {
-                if musicalPreferences.isEmpty {
+                if musicalPreferences.isEmpty && priorities[0] != .notMatter {
                     errorText = Strings.Error.Questionnaire.musicField
                     withAnimation {
                         willShowingError = true
                     }
                 } else {
                     user.selectionParametrs = SelectionParametrs(
-                        musicalPreferences: musicalPreferences,
+                        musicalPreferences: priorities[0] == .notMatter ? nil : musicalPreferences,
                         musicalPrioritet: priorities[0].rawValue,
-                        driverGenderIndex: genderIndex,
+                        driverGenderIndex: priorities[1] == .notMatter ? nil : genderIndex,
                         genderPrioritet: priorities[1].rawValue,
-                        driverMinAge: leftAgeIndex,
-                        driverMaxAge: rightAgeIndex,
+                        driverMinAge: priorities[2] == .notMatter ? nil : leftAgeIndex,
+                        driverMaxAge: priorities[2] == .notMatter ? nil : rightAgeIndex,
                         agePrioritet: priorities[2].rawValue,
-                        speedIndex: speedIndex,
+                        speedIndex: priorities[3] == .notMatter ? nil : speedIndex,
                         speedPrioritet: priorities[3].rawValue,
-                        carColorIndex: carColorIndex,
+                        carColorIndex: priorities[4] == .notMatter ? nil : carColorIndex,
                         colorPrioritet: priorities[4].rawValue
                     )
                 }
