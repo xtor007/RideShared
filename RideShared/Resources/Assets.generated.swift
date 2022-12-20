@@ -29,11 +29,13 @@ internal enum Asset {
   internal enum Colors {
     internal static let accentColor = ColorAsset(name: "AccentColor")
     internal static let backgroundColor = ColorAsset(name: "backgroundColor")
+    internal static let borderColor = ColorAsset(name: "borderColor")
     internal static let elementBackgroundColor = ColorAsset(name: "elementBackgroundColor")
     internal static let sampleColor = ColorAsset(name: "sampleColor")
     internal static let textColor = ColorAsset(name: "textColor")
   }
   internal enum Images {
+    internal static let errorIcon = ImageAsset(name: "errorIcon")
     internal static let googleIcon = ImageAsset(name: "googleIcon")
     internal static let sampleImage = ImageAsset(name: "sampleImage")
   }

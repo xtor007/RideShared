@@ -9,9 +9,29 @@ import SwiftUI
 
 @main
 struct RideSharedApp: App {
+
+    @State var user: User?
+
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            if let user {
+                
+                let binding = Binding {
+                    return user
+                } set: { value, _ in
+                    self.user = value
+                }
+                
+                if let _ = user.selectionParametrs {
+                    Text("Success")
+                } else {
+                    QuestionnaireView(user: binding)
+                }
+                
+            } else {
+                AuthView(user: $user)
+            }
         }
     }
+
 }

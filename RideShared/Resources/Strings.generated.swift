@@ -10,6 +10,34 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
+  internal enum Button {
+    /// Close
+    internal static let close = Strings.tr("Localizable", "button.close", fallback: "Close")
+    /// Finish
+    internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
+  }
+  internal enum CarColor {
+    /// Black
+    internal static let black = Strings.tr("Localizable", "carColor.black", fallback: "Black")
+    /// Light
+    internal static let light = Strings.tr("Localizable", "carColor.light", fallback: "Light")
+    /// White
+    internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
+  }
+  internal enum Error {
+    internal enum Questionnaire {
+      /// You must set value for music preferences
+      internal static let musicField = Strings.tr("Localizable", "error.questionnaire.musicField", fallback: "You must set value for music preferences")
+      /// Error in filling
+      internal static let title = Strings.tr("Localizable", "error.questionnaire.title", fallback: "Error in filling")
+    }
+  }
+  internal enum GenderBlock {
+    /// Female
+    internal static let female = Strings.tr("Localizable", "genderBlock.female", fallback: "Female")
+    /// Male
+    internal static let male = Strings.tr("Localizable", "genderBlock.male", fallback: "Male")
+  }
   internal enum General {
     /// RideShared
     internal static let title = Strings.tr("Localizable", "general.title", fallback: "RideShared")
@@ -17,6 +45,42 @@ internal enum Strings {
   internal enum Google {
     /// Sing in with Google
     internal static let singIn = Strings.tr("Localizable", "google.singIn", fallback: "Sing in with Google")
+  }
+  internal enum Importance {
+    /// Hight
+    internal static let hight = Strings.tr("Localizable", "importance.hight", fallback: "Hight")
+    /// Low
+    internal static let low = Strings.tr("Localizable", "importance.low", fallback: "Low")
+    /// Medium
+    internal static let medium = Strings.tr("Localizable", "importance.medium", fallback: "Medium")
+    /// Not Matter
+    internal static let notMatter = Strings.tr("Localizable", "importance.notMatter", fallback: "Not Matter")
+  }
+  internal enum MusicBlock {
+    /// Write your music wishes
+    internal static let placeholder = Strings.tr("Localizable", "musicBlock.placeholder", fallback: "Write your music wishes")
+  }
+  internal enum Questionnaire {
+    /// Driver age
+    internal static let age = Strings.tr("Localizable", "questionnaire.age", fallback: "Driver age")
+    /// Car color
+    internal static let color = Strings.tr("Localizable", "questionnaire.color", fallback: "Car color")
+    /// Driver gender
+    internal static let gender = Strings.tr("Localizable", "questionnaire.gender", fallback: "Driver gender")
+    /// Music
+    internal static let music = Strings.tr("Localizable", "questionnaire.music", fallback: "Music")
+    /// Speed
+    internal static let speed = Strings.tr("Localizable", "questionnaire.speed", fallback: "Speed")
+    /// Fill out the questionnaire for a better driver selection
+    internal static let title = Strings.tr("Localizable", "questionnaire.title", fallback: "Fill out the questionnaire for a better driver selection")
+  }
+  internal enum SpeedBlock {
+    /// Fast
+    internal static let fast = Strings.tr("Localizable", "speedBlock.fast", fallback: "Fast")
+    /// Medium
+    internal static let medium = Strings.tr("Localizable", "speedBlock.medium", fallback: "Medium")
+    /// Slow
+    internal static let slow = Strings.tr("Localizable", "speedBlock.slow", fallback: "Slow")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
+		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
+		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
+		FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */; };
+		FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */; };
+		FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1E294F4C19001C0F17 /* Triangle.swift */; };
+		FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */; };
+		FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */; };
+		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
+		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
+		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
+		FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */; };
+		FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B73294F241B00CA2B84 /* BigButton.swift */; };
+		FF4D9B77294F2CCF00CA2B84 /* MusicBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */; };
+		FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */; };
+		FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B7A294F387400CA2B84 /* Gender.swift */; };
+		FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B7D294F405700CA2B84 /* Speed.swift */; };
+		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -23,6 +41,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
+		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
+		FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorBlockView.swift; sourceTree = "<group>"; };
+		FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointView.swift; sourceTree = "<group>"; };
+		FF3BCC1E294F4C19001C0F17 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderConstants.swift; sourceTree = "<group>"; };
+		FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePointSliderView.swift; sourceTree = "<group>"; };
+		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
+		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlock.swift; sourceTree = "<group>"; };
+		FF4D9B73294F241B00CA2B84 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
+		FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderBlockView.swift; sourceTree = "<group>"; };
+		FF4D9B7A294F387400CA2B84 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		FF4D9B7D294F405700CA2B84 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -50,6 +86,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF31E0502952373200CC56BC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FF31E0512952374800CC56BC /* ErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */,
+				FF3BCC1E294F4C19001C0F17 /* Triangle.swift */,
+				FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */,
+				FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */,
+			);
+			path = DoublePointSlider;
+			sourceTree = "<group>";
+		};
+		FF4D9B67294F101000CA2B84 /* Questionnaire */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B6B294F13D300CA2B84 /* Model */,
+				FF4D9B6A294F13C500CA2B84 /* View */,
+			);
+			path = Questionnaire;
+			sourceTree = "<group>";
+		};
+		FF4D9B6A294F13C500CA2B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B75294F2C5F00CA2B84 /* BlocksView */,
+				FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */,
+				FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF4D9B6B294F13D300CA2B84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B7C294F3B8300CA2B84 /* Enum */,
+				FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */,
+				FF4D9B70294F208B00CA2B84 /* QuestionnaireBlock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF4D9B72294F23E400CA2B84 /* BigButton */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B73294F241B00CA2B84 /* BigButton.swift */,
+			);
+			path = BigButton;
+			sourceTree = "<group>";
+		};
+		FF4D9B75294F2C5F00CA2B84 /* BlocksView */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B76294F2CCF00CA2B84 /* MusicBlockView.swift */,
+				FF4D9B78294F383100CA2B84 /* GenderBlockView.swift */,
+				FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */,
+				FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */,
+			);
+			path = BlocksView;
+			sourceTree = "<group>";
+		};
+		FF4D9B7C294F3B8300CA2B84 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D9B7A294F387400CA2B84 /* Gender.swift */,
+				FF4D9B7D294F405700CA2B84 /* Speed.swift */,
+				FF3BCC17294F4827001C0F17 /* CarColor.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +227,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FF4D9B67294F101000CA2B84 /* Questionnaire */,
 				FFD9211E294E137000B89B35 /* Auth */,
 			);
 			path = Flow;
@@ -122,6 +236,9 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF31E0502952373200CC56BC /* Error */,
+				FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */,
+				FF4D9B72294F23E400CA2B84 /* BigButton */,
 				FFD92135294E27C200B89B35 /* GoogleAuthButton */,
 			);
 			path = View;
@@ -131,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD92136294E284D00B89B35 /* User.swift */,
+				FF31E04E29521EA300CC56BC /* SelectionParameters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,13 +373,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF31E0522952374900CC56BC /* ErrorView.swift in Sources */,
+				FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
+				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
+				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
+				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
+				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
+				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
+				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
+				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
+				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
+				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
+				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
+				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
+				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
+				FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */,
+				FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */,
+				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,
+				FF4D9B77294F2CCF00CA2B84 /* MusicBlockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
