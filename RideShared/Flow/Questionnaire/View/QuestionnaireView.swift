@@ -19,6 +19,9 @@ struct QuestionnaireView: View {
     @State var rightAgeIndex = 99
     
     @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
+    
+    @State var willShowingError = false
+    @State var errorText = ""
 
     var body: some View {
         
@@ -48,7 +51,10 @@ struct QuestionnaireView: View {
             }
             BigButton(title: Strings.Button.finish.uppercased()) {
                 if musicalPreferences.isEmpty {
-                    print("Error")
+                    errorText = Strings.Error.Questionnaire.musicField
+                    withAnimation {
+                        willShowingError = true
+                    }
                 } else {
                     user.selectionParametrs = SelectionParametrs(
                         musicalPreferences: musicalPreferences,
@@ -75,6 +81,10 @@ struct QuestionnaireView: View {
                     // Close keyboard
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }
+        )
+        .overlay(
+            ErrorView(isShowing: $willShowingError, title: Strings.Error.Questionnaire.title, message: errorText)
+                .transition(.opacity.animation(.default))
         )
         
     }

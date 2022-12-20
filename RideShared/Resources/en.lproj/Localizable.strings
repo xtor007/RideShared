@@ -15,6 +15,7 @@
 "questionnaire.color" = "Car color";
 
 "button.finish" = "Finish";
+"button.close" = "Close";
 
 "musicBlock.placeholder" = "Write your music wishes";
 
@@ -28,3 +29,6 @@
 "carColor.white" = "White";
 "carColor.light" = "Light";
 "carColor.black" = "Black";
+
+"error.questionnaire.title" = "Error in filling";
+"error.questionnaire.musicField" = "You must set value for music preferences";

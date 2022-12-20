@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
   internal enum Button {
+    /// Close
+    internal static let close = Strings.tr("Localizable", "button.close", fallback: "Close")
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
   }
@@ -21,6 +23,14 @@ internal enum Strings {
     internal static let light = Strings.tr("Localizable", "carColor.light", fallback: "Light")
     /// White
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
+  }
+  internal enum Error {
+    internal enum Questionnaire {
+      /// You must set value for music preferences
+      internal static let musicField = Strings.tr("Localizable", "error.questionnaire.musicField", fallback: "You must set value for music preferences")
+      /// Error in filling
+      internal static let title = Strings.tr("Localizable", "error.questionnaire.title", fallback: "Error in filling")
+    }
   }
   internal enum GenderBlock {
     /// Female
