@@ -23,7 +23,12 @@ struct RideSharedApp: App {
                 }
                 
                 if let _ = user.selectionParametrs {
-                    Text("Success")
+                    TabView {
+                        Text("profile")
+                            .tabItem {
+                                Label(Strings.TabBar.profile, systemImage: "person.fill")
+                            }
+                    }
                 } else {
                     QuestionnaireView(user: binding)
                 }
