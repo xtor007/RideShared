@@ -155,7 +155,6 @@
 		FF2079032953760000DFC4B9 /* ProfileList */ = {
 			isa = PBXGroup;
 			children = (
-				FF2079052953760D00DFC4B9 /* View */,
 				FF2079042953760800DFC4B9 /* Model */,
 			);
 			path = ProfileList;
@@ -167,13 +166,6 @@
 				FF2079062953762D00DFC4B9 /* ProfileListElement.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FF2079052953760D00DFC4B9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FF31E0502952373200CC56BC /* Error */ = {

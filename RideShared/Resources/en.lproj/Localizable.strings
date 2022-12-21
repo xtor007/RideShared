@@ -34,3 +34,7 @@
 "error.questionnaire.musicField" = "You must set value for music preferences";
 
 "tabBar.profile" = "Profile";
+
+"profileList.priotitets" = "Prioritets";
+"profileList.adresses" = "My Adresses";
+"profileList.driverSettings" = "Driver Settings";

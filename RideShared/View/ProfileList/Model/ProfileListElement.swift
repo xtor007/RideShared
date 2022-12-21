@@ -12,11 +12,11 @@ enum ProfileListElement: ScreenListElement {
     var title: String {
         switch self {
         case .adresses:
-            return "1"
+            return Strings.ProfileList.adresses.uppercased()
         case .driver:
-            return "2"
+            return Strings.ProfileList.driverSettings.uppercased()
         case .prioritets:
-            return "3"
+            return Strings.ProfileList.priotitets.uppercased()
         }
     }
     
