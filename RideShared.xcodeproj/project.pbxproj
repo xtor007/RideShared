@@ -10,6 +10,7 @@
 		FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F2295352AC00DFC4B9 /* ProfileView.swift */; };
 		FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F42953654D00DFC4B9 /* UserManager.swift */; };
 		FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F729536AB200DFC4B9 /* Double+rating.swift */; };
+		FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078FA2953730200DFC4B9 /* Hexagon.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
@@ -47,6 +48,7 @@
 		FF2078F2295352AC00DFC4B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF2078F42953654D00DFC4B9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		FF2078F729536AB200DFC4B9 /* Double+rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rating.swift"; sourceTree = "<group>"; };
+		FF2078FA2953730200DFC4B9 /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 				FF2078F729536AB200DFC4B9 /* Double+rating.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FF2078F9295372F200DFC4B9 /* Hexagon */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078FA2953730200DFC4B9 /* Hexagon.swift */,
+			);
+			path = Hexagon;
 			sourceTree = "<group>";
 		};
 		FF31E0502952373200CC56BC /* Error */ = {
@@ -260,6 +270,7 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF2078F9295372F200DFC4B9 /* Hexagon */,
 				FF31E0502952373200CC56BC /* Error */,
 				FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */,
 				FF4D9B72294F23E400CA2B84 /* BigButton */,
@@ -415,6 +426,7 @@
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
+				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
