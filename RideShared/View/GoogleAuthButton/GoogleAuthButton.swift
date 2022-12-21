@@ -30,7 +30,7 @@ struct GoogleAuthButton: View {
                 .fill(Color(Asset.Colors.elementBackgroundColor.color))
         )
         .onTapGesture {
-            callback(User()) //AUTH
+            callback(User.preview) //AUTH
         }
     }
     

@@ -28,15 +28,31 @@ struct ProfileView: View {
                 .frame(width: 80)
                 .clipShape(Circle())
                 
+                Spacer()
+                
+                VStack(alignment: .leading, spacing: Paddings.padding10) {
+                    Text(userManager.user.name)
+                        .font(.title)
+                        .lineLimit(1...2)
+                    Text("⭐️\(userManager.user.rating.rating)")
+                        .font(.bold(.subheadline)())
+                }
+                .foregroundColor(Color(Asset.Colors.textColor.color))
+                
             }
+            .padding(.horizontal, Paddings.padding30)
+            .padding(.top, Paddings.padding30)
+            
+            Spacer()
             
         }
+        .background(Color(Asset.Colors.backgroundColor.color).ignoresSafeArea())
     }
     
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(userManager: UserManager(user: User()))
+        ProfileView(userManager: UserManager(user: User.preview))
     }
 }

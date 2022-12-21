@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F2295352AC00DFC4B9 /* ProfileView.swift */; };
 		FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F42953654D00DFC4B9 /* UserManager.swift */; };
+		FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F729536AB200DFC4B9 /* Double+rating.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		FF2078F2295352AC00DFC4B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FF2078F42953654D00DFC4B9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		FF2078F729536AB200DFC4B9 /* Double+rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rating.swift"; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 				FF2078F2295352AC00DFC4B9 /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		FF2078F629536A9600DFC4B9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078F729536AB200DFC4B9 /* Double+rating.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FF31E0502952373200CC56BC /* Error */ = {
@@ -195,6 +205,7 @@
 		FFD92109294E12CA00B89B35 /* RideShared */ = {
 			isa = PBXGroup;
 			children = (
+				FF2078F629536A9600DFC4B9 /* Extension */,
 				FFD9211D294E134300B89B35 /* Manager */,
 				FFD9211C294E133D00B89B35 /* Model */,
 				FFD9211B294E133600B89B35 /* View */,
@@ -404,6 +415,7 @@
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
+				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
