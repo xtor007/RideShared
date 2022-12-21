@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F2295352AC00DFC4B9 /* ProfileView.swift */; };
+		FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F42953654D00DFC4B9 /* UserManager.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF2078F2295352AC00DFC4B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FF2078F42953654D00DFC4B9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		FF2078F12953501900DFC4B9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FF2078F2295352AC00DFC4B9 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -395,9 +401,11 @@
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
+				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
+				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
 				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,

@@ -9,4 +9,5 @@ import Foundation
 
 struct User {
     var selectionParametrs: SelectionParametrs?
+    var avatar: Data?
 }
