@@ -93,6 +93,6 @@ struct QuestionnaireView: View {
 
 struct QuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionnaireView(user: .constant(User()))
+        QuestionnaireView(user: .constant(User.preview))
     }
 }

@@ -23,13 +23,21 @@ struct RideSharedApp: App {
                 }
                 
                 if let _ = user.selectionParametrs {
-                    Text("Success")
+                    TabView {
+                        ProfileView(userManager: UserManager(user: user))
+                            .tabItem {
+                                Label(Strings.TabBar.profile, systemImage: "person.fill")
+                            }
+                    }
+                    .preferredColorScheme(.light)
                 } else {
                     QuestionnaireView(user: binding)
+                        .preferredColorScheme(.light)
                 }
                 
             } else {
                 AuthView(user: $user)
+                    .preferredColorScheme(.light)
             }
         }
     }

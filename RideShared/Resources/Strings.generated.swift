@@ -60,6 +60,14 @@ internal enum Strings {
     /// Write your music wishes
     internal static let placeholder = Strings.tr("Localizable", "musicBlock.placeholder", fallback: "Write your music wishes")
   }
+  internal enum ProfileList {
+    /// My Adresses
+    internal static let adresses = Strings.tr("Localizable", "profileList.adresses", fallback: "My Adresses")
+    /// Driver Settings
+    internal static let driverSettings = Strings.tr("Localizable", "profileList.driverSettings", fallback: "Driver Settings")
+    /// Prioritets
+    internal static let priotitets = Strings.tr("Localizable", "profileList.priotitets", fallback: "Prioritets")
+  }
   internal enum Questionnaire {
     /// Driver age
     internal static let age = Strings.tr("Localizable", "questionnaire.age", fallback: "Driver age")
@@ -81,6 +89,10 @@ internal enum Strings {
     internal static let medium = Strings.tr("Localizable", "speedBlock.medium", fallback: "Medium")
     /// Slow
     internal static let slow = Strings.tr("Localizable", "speedBlock.slow", fallback: "Slow")
+  }
+  internal enum TabBar {
+    /// Profile
+    internal static let profile = Strings.tr("Localizable", "tabBar.profile", fallback: "Profile")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
