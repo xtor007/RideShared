@@ -13,11 +13,11 @@ struct GoogleAuthButton: View {
     
     var body: some View {
         HStack {
-            Spacer()
             Image(uiImage: Asset.Images.googleIcon.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50)
+                .padding(.leading, Paddings.padding10)
             Spacer()
             Text(Strings.Google.singIn)
                 .foregroundColor(Color(Asset.Colors.textColor.color))

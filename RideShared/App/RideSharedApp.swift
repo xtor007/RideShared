@@ -29,12 +29,15 @@ struct RideSharedApp: App {
                                 Label(Strings.TabBar.profile, systemImage: "person.fill")
                             }
                     }
+                    .preferredColorScheme(.light)
                 } else {
                     QuestionnaireView(user: binding)
+                        .preferredColorScheme(.light)
                 }
                 
             } else {
                 AuthView(user: $user)
+                    .preferredColorScheme(.light)
             }
         }
     }
