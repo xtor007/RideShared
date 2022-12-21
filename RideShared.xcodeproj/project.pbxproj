@@ -11,6 +11,10 @@
 		FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F42953654D00DFC4B9 /* UserManager.swift */; };
 		FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078F729536AB200DFC4B9 /* Double+rating.swift */; };
 		FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078FA2953730200DFC4B9 /* Hexagon.swift */; };
+		FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2078FF2953756E00DFC4B9 /* ScreenListElement.swift */; };
+		FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF207901295375DB00DFC4B9 /* ScreenListElementView.swift */; };
+		FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2079062953762D00DFC4B9 /* ProfileListElement.swift */; };
+		FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2079082953824500DFC4B9 /* ScreenListView.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
@@ -49,6 +53,10 @@
 		FF2078F42953654D00DFC4B9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		FF2078F729536AB200DFC4B9 /* Double+rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rating.swift"; sourceTree = "<group>"; };
 		FF2078FA2953730200DFC4B9 /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
+		FF2078FF2953756E00DFC4B9 /* ScreenListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenListElement.swift; sourceTree = "<group>"; };
+		FF207901295375DB00DFC4B9 /* ScreenListElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenListElementView.swift; sourceTree = "<group>"; };
+		FF2079062953762D00DFC4B9 /* ProfileListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListElement.swift; sourceTree = "<group>"; };
+		FF2079082953824500DFC4B9 /* ScreenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenListView.swift; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
@@ -116,6 +124,56 @@
 				FF2078FA2953730200DFC4B9 /* Hexagon.swift */,
 			);
 			path = Hexagon;
+			sourceTree = "<group>";
+		};
+		FF2078FC295374B300DFC4B9 /* ScreenList */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078FE295374D300DFC4B9 /* Model */,
+				FF2078FD295374BD00DFC4B9 /* View */,
+			);
+			path = ScreenList;
+			sourceTree = "<group>";
+		};
+		FF2078FD295374BD00DFC4B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF207901295375DB00DFC4B9 /* ScreenListElementView.swift */,
+				FF2079082953824500DFC4B9 /* ScreenListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF2078FE295374D300DFC4B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078FF2953756E00DFC4B9 /* ScreenListElement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF2079032953760000DFC4B9 /* ProfileList */ = {
+			isa = PBXGroup;
+			children = (
+				FF2079052953760D00DFC4B9 /* View */,
+				FF2079042953760800DFC4B9 /* Model */,
+			);
+			path = ProfileList;
+			sourceTree = "<group>";
+		};
+		FF2079042953760800DFC4B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF2079062953762D00DFC4B9 /* ProfileListElement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF2079052953760D00DFC4B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FF31E0502952373200CC56BC /* Error */ = {
@@ -270,6 +328,8 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF2079032953760000DFC4B9 /* ProfileList */,
+				FF2078FC295374B300DFC4B9 /* ScreenList */,
 				FF2078F9295372F200DFC4B9 /* Hexagon */,
 				FF31E0502952373200CC56BC /* Error */,
 				FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */,
@@ -414,10 +474,12 @@
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
+				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
+				FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
@@ -427,6 +489,8 @@
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
+				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
+				FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */,
 				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,

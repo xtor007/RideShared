@@ -12,7 +12,7 @@ struct ProfileView: View {
     @ObservedObject var userManager: UserManager
 
     var body: some View {
-        VStack {
+        VStack(spacing: Paddings.padding20) {
             
             HStack {
                 
@@ -42,6 +42,13 @@ struct ProfileView: View {
             }
             .padding(.horizontal, Paddings.padding30)
             .padding(.top, Paddings.padding30)
+            
+            ScreenListView(data: [
+                ProfileListElement.prioritets,
+                ProfileListElement.adresses,
+                ProfileListElement.driver
+            ])
+            .padding(.horizontal, Paddings.padding20)
             
             Spacer()
             
