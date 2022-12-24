@@ -16,7 +16,6 @@ class GoogleAuthManager: AuthManager {
         GIDSignIn.sharedInstance.configuration = config
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { signInResult, error in
             guard let result = signInResult else {
-                // Inspect error
                 handler(.failure(error!))
                 return
             }

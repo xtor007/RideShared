@@ -32,6 +32,7 @@
 
 "error.questionnaire.title" = "Error in filling";
 "error.questionnaire.musicField" = "You must set value for music preferences";
+"error.singIn.title" = "Sing in error";
 
 "tabBar.profile" = "Profile";
 

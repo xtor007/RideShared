@@ -11,7 +11,7 @@ import GoogleSignIn
 struct GoogleAuthButton: View {
     
     let authManager: AuthManager
-    let callback: (User) -> Void
+    let callback: (Result<User, Error>) -> Void
     
     var body: some View {
         HStack {
@@ -35,10 +35,9 @@ struct GoogleAuthButton: View {
             authManager.singIn(rootViewController: getRootViewController()) { result in
                 switch result {
                 case .success(let success):
-                    print(success.user.profile?.name)
-                    callback(User.preview) //AUTH
+                    callback(.success(User.preview))
                 case .failure(let failure):
-                    print(failure.localizedDescription)
+                    callback(.failure(failure))
                 }
             }
         }
