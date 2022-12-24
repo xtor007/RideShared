@@ -9,4 +9,5 @@ import Foundation
 
 enum EnviromentVariables {
     static let googleClientID = "googleClientID"
+    static let serverURL = "serverURL"
 }

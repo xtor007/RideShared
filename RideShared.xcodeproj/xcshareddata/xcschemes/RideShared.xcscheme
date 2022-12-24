@@ -56,6 +56,11 @@
             value = "1070319083094-rhfna9ibe6pgrun9ag7f90ogbcdmcm95.apps.googleusercontent.com"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "serverURL"
+            value = "http://127.0.0.1:8080/"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

@@ -35,7 +35,7 @@ struct AuthView: View {
         }
         .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
         .overlay(
-            ErrorView(isShowing: $willShowingError, title: Strings.Error.Questionnaire.title, message: errorText)
+            ErrorView(isShowing: $willShowingError, title: Strings.Error.SingIn.title, message: errorText)
                 .transition(.opacity.animation(.default))
         )
     }

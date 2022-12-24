@@ -31,6 +31,10 @@ internal enum Strings {
       /// Error in filling
       internal static let title = Strings.tr("Localizable", "error.questionnaire.title", fallback: "Error in filling")
     }
+    internal enum SingIn {
+      /// Sing in error
+      internal static let title = Strings.tr("Localizable", "error.singIn.title", fallback: "Sing in error")
+    }
   }
   internal enum GenderBlock {
     /// Female
