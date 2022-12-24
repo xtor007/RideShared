@@ -9,4 +9,5 @@ import Foundation
 
 enum NetworkError: LocalizedError {
     case failedURL(message: String = "Failed URL")
+    case serverError(message: String = "Server error")
 }

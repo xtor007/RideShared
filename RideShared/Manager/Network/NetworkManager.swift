@@ -20,7 +20,7 @@ class NetworkManager {
         postRequest(postData: authData, path: .singIn, callback: callback)
     }
     
-    private func postRequest<GetType>(postData: Data, path: ServerPath, callback: @escaping (Result<GetType, Error>) -> Void) {
+    private func postRequest<GetType: Decodable>(postData: Data, path: ServerPath, callback: @escaping (Result<GetType, Error>) -> Void) {
         guard let url = URL(string: ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + path.path) else {
             callback(.failure(NetworkError.failedURL()))
             return
@@ -29,9 +29,20 @@ class NetworkManager {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.uploadTask(with: request, from: postData) { data, response, error in
-            // Handle response from your backend.
-            if let data {
-                print(String(data: data, encoding: .ascii))
+            guard let data = data, let response = response as? HTTPURLResponse else {
+                callback(.failure(error!))
+                return
+            }
+            do {
+                if response.statusCode == 200 {
+                    let result = try JSONDecoder().decode(GetType.self, from: data)
+                    callback(.success(result))
+                } else {
+                    callback(.failure(NetworkError.serverError()))
+                }
+            }
+            catch {
+                callback(.failure(error))
             }
         }.resume()
     }

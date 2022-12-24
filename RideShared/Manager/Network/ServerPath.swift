@@ -12,7 +12,7 @@ enum ServerPath {
     var path: String {
         switch self {
         case .singIn:
-            return "singIn"
+            return "auth/singIn"
         }
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SelectionParametrs {
+struct SelectionParametrs: Decodable {
     var musicalPreferences: String?
     var musicalPrioritet: Int
     var driverGenderIndex: Int?
