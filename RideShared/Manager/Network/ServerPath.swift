@@ -1,5 +1,5 @@
 //
-//  Path.swift
+//  ServerPath.swift
 //  RideShared
 //
 //  Created by Anatoliy Khramchenko on 24.12.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Path {
+enum ServerPath {
     
     var path: String {
         switch self {

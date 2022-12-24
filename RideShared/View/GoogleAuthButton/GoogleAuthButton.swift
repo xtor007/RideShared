@@ -32,17 +32,15 @@ struct GoogleAuthButton: View {
                 .fill(Color(Asset.Colors.elementBackgroundColor.color))
         )
         .onTapGesture {
-            DispatchQueue.global(qos: .background).async {
-                authManager.singIn(rootViewController: getRootViewController()) { result in
-                    switch result {
-                    case .success(let success):
-                        success.user.refreshTokensIfNeeded { user, error in
-                            if let error {
-                                DispatchQueue.main.async {
-                                    callback(.failure(error))
-                                }
-                                return
-                            }
+            authManager.singIn(rootViewController: getRootViewController()) { result in
+                switch result {
+                case .success(let success):
+                    success.user.refreshTokensIfNeeded { user, error in
+                        if let error {
+                            callback(.failure(error))
+                            return
+                        }
+                        DispatchQueue.global(qos: .background).async {
                             NetworkManager.shared.auth(token: user!.idToken!.tokenString) { result in
                                 DispatchQueue.main.async {
                                     switch result {
@@ -54,11 +52,9 @@ struct GoogleAuthButton: View {
                                 }
                             }
                         }
-                    case .failure(let failure):
-                        DispatchQueue.main.async {
-                            callback(.failure(failure))
-                        }
                     }
+                case .failure(let failure):
+                    callback(.failure(failure))
                 }
             }
         }

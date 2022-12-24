@@ -33,7 +33,7 @@
 		FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B7A294F387400CA2B84 /* Gender.swift */; };
 		FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B7D294F405700CA2B84 /* Speed.swift */; };
 		FF5555292957618C001B9646 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5555282957618B001B9646 /* NetworkManager.swift */; };
-		FF55552B29576302001B9646 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552A29576302001B9646 /* Path.swift */; };
+		FF55552B29576302001B9646 /* ServerPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552A29576302001B9646 /* ServerPath.swift */; };
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
@@ -86,7 +86,7 @@
 		FF4D9B7A294F387400CA2B84 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		FF4D9B7D294F405700CA2B84 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		FF5555282957618B001B9646 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		FF55552A29576302001B9646 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		FF55552A29576302001B9646 /* ServerPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerPath.swift; sourceTree = "<group>"; };
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5555282957618B001B9646 /* NetworkManager.swift */,
-				FF55552A29576302001B9646 /* Path.swift */,
+				FF55552A29576302001B9646 /* ServerPath.swift */,
 				FF55552C2957656D001B9646 /* NetworkError.swift */,
 			);
 			path = Network;
@@ -538,7 +538,7 @@
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
-				FF55552B29576302001B9646 /* Path.swift in Sources */,
+				FF55552B29576302001B9646 /* ServerPath.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
