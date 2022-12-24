@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct RideSharedApp: App {
@@ -36,8 +37,11 @@ struct RideSharedApp: App {
                 }
                 
             } else {
-                AuthView(user: $user)
+                AuthView(user: $user, authManager: GoogleAuthManager())
                     .preferredColorScheme(.light)
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
+                    }
             }
         }
     }

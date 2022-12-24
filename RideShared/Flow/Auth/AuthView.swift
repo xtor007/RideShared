@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthView: View {
     
     @Binding var user: User?
+    let authManager: AuthManager
     
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct AuthView: View {
                 .font(.title)
                 .foregroundColor(Color(Asset.Colors.textColor.color))
             Spacer()
-            GoogleAuthButton { user in
+            GoogleAuthButton(authManager: authManager) { user in
                 self.user = user
             }
             .padding(.horizontal, Paddings.padding16)
@@ -30,6 +31,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(user: .constant(User.preview))
+        AuthView(user: .constant(User.preview), authManager: GoogleAuthManager())
     }
 }

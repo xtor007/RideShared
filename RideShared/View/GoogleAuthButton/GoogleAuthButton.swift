@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct GoogleAuthButton: View {
     
+    let authManager: AuthManager
     let callback: (User) -> Void
     
     var body: some View {
@@ -30,7 +32,20 @@ struct GoogleAuthButton: View {
                 .fill(Color(Asset.Colors.elementBackgroundColor.color))
         )
         .onTapGesture {
-            callback(User.preview) //AUTH
+            authManager.singIn(rootViewController: getRootViewController()) { result in
+                switch result {
+                case .success(let success):
+                    print(success.user.profile?.name)
+                    callback(User.preview) //AUTH
+                case .failure(let failure):
+                    print(failure.localizedDescription)
+                }
+            }
+        }
+        .onAppear {
+          GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            //
+          }
         }
     }
     
@@ -38,7 +53,7 @@ struct GoogleAuthButton: View {
 
 struct GoogleAuthButton_Previews: PreviewProvider {
     static var previews: some View {
-        GoogleAuthButton { _ in 
+        GoogleAuthButton(authManager: GoogleAuthManager()) { _ in
             print(1)
         }
         .background(Color.blue)

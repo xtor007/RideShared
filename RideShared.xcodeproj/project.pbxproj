@@ -49,6 +49,9 @@
 		FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3429573CA4007BA886 /* GoogleSignIn */; };
 		FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3629573CA4007BA886 /* GoogleSignInSwift */; };
 		FFF88D3A29573D4D007BA886 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF88D3929573D4D007BA886 /* credentials.plist */; };
+		FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D3C29574E08007BA886 /* View+rootViewController.swift */; };
+		FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D3F29574F94007BA886 /* AuthManager.swift */; };
+		FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D412957503E007BA886 /* GoogleAuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,10 @@
 		FFD92136294E284D00B89B35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD92138294E295C00B89B35 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		FFF88D3929573D4D007BA886 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		FFF88D3B29573F55007BA886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
+		FFF88D3F29574F94007BA886 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FFF88D412957503E007BA886 /* GoogleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2078F729536AB200DFC4B9 /* Double+rating.swift */,
+				FFF88D3C29574E08007BA886 /* View+rootViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,6 +302,8 @@
 		FFD92118294E12DD00B89B35 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FFF88D3829573D40007BA886 /* Auth */,
+				FFF88D3B29573F55007BA886 /* Info.plist */,
 				FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */,
 			);
 			path = App;
@@ -302,7 +312,6 @@
 		FFD92119294E12EE00B89B35 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FFF88D3829573D40007BA886 /* Auth */,
 				FFD9212F294E219100B89B35 /* Assets.generated.swift */,
 				FFD92130294E219100B89B35 /* Strings.generated.swift */,
 				FFD92125294E168D00B89B35 /* Assets.xcassets */,
@@ -350,6 +359,7 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFF88D3E29574F81007BA886 /* Auth */,
 				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
 			);
 			path = Manager;
@@ -375,6 +385,15 @@
 			isa = PBXGroup;
 			children = (
 				FFF88D3929573D4D007BA886 /* credentials.plist */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FFF88D3E29574F81007BA886 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFF88D3F29574F94007BA886 /* AuthManager.swift */,
+				FFF88D412957503E007BA886 /* GoogleAuthManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -504,7 +523,9 @@
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
+				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
+				FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */,
 				FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */,
 				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
@@ -512,6 +533,7 @@
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
 				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
+				FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */,
 				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
 				FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */,
 				FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */,
@@ -659,6 +681,7 @@
 				DEVELOPMENT_TEAM = AF68Y4A9MG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RideShared/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -689,6 +712,7 @@
 				DEVELOPMENT_TEAM = AF68Y4A9MG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RideShared/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
