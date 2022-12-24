@@ -8,15 +8,18 @@
 import Foundation
 
 struct User {
-    var selectionParametrs: SelectionParametrs?
-    var avatar: Data?
     var name: String
+    var avatar: Data?
     var rating: Double
+    var tripCount: Int
+    var selectionParametrs: SelectionParametrs?
+    var taxiData: TaxiData?
 }
 
 extension User {
     static let preview = User(
         name: "Anatolii Khramchenko",
-        rating: 5.0
+        rating: 5.0,
+        tripCount: 1
     )
 }
