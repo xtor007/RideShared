@@ -52,6 +52,7 @@
 		FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D3C29574E08007BA886 /* View+rootViewController.swift */; };
 		FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D3F29574F94007BA886 /* AuthManager.swift */; };
 		FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D412957503E007BA886 /* GoogleAuthManager.swift */; };
+		FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF88D432957538D007BA886 /* EnviromentVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
 		FFF88D3F29574F94007BA886 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FFF88D412957503E007BA886 /* GoogleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthManager.swift; sourceTree = "<group>"; };
+		FFF88D432957538D007BA886 /* EnviromentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 				FFD92123294E13FA00B89B35 /* Colors.xcassets */,
 				FFD9212B294E1A4800B89B35 /* Localizable.strings */,
 				FFD92138294E295C00B89B35 /* Padding.swift */,
+				FFF88D432957538D007BA886 /* EnviromentVariables.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
+				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
