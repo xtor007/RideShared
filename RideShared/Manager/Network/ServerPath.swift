@@ -12,7 +12,7 @@ enum ServerPath {
     var path: String {
         switch self {
         case .singIn:
-            return "auth/singIn"
+            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/signIn"
         }
     }
     

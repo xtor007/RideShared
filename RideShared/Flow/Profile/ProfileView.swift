@@ -13,23 +13,15 @@ struct ProfileView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: Paddings.padding20) {
+            VStack(alignment: .leading, spacing: Paddings.padding20) {
                 
-                HStack {
+                HStack(spacing: Paddings.padding16) {
                     
-                    Image(
-                        uiImage: userManager.user.avatar.map({ data in
-                            return UIImage(data: data)
-                            ?? Asset.Images.defaultAvatar.image
-                        })
-                           ?? Asset.Images.defaultAvatar.image
-                    )
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80)
-                    .clipShape(Circle())
-                    
-                    Spacer()
+                    Image(uiImage: userManager.avatar)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80)
+                        .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: Paddings.padding10) {
                         Text(userManager.user.name)
