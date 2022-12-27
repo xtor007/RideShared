@@ -9,6 +9,7 @@ import Foundation
 
 struct User: Decodable {
     var name: String
+    var email: String
     var avatar: String?
     var rating: Double
     var tripCount: Int
@@ -19,6 +20,7 @@ struct User: Decodable {
 extension User {
     static let preview = User(
         name: "Anatolii Khramchenko",
+        email: "tolxpams@gmail.com",
         rating: 5.0,
         tripCount: 1
     )

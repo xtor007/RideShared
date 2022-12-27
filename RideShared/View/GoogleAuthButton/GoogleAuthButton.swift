@@ -13,6 +13,8 @@ struct GoogleAuthButton: View {
     let authManager: AuthManager
     let callback: (Result<User, Error>) -> Void
     
+    @State private var isLoading = false
+    
     var body: some View {
         HStack {
             Image(uiImage: Asset.Images.googleIcon.image)
@@ -24,6 +26,10 @@ struct GoogleAuthButton: View {
             Text(Strings.Google.singIn)
                 .foregroundColor(Color(Asset.Colors.textColor.color))
             Spacer()
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
         }
         .padding(.horizontal, Paddings.padding16)
         .padding(.vertical, Paddings.padding10)
@@ -32,29 +38,35 @@ struct GoogleAuthButton: View {
                 .fill(Color(Asset.Colors.elementBackgroundColor.color))
         )
         .onTapGesture {
-            authManager.singIn(rootViewController: getRootViewController()) { result in
-                switch result {
-                case .success(let success):
-                    success.user.refreshTokensIfNeeded { user, error in
-                        if let error {
-                            callback(.failure(error))
-                            return
-                        }
-                        DispatchQueue.global(qos: .background).async {
-                            NetworkManager.shared.auth(token: user!.idToken!.tokenString) { result in
-                                DispatchQueue.main.async {
-                                    switch result {
-                                    case .success(let success):
-                                        callback(.success(success))
-                                    case .failure(let failure):
-                                        callback(.failure(failure))
+            if !isLoading {
+                authManager.singIn(rootViewController: getRootViewController()) { result in
+                    withAnimation {
+                        isLoading = true
+                    }
+                    switch result {
+                    case .success(let success):
+                        success.user.refreshTokensIfNeeded { user, error in
+                            if let error {
+                                finishLoading(result: .failure(error))
+                                isLoading = false
+                                return
+                            }
+                            DispatchQueue.global(qos: .background).async {
+                                NetworkManager.shared.auth(token: user!.idToken!.tokenString) { result in
+                                    DispatchQueue.main.async {
+                                        switch result {
+                                        case .success(let success):
+                                            finishLoading(result: .success(success))
+                                        case .failure(let failure):
+                                            finishLoading(result: .failure(failure))
+                                        }
                                     }
                                 }
                             }
                         }
+                    case .failure(let failure):
+                        finishLoading(result: .failure(failure))
                     }
-                case .failure(let failure):
-                    callback(.failure(failure))
                 }
             }
         }
@@ -63,6 +75,11 @@ struct GoogleAuthButton: View {
             //
           }
         }
+    }
+    
+    private func finishLoading(result: Result<User, Error>) {
+        isLoading = false
+        callback(result)
     }
     
 }
