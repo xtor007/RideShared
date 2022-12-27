@@ -12,6 +12,8 @@ import GoogleSignIn
 struct RideSharedApp: App {
 
     @State var user: User?
+    @State var isError = false
+    @State var errorText = ""
 
     var body: some Scene {
         WindowGroup {
@@ -20,7 +22,19 @@ struct RideSharedApp: App {
                 let binding = Binding {
                     return user
                 } set: { value, _ in
-                    self.user = value
+                    DispatchQueue.global(qos: .background).async {
+                        NetworkManager.shared.updateUser(user: value) { result in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .success:
+                                    self.user = value
+                                case .failure(let failure):
+                                    errorText = failure.localizedDescription
+                                    isError = true
+                                }
+                            }
+                        }
+                    }
                 }
                 
                 if let _ = user.selectionParametrs {
@@ -32,7 +46,7 @@ struct RideSharedApp: App {
                     }
                     .preferredColorScheme(.light)
                 } else {
-                    QuestionnaireView(user: binding)
+                    QuestionnaireView(user: binding, willShowingError: $isError, errorText: $errorText)
                         .preferredColorScheme(.light)
                 }
                 

@@ -12,4 +12,5 @@ enum NetworkError: LocalizedError {
     case failedData(message: String = "Failed data")
     case serverError(message: String = "Server error")
     case decodeImageError(message: String = "Decode image error")
+    case codeFailed(message: String = "Code failed")
 }

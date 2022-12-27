@@ -20,8 +20,10 @@ struct QuestionnaireView: View {
     
     @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
     
-    @State var willShowingError = false
-    @State var errorText = ""
+    @Binding var willShowingError: Bool
+    @Binding var errorText: String
+    
+    @State var isLoading = false
 
     var body: some View {
         
@@ -69,6 +71,7 @@ struct QuestionnaireView: View {
                         carColorIndex: priorities[4] == .notMatter ? nil : carColorIndex,
                         colorPrioritet: priorities[4].rawValue
                     )
+                    isLoading = true
                 }
             }
         }
@@ -82,10 +85,20 @@ struct QuestionnaireView: View {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }
         )
+        .disabled(isLoading)
         .overlay(
             ErrorView(isShowing: $willShowingError, title: Strings.Error.Questionnaire.title, message: errorText)
                 .transition(.opacity.animation(.default))
         )
+        .overlay {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }
+        .onChange(of: willShowingError) { newValue in
+            isLoading = false
+        }
         
     }
 
@@ -93,6 +106,6 @@ struct QuestionnaireView: View {
 
 struct QuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionnaireView(user: .constant(User.preview))
+        QuestionnaireView(user: .constant(User.preview), willShowingError: .constant(false), errorText: .constant(""))
     }
 }

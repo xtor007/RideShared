@@ -472,6 +472,7 @@
 			mainGroup = FFD920FE294E12CA00B89B35;
 			packageReferences = (
 				FFF88D3329573CA4007BA886 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				FFE561DC295B597F000B0371 /* XCRemoteSwiftPackageReference "jwt" */,
 			);
 			productRefGroup = FFD92108294E12CA00B89B35 /* Products */;
 			projectDirPath = "";
@@ -784,6 +785,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FFE561DC295B597F000B0371 /* XCRemoteSwiftPackageReference "jwt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/jwt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		FFF88D3329573CA4007BA886 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";

@@ -13,9 +13,11 @@ enum ServerPath {
         switch self {
         case .singIn:
             return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/signIn"
+        case .updateUser:
+            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/updateUser"
         }
     }
     
-    case singIn
+    case singIn, updateUser
     
 }

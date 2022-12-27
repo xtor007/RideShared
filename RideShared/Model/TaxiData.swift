@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct TaxiData: Decodable {
+struct TaxiData: Codable {
     
 }
