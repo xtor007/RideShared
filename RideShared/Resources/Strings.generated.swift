@@ -25,8 +25,16 @@ internal enum Strings {
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
   }
   internal enum DriverInfo {
+    /// Select your car color
+    internal static let carColor = Strings.tr("Localizable", "driverInfo.carColor", fallback: "Select your car color")
+    /// Select date of birth
+    internal static let dateOfBirth = Strings.tr("Localizable", "driverInfo.dateOfBirth", fallback: "Select date of birth")
+    /// Select your gender
+    internal static let gender = Strings.tr("Localizable", "driverInfo.gender", fallback: "Select your gender")
     /// Do you want to become a driver?
     internal static let question = Strings.tr("Localizable", "driverInfo.question", fallback: "Do you want to become a driver?")
+    /// Fill out the questionnaire
+    internal static let questionnaire = Strings.tr("Localizable", "driverInfo.questionnaire", fallback: "Fill out the questionnaire")
   }
   internal enum Error {
     internal enum Error {

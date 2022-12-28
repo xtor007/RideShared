@@ -13,5 +13,5 @@ struct TaxiData: Codable {
     var genderIndex: Int
     var dateOfBirth: Date
     var speedRating: Double
-    var carColorIndex: Int
+    var yourCarColorIndex: Int
 }
