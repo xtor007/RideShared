@@ -50,6 +50,7 @@
 		FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */; };
 		FFD92137294E284D00B89B35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92136294E284D00B89B35 /* User.swift */; };
 		FFD92139294E295C00B89B35 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92138294E295C00B89B35 /* Padding.swift */; };
+		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3429573CA4007BA886 /* GoogleSignIn */; };
 		FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3629573CA4007BA886 /* GoogleSignInSwift */; };
 		FFF88D3A29573D4D007BA886 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF88D3929573D4D007BA886 /* credentials.plist */; };
@@ -104,6 +105,7 @@
 		FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthButton.swift; sourceTree = "<group>"; };
 		FFD92136294E284D00B89B35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD92138294E295C00B89B35 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFF88D3929573D4D007BA886 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		FFF88D3B29573F55007BA886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FFE561FC295CC1A9000B0371 /* DriverInfo */,
 				FF2078F12953501900DFC4B9 /* Profile */,
 				FF4D9B67294F101000CA2B84 /* Questionnaire */,
 				FFD9211E294E137000B89B35 /* Auth */,
@@ -402,6 +405,14 @@
 				FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */,
 			);
 			path = GoogleAuthButton;
+			sourceTree = "<group>";
+		};
+		FFE561FC295CC1A9000B0371 /* DriverInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */,
+			);
+			path = DriverInfo;
 			sourceTree = "<group>";
 		};
 		FFF88D3829573D40007BA886 /* Auth */ = {
@@ -537,6 +548,7 @@
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
+				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF55552B29576302001B9646 /* ServerPath.swift in Sources */,

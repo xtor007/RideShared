@@ -1,4 +1,5 @@
 "general.title" = "RideShared";
+"general.yes" = "Yes";
 
 "google.singIn" = "Sign in with Google";
 
@@ -40,3 +41,5 @@
 "profileList.priotitets" = "Prioritets";
 "profileList.adresses" = "My Adresses";
 "profileList.driverSettings" = "Driver Settings";
+
+"driverInfo.question" = "Do you want to become a driver?";
