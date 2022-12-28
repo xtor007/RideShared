@@ -20,3 +20,15 @@ struct SelectionParametrs: Codable {
     var carColorIndex: Int?
     var colorPrioritet: Int
 }
+
+extension SelectionParametrs {
+    func getPriorities() -> [Int] {
+        return [
+            musicalPrioritet,
+            genderPrioritet,
+            agePrioritet,
+            speedPrioritet,
+            colorPrioritet
+        ]
+    }
+}

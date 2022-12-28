@@ -58,7 +58,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "serverURL"
-            value = "https://63ec-146-70-28-14.eu.ngrok.io/"
+            value = "https://a24e-146-70-28-14.eu.ngrok.io/"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

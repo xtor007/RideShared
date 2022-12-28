@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol ScreenListElement: Hashable {
+protocol ScreenListElement {
     
     var title: String { get }
     var content: AnyView { get }

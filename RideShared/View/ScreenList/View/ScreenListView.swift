@@ -25,6 +25,6 @@ struct ScreenListView: View {
 
 struct ScreenListView_Previews: PreviewProvider {
     static var previews: some View {
-        ScreenListView(data: [ProfileListElement.driver, ProfileListElement.prioritets])
+        ScreenListView(data: [ProfileListElement.driver, ProfileListElement.adresses])
     }
 }

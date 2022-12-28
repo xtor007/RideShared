@@ -38,11 +38,13 @@ struct RideSharedApp: App {
                 }
                 
                 if let _ = user.selectionParametrs {
-                    TabView {
-                        ProfileView(userManager: UserManager(user: user))
-                            .tabItem {
-                                Label(Strings.TabBar.profile, systemImage: "person.fill")
-                            }
+                    NavigationView {
+                        TabView {
+                            ProfileView(userManager: UserManager(user: user))
+                                .tabItem {
+                                    Label(Strings.TabBar.profile, systemImage: "person.fill")
+                                }
+                        }
                     }
                     .preferredColorScheme(.light)
                 } else {

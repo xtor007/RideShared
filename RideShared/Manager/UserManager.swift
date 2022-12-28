@@ -9,7 +9,7 @@ import SwiftUI
 
 class UserManager: ObservableObject {
     
-    @Published private(set) var user: User {
+    @Published var user: User {
         didSet {
             DispatchQueue.global(qos: .background).async {
                 NetworkManager.shared.updateUser(user: self.user) { result in
@@ -27,8 +27,8 @@ class UserManager: ObservableObject {
         }
     }
     @Published private(set) var avatar: UIImage
-    @Published private(set) var willShowError = false
-    @Published private(set) var errorMessage = ""
+    @Published var willShowError = false
+    @Published var errorMessage = ""
     
     init(user: User) {
         self.user = user

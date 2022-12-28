@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QuestionnaireView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @Binding var user: User
     
     @State var musicalPreferences = ""
@@ -72,6 +74,7 @@ struct QuestionnaireView: View {
                         colorPrioritet: priorities[4].rawValue
                     )
                     isLoading = true
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
         }
@@ -100,6 +103,37 @@ struct QuestionnaireView: View {
             isLoading = false
         }
         
+    }
+    
+    init(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>) {
+        self._user = user
+        self._willShowingError = willShowingError
+        self._errorText = errorText
+        if let priorities = user.wrappedValue.selectionParametrs {
+            self._priorities = State(
+                initialValue: priorities.getPriorities().compactMap({ value in
+                    return BlockImportance(rawValue: value)
+                })
+            )
+            if let musicalPregerences = priorities.musicalPreferences {
+                self._musicalPreferences = State(initialValue: musicalPregerences)
+            }
+            if let genderIndex = priorities.driverGenderIndex {
+                self._genderIndex = State(initialValue: genderIndex)
+            }
+            if let speedIndex = priorities.speedIndex {
+                self._speedIndex = State(initialValue: speedIndex)
+            }
+            if let carColorIndex = priorities.carColorIndex {
+                self._carColorIndex = State(initialValue: carColorIndex)
+            }
+            if let leftAgeIndex = priorities.driverMinAge {
+                self._leftAgeIndex = State(initialValue: leftAgeIndex)
+            }
+            if let rightAgeIndex = priorities.driverMaxAge {
+                self._rightAgeIndex = State(initialValue: rightAgeIndex)
+            }
+        }
     }
 
 }
