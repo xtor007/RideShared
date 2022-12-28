@@ -7,16 +7,21 @@
 
 import Foundation
 
-struct User {
-    var selectionParametrs: SelectionParametrs?
-    var avatar: Data?
+struct User: Codable {
     var name: String
+    var email: String
+    var avatar: String?
     var rating: Double
+    var tripCount: Int
+    var selectionParametrs: SelectionParametrs?
+    var taxiData: TaxiData?
 }
 
 extension User {
     static let preview = User(
         name: "Anatolii Khramchenko",
-        rating: 5.0
+        email: "tolxpams@gmail.com",
+        rating: 5.0,
+        tripCount: 1
     )
 }

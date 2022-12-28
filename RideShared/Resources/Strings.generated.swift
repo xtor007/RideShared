@@ -25,11 +25,19 @@ internal enum Strings {
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
   }
   internal enum Error {
+    internal enum Error {
+      /// Error
+      internal static let title = Strings.tr("Localizable", "error.error.title", fallback: "Error")
+    }
     internal enum Questionnaire {
       /// You must set value for music preferences
       internal static let musicField = Strings.tr("Localizable", "error.questionnaire.musicField", fallback: "You must set value for music preferences")
       /// Error in filling
       internal static let title = Strings.tr("Localizable", "error.questionnaire.title", fallback: "Error in filling")
+    }
+    internal enum SingIn {
+      /// Sign in error
+      internal static let title = Strings.tr("Localizable", "error.singIn.title", fallback: "Sign in error")
     }
   }
   internal enum GenderBlock {
@@ -43,8 +51,8 @@ internal enum Strings {
     internal static let title = Strings.tr("Localizable", "general.title", fallback: "RideShared")
   }
   internal enum Google {
-    /// Sing in with Google
-    internal static let singIn = Strings.tr("Localizable", "google.singIn", fallback: "Sing in with Google")
+    /// Sign in with Google
+    internal static let singIn = Strings.tr("Localizable", "google.singIn", fallback: "Sign in with Google")
   }
   internal enum Importance {
     /// Hight

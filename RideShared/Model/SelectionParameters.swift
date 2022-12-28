@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SelectionParametrs {
+struct SelectionParametrs: Codable {
     var musicalPreferences: String?
     var musicalPrioritet: Int
     var driverGenderIndex: Int?
@@ -19,4 +19,16 @@ struct SelectionParametrs {
     var speedPrioritet: Int
     var carColorIndex: Int?
     var colorPrioritet: Int
+}
+
+extension SelectionParametrs {
+    func getPriorities() -> [Int] {
+        return [
+            musicalPrioritet,
+            genderPrioritet,
+            agePrioritet,
+            speedPrioritet,
+            colorPrioritet
+        ]
+    }
 }

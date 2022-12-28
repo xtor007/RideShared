@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct RideSharedApp: App {
 
     @State var user: User?
+    @State var isError = false
+    @State var errorText = ""
 
     var body: some Scene {
         WindowGroup {
@@ -19,25 +22,42 @@ struct RideSharedApp: App {
                 let binding = Binding {
                     return user
                 } set: { value, _ in
-                    self.user = value
+                    DispatchQueue.global(qos: .background).async {
+                        NetworkManager.shared.updateUser(user: value) { result in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .success:
+                                    self.user = value
+                                case .failure(let failure):
+                                    errorText = failure.localizedDescription
+                                    isError = true
+                                }
+                            }
+                        }
+                    }
                 }
                 
                 if let _ = user.selectionParametrs {
-                    TabView {
-                        ProfileView(userManager: UserManager(user: user))
-                            .tabItem {
-                                Label(Strings.TabBar.profile, systemImage: "person.fill")
-                            }
+                    NavigationView {
+                        TabView {
+                            ProfileView(userManager: UserManager(user: user))
+                                .tabItem {
+                                    Label(Strings.TabBar.profile, systemImage: "person.fill")
+                                }
+                        }
                     }
                     .preferredColorScheme(.light)
                 } else {
-                    QuestionnaireView(user: binding)
+                    QuestionnaireView(user: binding, willShowingError: $isError, errorText: $errorText)
                         .preferredColorScheme(.light)
                 }
                 
             } else {
-                AuthView(user: $user)
+                AuthView(user: $user, authManager: GoogleAuthManager())
                     .preferredColorScheme(.light)
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
+                    }
             }
         }
     }

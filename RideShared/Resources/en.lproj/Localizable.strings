@@ -1,6 +1,6 @@
 "general.title" = "RideShared";
 
-"google.singIn" = "Sing in with Google";
+"google.singIn" = "Sign in with Google";
 
 "importance.notMatter" = "Not Matter";
 "importance.low" = "Low";
@@ -32,6 +32,8 @@
 
 "error.questionnaire.title" = "Error in filling";
 "error.questionnaire.musicField" = "You must set value for music preferences";
+"error.singIn.title" = "Sign in error";
+"error.error.title" = "Error";
 
 "tabBar.profile" = "Profile";
 

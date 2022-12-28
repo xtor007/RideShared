@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QuestionnaireView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @Binding var user: User
     
     @State var musicalPreferences = ""
@@ -20,8 +22,10 @@ struct QuestionnaireView: View {
     
     @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
     
-    @State var willShowingError = false
-    @State var errorText = ""
+    @Binding var willShowingError: Bool
+    @Binding var errorText: String
+    
+    @State var isLoading = false
 
     var body: some View {
         
@@ -69,6 +73,8 @@ struct QuestionnaireView: View {
                         carColorIndex: priorities[4] == .notMatter ? nil : carColorIndex,
                         colorPrioritet: priorities[4].rawValue
                     )
+                    isLoading = true
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
         }
@@ -82,17 +88,58 @@ struct QuestionnaireView: View {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }
         )
+        .disabled(isLoading)
         .overlay(
             ErrorView(isShowing: $willShowingError, title: Strings.Error.Questionnaire.title, message: errorText)
                 .transition(.opacity.animation(.default))
         )
+        .overlay {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }
+        .onChange(of: willShowingError) { newValue in
+            isLoading = false
+        }
         
+    }
+    
+    init(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>) {
+        self._user = user
+        self._willShowingError = willShowingError
+        self._errorText = errorText
+        if let priorities = user.wrappedValue.selectionParametrs {
+            self._priorities = State(
+                initialValue: priorities.getPriorities().compactMap({ value in
+                    return BlockImportance(rawValue: value)
+                })
+            )
+            if let musicalPregerences = priorities.musicalPreferences {
+                self._musicalPreferences = State(initialValue: musicalPregerences)
+            }
+            if let genderIndex = priorities.driverGenderIndex {
+                self._genderIndex = State(initialValue: genderIndex)
+            }
+            if let speedIndex = priorities.speedIndex {
+                self._speedIndex = State(initialValue: speedIndex)
+            }
+            if let carColorIndex = priorities.carColorIndex {
+                self._carColorIndex = State(initialValue: carColorIndex)
+            }
+            if let leftAgeIndex = priorities.driverMinAge {
+                self._leftAgeIndex = State(initialValue: leftAgeIndex)
+            }
+            if let rightAgeIndex = priorities.driverMaxAge {
+                self._rightAgeIndex = State(initialValue: rightAgeIndex)
+            }
+        }
     }
 
 }
 
 struct QuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionnaireView(user: .constant(User.preview))
+        QuestionnaireView(user: .constant(User.preview), willShowingError: .constant(false), errorText: .constant(""))
     }
 }
