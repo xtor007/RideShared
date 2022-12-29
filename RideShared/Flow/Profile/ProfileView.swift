@@ -12,46 +12,48 @@ struct ProfileView: View {
     @ObservedObject var userManager: UserManager
 
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: Paddings.padding20) {
+        VStack(alignment: .leading, spacing: Paddings.padding20) {
+            
+            HStack(spacing: Paddings.padding16) {
                 
-                HStack(spacing: Paddings.padding16) {
-                    
-                    Image(uiImage: userManager.avatar)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading, spacing: Paddings.padding10) {
-                        Text(userManager.user.name)
-                            .font(.title)
-                            .lineLimit(1...2)
-                        Text("⭐️\(userManager.user.rating.rating)")
-                            .font(.bold(.subheadline)())
-                    }
-                    .foregroundColor(Color(Asset.Colors.textColor.color))
-                    
+                Image(uiImage: userManager.avatar)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: Paddings.padding10) {
+                    Text(userManager.user.name)
+                        .font(.title)
+                        .lineLimit(1...2)
+                    Text("⭐️\(userManager.user.rating.rating)")
+                        .font(.bold(.subheadline)())
                 }
-                .padding(.horizontal, Paddings.padding30)
-                .padding(.top, Paddings.padding30)
-                
-                ScreenListView(data: [
-                    ProfileListElement.prioritets(
-                        user: $userManager.user,
-                        willShowingError: $userManager.willShowError,
-                        errorText: $userManager.errorMessage
-                    ),
-                    ProfileListElement.adresses,
-                    ProfileListElement.driver
-                ])
-                .padding(.horizontal, Paddings.padding20)
-                
-                Spacer()
+                .foregroundColor(Color(Asset.Colors.textColor.color))
                 
             }
-            .background(Color(Asset.Colors.backgroundColor.color).ignoresSafeArea())
+            .padding(.horizontal, Paddings.padding30)
+            .padding(.top, Paddings.padding30)
+            
+            ScreenListView(data: [
+                ProfileListElement.prioritets(
+                    user: $userManager.user,
+                    willShowingError: $userManager.willShowError,
+                    errorText: $userManager.errorMessage
+                ),
+                ProfileListElement.adresses,
+                ProfileListElement.driver
+            ])
+            .padding(.horizontal, Paddings.padding20)
+            
+            Spacer()
+            
         }
+        .overlay(
+            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
+                .transition(.opacity.animation(.default))
+        )
+        .background(Color(Asset.Colors.backgroundColor.color).ignoresSafeArea())
     }
     
 }

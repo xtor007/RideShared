@@ -52,6 +52,7 @@
 		FFD92139294E295C00B89B35 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92138294E295C00B89B35 /* Padding.swift */; };
 		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */; };
+		FFE56202295D8F36000B0371 /* Date+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56201295D8F36000B0371 /* Date+description.swift */; };
 		FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3429573CA4007BA886 /* GoogleSignIn */; };
 		FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3629573CA4007BA886 /* GoogleSignInSwift */; };
 		FFF88D3A29573D4D007BA886 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF88D3929573D4D007BA886 /* credentials.plist */; };
@@ -108,6 +109,7 @@
 		FFD92138294E295C00B89B35 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataView.swift; sourceTree = "<group>"; };
+		FFE56201295D8F36000B0371 /* Date+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+description.swift"; sourceTree = "<group>"; };
 		FFF88D3929573D4D007BA886 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		FFF88D3B29573F55007BA886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				FF2078F729536AB200DFC4B9 /* Double+rating.swift */,
 				FFF88D3C29574E08007BA886 /* View+rootViewController.swift */,
+				FFE56201295D8F36000B0371 /* Date+description.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
+				FFE56202295D8F36000B0371 /* Date+description.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,

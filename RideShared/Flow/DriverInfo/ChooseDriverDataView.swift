@@ -11,7 +11,7 @@ struct ChooseDriverDataView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    let userManager: UserManager
+    @ObservedObject var userManager: UserManager
     
     @State private var genderIndex = 0
     @State private var dateOfBirth = Date(timeIntervalSince1970: 0)
@@ -43,6 +43,7 @@ struct ChooseDriverDataView: View {
             
             BigButton(title: Strings.Button.finish.uppercased()) {
                 userManager.user.taxiData = TaxiData(
+                    isConfirmed: false,
                     taxiTripCount: 0,
                     musicRating: 5.0,
                     genderIndex: genderIndex,
@@ -54,6 +55,10 @@ struct ChooseDriverDataView: View {
             }
             
         }
+        .overlay(
+            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
+                .transition(.opacity.animation(.default))
+        )
         .foregroundColor(Asset.Colors.textColor.swiftUIColor)
         .padding(.top, Paddings.padding16)
         .padding(.horizontal, Paddings.padding16)

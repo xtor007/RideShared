@@ -43,7 +43,9 @@
 "profileList.driverSettings" = "Driver Settings";
 
 "driverInfo.question" = "Do you want to become a driver?";
-"driverInfo.questionnaire" = "Fill out the questionnaire";
+"driverInfo.questionnaire" = "Fill out the questionnaire ()";
 "driverInfo.gender" = "Select your gender";
 "driverInfo.dateOfBirth" = "Select date of birth";
 "driverInfo.carColor" = "Select your car color";
+"driverInfo.status.confirmed" = "Confirmed";
+"driverInfo.status.notConfirmed" = "Wait for our employee to contact you";
