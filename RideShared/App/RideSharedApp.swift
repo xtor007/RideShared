@@ -38,9 +38,10 @@ struct RideSharedApp: App {
                 }
                 
                 if let _ = user.selectionParametrs {
+                    let userManager = UserManager(user: user)
                     NavigationView {
                         TabView {
-                            ProfileView(userManager: UserManager(user: user))
+                            ProfileView(userManager: userManager)
                                 .tabItem {
                                     Label(Strings.TabBar.profile, systemImage: "person.fill")
                                 }

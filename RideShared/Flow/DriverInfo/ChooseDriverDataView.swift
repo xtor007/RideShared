@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ChooseDriverDataView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @ObservedObject var userManager: UserManager
+    @Binding var isPresented: Bool
     
     @State private var genderIndex = 0
     @State private var dateOfBirth = Date(timeIntervalSince1970: 0)
@@ -41,17 +40,29 @@ struct ChooseDriverDataView: View {
             
             Spacer()
             
-            BigButton(title: Strings.Button.finish.uppercased()) {
-                userManager.user.taxiData = TaxiData(
-                    isConfirmed: false,
-                    taxiTripCount: 0,
-                    musicRating: 5.0,
-                    genderIndex: genderIndex,
-                    dateOfBirth: dateOfBirth,
-                    speedRating: 5.0,
-                    yourCarColorIndex: yourCarColorIndex
-                )
-                presentationMode.wrappedValue.dismiss()
+            HStack {
+                
+                BigButton(title: Strings.Button.close) {
+                    withAnimation {
+                        isPresented = false
+                    }
+                }
+                
+                BigButton(title: Strings.Button.finish.uppercased()) {
+                    userManager.user.taxiData = TaxiData(
+                        isConfirmed: false,
+                        taxiTripCount: 0,
+                        musicRating: 5.0,
+                        genderIndex: genderIndex,
+                        dateOfBirth: dateOfBirth,
+                        speedRating: 5.0,
+                        yourCarColorIndex: yourCarColorIndex
+                    )
+                    withAnimation {
+                        isPresented = false
+                    }
+                }
+                
             }
             
         }
@@ -70,6 +81,6 @@ struct ChooseDriverDataView: View {
 
 struct ChooseDriverDataView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseDriverDataView(userManager: UserManager(user: User.preview))
+        ChooseDriverDataView(userManager: UserManager(user: User.preview), isPresented: .constant(true))
     }
 }

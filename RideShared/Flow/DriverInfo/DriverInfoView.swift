@@ -24,8 +24,8 @@ struct DriverInfoView: View {
                 ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
                     .transition(.opacity.animation(.default))
             )
-            .sheet(isPresented: $isShowingChooseData) {
-                ChooseDriverDataView(userManager: userManager)
+            .fullScreenCover(isPresented: $isShowingChooseData) {
+                ChooseDriverDataView(userManager: userManager, isPresented: $isShowingChooseData)
             }
     }
     

@@ -42,7 +42,7 @@ struct ProfileView: View {
                     errorText: $userManager.errorMessage
                 ),
                 ProfileListElement.adresses,
-                ProfileListElement.driver
+                ProfileListElement.driver(userManager: userManager)
             ])
             .padding(.horizontal, Paddings.padding20)
             
