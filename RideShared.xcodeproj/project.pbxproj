@@ -37,6 +37,9 @@
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
+		FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */; };
+		FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */; };
+		FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -93,6 +96,9 @@
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
+		FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Token.swift"; sourceTree = "<group>"; };
+		FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Auth.swift"; sourceTree = "<group>"; };
+		FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Driver.swift"; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -282,6 +288,9 @@
 				FF5555282957618B001B9646 /* NetworkManager.swift */,
 				FF55552A29576302001B9646 /* ServerPath.swift */,
 				FF55552C2957656D001B9646 /* NetworkError.swift */,
+				FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */,
+				FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */,
+				FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -549,10 +558,13 @@
 				FF31E0522952374900CC56BC /* ErrorView.swift in Sources */,
 				FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
+				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
+				FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
+				FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,

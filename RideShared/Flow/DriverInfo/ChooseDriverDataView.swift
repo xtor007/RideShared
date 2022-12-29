@@ -61,6 +61,20 @@ struct ChooseDriverDataView: View {
                     withAnimation {
                         isPresented = false
                     }
+                    DispatchQueue.global(qos: .background).async {
+                        NetworkManager.shared.requestDriverPermission(user: userManager.user) { result in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .success(_):
+                                    return
+                                case .failure(let failure):
+                                    userManager.user.taxiData = nil
+                                    userManager.errorMessage = failure.localizedDescription
+                                    userManager.willShowError = true
+                                }
+                            }
+                        }
+                    }
                 }
                 
             }
