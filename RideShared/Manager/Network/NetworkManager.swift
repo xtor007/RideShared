@@ -91,6 +91,10 @@ class NetworkManager {
     }
     
     private func makeRequest<GetType: Decodable>(request: URLRequest, postData: Data? = nil, callback: @escaping (Result<GetType, Error>) -> Void) {
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         URLSession.shared.uploadTask(with: request, from: postData) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse else {
                 callback(.failure(error!))
@@ -98,13 +102,15 @@ class NetworkManager {
             }
             do {
                 if response.statusCode == 200 {
-                    let result = try JSONDecoder().decode(GetType.self, from: data)
+                    print(String(data: data, encoding: .utf8)!)
+                    let result = try decoder.decode(GetType.self, from: data)
                     callback(.success(result))
                 } else {
                     callback(.failure(NetworkError.serverError()))
                 }
             }
             catch {
+                print(error)
                 callback(.failure(error))
             }
         }.resume()
