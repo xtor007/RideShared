@@ -24,8 +24,8 @@ enum ProfileListElement: ScreenListElement {
         switch self {
         case .adresses:
             return AnyView(Text("s"))
-        case .driver:
-            return AnyView(Text("s"))
+        case .driver(let userManager):
+            return AnyView(DriverInfoView(userManager: userManager))
         case .prioritets(let user, let showingError, let errorText):
             return AnyView(QuestionnaireView(user: user, willShowingError: showingError, errorText: errorText))
         }
@@ -33,6 +33,6 @@ enum ProfileListElement: ScreenListElement {
     
     case adresses
     case prioritets(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>)
-    case driver
+    case driver(userManager: UserManager)
     
 }

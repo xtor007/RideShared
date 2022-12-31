@@ -24,6 +24,24 @@ internal enum Strings {
     /// White
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
   }
+  internal enum DriverInfo {
+    /// Select your car color
+    internal static let carColor = Strings.tr("Localizable", "driverInfo.carColor", fallback: "Select your car color")
+    /// Select date of birth
+    internal static let dateOfBirth = Strings.tr("Localizable", "driverInfo.dateOfBirth", fallback: "Select date of birth")
+    /// Select your gender
+    internal static let gender = Strings.tr("Localizable", "driverInfo.gender", fallback: "Select your gender")
+    /// Do you want to become a driver?
+    internal static let question = Strings.tr("Localizable", "driverInfo.question", fallback: "Do you want to become a driver?")
+    /// Fill out the questionnaire
+    internal static let questionnaire = Strings.tr("Localizable", "driverInfo.questionnaire", fallback: "Fill out the questionnaire")
+    internal enum Status {
+      /// Confirmed
+      internal static let confirmed = Strings.tr("Localizable", "driverInfo.status.confirmed", fallback: "Confirmed")
+      /// Wait for our employee to contact you
+      internal static let notConfirmed = Strings.tr("Localizable", "driverInfo.status.notConfirmed", fallback: "Wait for our employee to contact you")
+    }
+  }
   internal enum Error {
     internal enum Error {
       /// Error
@@ -49,6 +67,8 @@ internal enum Strings {
   internal enum General {
     /// RideShared
     internal static let title = Strings.tr("Localizable", "general.title", fallback: "RideShared")
+    /// Yes
+    internal static let yes = Strings.tr("Localizable", "general.yes", fallback: "Yes")
   }
   internal enum Google {
     /// Sign in with Google
