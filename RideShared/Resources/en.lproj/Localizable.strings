@@ -37,6 +37,7 @@
 "error.error.title" = "Error";
 
 "tabBar.profile" = "Profile";
+"tabBar.road" = "Road";
 
 "profileList.priotitets" = "Prioritets";
 "profileList.adresses" = "My Adresses";

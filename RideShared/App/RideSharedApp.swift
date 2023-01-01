@@ -43,12 +43,18 @@ struct RideSharedApp: App {
                         TabView {
                             RoadBuilderView()
                                 .tabItem {
-                                    Label(Strings.TabBar.profile, systemImage: "person.fill")
+                                    Label(Strings.TabBar.road, systemImage: "map.fill")
                                 }
                             ProfileView(userManager: userManager)
                                 .tabItem {
                                     Label(Strings.TabBar.profile, systemImage: "person.fill")
                                 }
+                        }
+                        .onAppear {
+                            let appearance = UITabBarAppearance()
+                            appearance.backgroundColor = Asset.Colors.accentColor.color
+                            appearance.selectionIndicatorTintColor = Asset.Colors.accentColor.color
+                            UITabBar.appearance().standardAppearance = appearance
                         }
                     }
                     .preferredColorScheme(.light)

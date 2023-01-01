@@ -121,6 +121,8 @@ internal enum Strings {
   internal enum TabBar {
     /// Profile
     internal static let profile = Strings.tr("Localizable", "tabBar.profile", fallback: "Profile")
+    /// Road
+    internal static let road = Strings.tr("Localizable", "tabBar.road", fallback: "Road")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
