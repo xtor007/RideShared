@@ -110,6 +110,10 @@ internal enum Strings {
     /// Fill out the questionnaire for a better driver selection
     internal static let title = Strings.tr("Localizable", "questionnaire.title", fallback: "Fill out the questionnaire for a better driver selection")
   }
+  internal enum SearchLocation {
+    /// Where are you going?
+    internal static let `where` = Strings.tr("Localizable", "searchLocation.where", fallback: "Where are you going?")
+  }
   internal enum SpeedBlock {
     /// Fast
     internal static let fast = Strings.tr("Localizable", "speedBlock.fast", fallback: "Fast")

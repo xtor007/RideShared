@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct RoadBuilderView: View {
+    
+    @State private var willShowingSearchView = false
+    
     var body: some View {
-        MapViewRepresentable()
-            .ignoresSafeArea()
+        ZStack(alignment: .top) {
+            MapViewRepresentable()
+                .ignoresSafeArea()
+            SearchLocationField(willPresentSearch: $willShowingSearchView)
+                .padding(.top, Paddings.padding20)
+                .padding(.horizontal, Paddings.padding16)
+        }
+        .fullScreenCover(isPresented: $willShowingSearchView) {
+            SearchLocationView(isPresented: $willShowingSearchView, model: SearchLocationViewModel())
+        }
     }
+
 }
 
 struct RoadBuilderView_Previews: PreviewProvider {
