@@ -41,6 +41,10 @@ struct RideSharedApp: App {
                     let userManager = UserManager(user: user)
                     NavigationView {
                         TabView {
+                            RoadBuilderView()
+                                .tabItem {
+                                    Label(Strings.TabBar.profile, systemImage: "person.fill")
+                                }
                             ProfileView(userManager: userManager)
                                 .tabItem {
                                     Label(Strings.TabBar.profile, systemImage: "person.fill")

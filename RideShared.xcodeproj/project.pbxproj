@@ -37,6 +37,10 @@
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
+		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
+		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
+		FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEF296193770020B8C1 /* MapCoordinator.swift */; };
+		FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AF2296196240020B8C1 /* LocationManager.swift */; };
 		FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */; };
 		FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */; };
 		FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */; };
@@ -96,6 +100,10 @@
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
+		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
+		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		FFB87AEF296193770020B8C1 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		FFB87AF2296196240020B8C1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Token.swift"; sourceTree = "<group>"; };
 		FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Auth.swift"; sourceTree = "<group>"; };
 		FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Driver.swift"; sourceTree = "<group>"; };
@@ -295,6 +303,48 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FFB87AE729618A690020B8C1 /* RoadBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AEE296193640020B8C1 /* Model */,
+				FFB87AE929618C140020B8C1 /* ViewModel */,
+				FFB87AE829618A7B0020B8C1 /* View */,
+			);
+			path = RoadBuilder;
+			sourceTree = "<group>";
+		};
+		FFB87AE829618A7B0020B8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */,
+				FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB87AE929618C140020B8C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB87AEE296193640020B8C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AEF296193770020B8C1 /* MapCoordinator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFB87AF1296196100020B8C1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AF2296196240020B8C1 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +413,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FFB87AE729618A690020B8C1 /* RoadBuilder */,
 				FFE561FC295CC1A9000B0371 /* DriverInfo */,
 				FF2078F12953501900DFC4B9 /* Profile */,
 				FF4D9B67294F101000CA2B84 /* Questionnaire */,
@@ -398,6 +449,7 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFB87AF1296196100020B8C1 /* Location */,
 				FF55552729576167001B9646 /* Network */,
 				FFF88D3E29574F81007BA886 /* Auth */,
 				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
@@ -577,6 +629,7 @@
 				FFE56202295D8F36000B0371 /* Date+description.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
+				FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
@@ -585,7 +638,9 @@
 				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
+				FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
+				FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */,
 				FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */,
 				FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */,
 				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
@@ -593,6 +648,7 @@
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
 				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
+				FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
 				FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */,
 				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
@@ -743,6 +799,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideShared/App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -774,6 +831,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideShared/App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
