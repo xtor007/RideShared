@@ -11,11 +11,7 @@ import MapKit
 class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var locations = [MKLocalSearchCompletion]()
-    @Published var selectedLocation: String? {
-        didSet {
-            
-        }
-    }
+    @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
     
     private let searchCompleter = MKLocalSearchCompleter()
     var locationName = "" {
@@ -32,6 +28,20 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         locations = completer.results
+    }
+    
+    func setLocation(_ location: MKLocalSearchCompletion) {
+        locationSearch(forLocalCompletion: location) { res, error in
+            guard let item = res?.mapItems.first else { return } //ERRROOR FOR FUTURE
+            self.selectedLocationCoordinate = item.placemark.coordinate
+        }
+    }
+    
+    func locationSearch(forLocalCompletion localCompletion: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler) {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = localCompletion.title.appending(localCompletion.subtitle)
+        let search = MKLocalSearch(request: request)
+        search.start(completionHandler: completion)
     }
     
 }

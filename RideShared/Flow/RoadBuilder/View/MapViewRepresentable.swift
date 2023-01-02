@@ -23,8 +23,8 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let selectedLocation = searchLocationModel.selectedLocation {
-            print(selectedLocation)
+        if let coordinate = searchLocationModel.selectedLocationCoordinate {
+            print(coordinate)
         }
     }
     
