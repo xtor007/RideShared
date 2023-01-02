@@ -11,6 +11,12 @@ import MapKit
 class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var locations = [MKLocalSearchCompletion]()
+    @Published var selectedLocation: String? {
+        didSet {
+            
+        }
+    }
+    
     private let searchCompleter = MKLocalSearchCompleter()
     var locationName = "" {
         didSet {

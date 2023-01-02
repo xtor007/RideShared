@@ -14,6 +14,8 @@ struct RideSharedApp: App {
     @State var user: User?
     @State var isError = false
     @State var errorText = ""
+    
+    @StateObject var searchLocationModel = SearchLocationViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -42,6 +44,7 @@ struct RideSharedApp: App {
                     NavigationView {
                         TabView {
                             RoadBuilderView()
+                                .environmentObject(searchLocationModel)
                                 .tabItem {
                                     Label(Strings.TabBar.road, systemImage: "map.fill")
                                 }

@@ -20,7 +20,7 @@ struct RoadBuilderView: View {
                 .padding(.horizontal, Paddings.padding16)
         }
         .fullScreenCover(isPresented: $willShowingSearchView) {
-            SearchLocationView(isPresented: $willShowingSearchView, model: SearchLocationViewModel())
+            SearchLocationView(isPresented: $willShowingSearchView)
         }
     }
 

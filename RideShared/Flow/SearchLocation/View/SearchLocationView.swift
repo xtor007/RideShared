@@ -11,7 +11,7 @@ struct SearchLocationView: View {
     
     @Binding var isPresented: Bool
     
-    @ObservedObject var model: SearchLocationViewModel
+    @EnvironmentObject var model: SearchLocationViewModel
     
     var body: some View {
         VStack {
@@ -35,6 +35,10 @@ struct SearchLocationView: View {
                 VStack {
                     ForEach(model.locations, id: \.self) { location in
                         LocationCellView(locationName: location.title, locationAdress: location.subtitle)
+                            .onTapGesture {
+                                model.selectedLocation = location.title
+                                isPresented = false
+                            }
                     }
                 }
             }
@@ -48,6 +52,6 @@ struct SearchLocationView: View {
 
 struct SearchLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchLocationView(isPresented: .constant(true), model: SearchLocationViewModel())
+        SearchLocationView(isPresented: .constant(true))
     }
 }
