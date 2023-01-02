@@ -25,6 +25,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         if let coordinate = searchLocationModel.selectedLocationCoordinate {
             context.coordinator.addAnnotation(forCoordinate: coordinate)
+            context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
         }
     }
     
