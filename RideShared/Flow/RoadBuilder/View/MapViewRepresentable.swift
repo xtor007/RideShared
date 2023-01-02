@@ -24,7 +24,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
         if let coordinate = searchLocationModel.selectedLocationCoordinate {
-            print(coordinate)
+            context.coordinator.addAnnotation(forCoordinate: coordinate)
         }
     }
     
