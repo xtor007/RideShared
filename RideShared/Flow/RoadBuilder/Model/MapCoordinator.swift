@@ -15,6 +15,7 @@ extension MapViewRepresentable {
         let parent: MapViewRepresentable
         
         var userLocationCoordinate: CLLocationCoordinate2D?
+        var currentRegion: MKCoordinateRegion?
         
         init(parent: MapViewRepresentable) {
             self.parent = parent
@@ -34,6 +35,7 @@ extension MapViewRepresentable {
                     longitudeDelta: delta
                 )
             )
+            currentRegion = region
             parent.mapView.setRegion(region, animated: true)
         }
         
@@ -78,6 +80,14 @@ extension MapViewRepresentable {
                     return //ERROROOR FUTURE
                 }
                 completion(route)
+            }
+        }
+        
+        func clearMap() {
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
+            if let currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
             }
         }
         

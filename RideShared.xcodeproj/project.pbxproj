@@ -64,6 +64,7 @@
 		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */; };
 		FFE56202295D8F36000B0371 /* Date+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56201295D8F36000B0371 /* Date+description.swift */; };
+		FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA69002963715400BF0159 /* RoadViewState.swift */; };
 		FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3429573CA4007BA886 /* GoogleSignIn */; };
 		FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3629573CA4007BA886 /* GoogleSignInSwift */; };
 		FFF88D3A29573D4D007BA886 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF88D3929573D4D007BA886 /* credentials.plist */; };
@@ -132,6 +133,7 @@
 		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataView.swift; sourceTree = "<group>"; };
 		FFE56201295D8F36000B0371 /* Date+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+description.swift"; sourceTree = "<group>"; };
+		FFEA69002963715400BF0159 /* RoadViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadViewState.swift; sourceTree = "<group>"; };
 		FFF88D3929573D4D007BA886 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		FFF88D3B29573F55007BA886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB87AEF296193770020B8C1 /* MapCoordinator.swift */,
+				FFEA69002963715400BF0159 /* RoadViewState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
+				FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */,
 				FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF55552B29576302001B9646 /* ServerPath.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchLocationView: View {
     
     @Binding var isPresented: Bool
+    @Binding var state: RoadViewState
     
     @EnvironmentObject var model: SearchLocationViewModel
     
@@ -37,6 +38,7 @@ struct SearchLocationView: View {
                         LocationCellView(locationName: location.title, locationAdress: location.subtitle)
                             .onTapGesture {
                                 model.setLocation(location)
+                                state = .buildRoad
                                 isPresented = false
                             }
                     }
@@ -52,6 +54,6 @@ struct SearchLocationView: View {
 
 struct SearchLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchLocationView(isPresented: .constant(true))
+        SearchLocationView(isPresented: .constant(true), state: .constant(.clear))
     }
 }
