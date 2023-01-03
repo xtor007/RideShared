@@ -9,6 +9,9 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject {
     
+    static let shared = LocationManager()
+    
+    @Published var userLocation: CLLocationCoordinate2D?
     private let locationManager = CLLocationManager()
     
     override init() {
@@ -24,9 +27,10 @@ class LocationManager: NSObject, ObservableObject {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard !locations.isEmpty else {
+        guard let location = locations.first else {
             return
         }
+        self.userLocation = location.coordinate
         locationManager.stopUpdatingLocation()
     }
     

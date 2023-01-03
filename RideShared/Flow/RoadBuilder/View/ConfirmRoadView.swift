@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ConfirmRoadView: View {
     
+    @EnvironmentObject var searchLocationModel: SearchLocationViewModel
+    
     @Binding var state: RoadViewState
     
     var body: some View {
@@ -33,9 +35,9 @@ struct ConfirmRoadView: View {
             }
             .foregroundColor(Asset.Colors.textColor.swiftUIColor)
             
-            Text(412.35.price)
+            Text(searchLocationModel.computePrice().price)
                 .foregroundColor(Asset.Colors.textColor.swiftUIColor)
-                .font(.system(size: 80, weight: .semibold))
+                .font(.system(size: 65, weight: .semibold))
             
             
             HStack {

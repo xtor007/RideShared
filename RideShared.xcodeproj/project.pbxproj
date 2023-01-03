@@ -36,6 +36,7 @@
 		FF55552B29576302001B9646 /* ServerPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552A29576302001B9646 /* ServerPath.swift */; };
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
+		FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2A2964BFD100C3645E /* PriceManager.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
 		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
 		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
@@ -106,6 +107,7 @@
 		FF55552A29576302001B9646 /* ServerPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerPath.swift; sourceTree = "<group>"; };
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
+		FFAF0C2A2964BFD100C3645E /* PriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceManager.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
 		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
 		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FFAF0C292964BFBD00C3645E /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				FFAF0C2A2964BFD100C3645E /* PriceManager.swift */,
+			);
+			path = Price;
+			sourceTree = "<group>";
+		};
 		FFB87AE729618A690020B8C1 /* RoadBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +512,7 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFAF0C292964BFBD00C3645E /* Price */,
 				FFB87AF1296196100020B8C1 /* Location */,
 				FF55552729576167001B9646 /* Network */,
 				FFF88D3E29574F81007BA886 /* Auth */,
@@ -660,6 +671,7 @@
 			files = (
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
+				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
 				FF55552F295772CD001B9646 /* TaxiData.swift in Sources */,
 				FF31E0522952374900CC56BC /* ErrorView.swift in Sources */,
 				FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */,

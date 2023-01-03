@@ -38,6 +38,11 @@ struct RoadBuilderView: View {
                 searchLocationModel.selectedLocationCoordinate = nil
             }
         }
+        .onReceive(LocationManager.shared.$userLocation) { location in
+            if let location {
+                searchLocationModel.userLocation = location
+            }
+        }
     }
 
 }

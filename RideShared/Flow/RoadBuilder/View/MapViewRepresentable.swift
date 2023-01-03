@@ -11,7 +11,7 @@ import MapKit
 struct MapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
-    let locationManager = LocationManager()
+    let locationManager = LocationManager.shared
     @Binding var state: RoadViewState
     @EnvironmentObject var searchLocationModel: SearchLocationViewModel
     

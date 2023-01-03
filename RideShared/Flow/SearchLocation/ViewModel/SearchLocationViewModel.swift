@@ -20,6 +20,8 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
         }
     }
     
+    var userLocation: CLLocationCoordinate2D?
+    
     override init() {
         super.init()
         searchCompleter.delegate = self
@@ -42,6 +44,19 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
         request.naturalLanguageQuery = localCompletion.title.appending(localCompletion.subtitle)
         let search = MKLocalSearch(request: request)
         search.start(completionHandler: completion)
+    }
+    
+    func computePrice() -> Double {
+        guard let selectedLocationCoordinate else {
+            return 0
+        }
+        guard let userLocation else {
+            return 0
+        }
+        let userLocationPoint = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let goalLocationPoint = CLLocation(latitude: selectedLocationCoordinate.latitude, longitude: selectedLocationCoordinate.longitude)
+        let distance = userLocationPoint.distance(from: goalLocationPoint)
+        return PriceManager.shared.getPrice(forDistance: distance)
     }
     
 }
