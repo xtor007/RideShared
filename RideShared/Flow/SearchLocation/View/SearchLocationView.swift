@@ -37,9 +37,11 @@ struct SearchLocationView: View {
                     ForEach(model.locations, id: \.self) { location in
                         LocationCellView(locationName: location.title, locationAdress: location.subtitle)
                             .onTapGesture {
-                                model.setLocation(location)
-                                state = .buildRoad
-                                isPresented = false
+                                withAnimation {
+                                    model.setLocation(location)
+                                    state = .buildRoad
+                                    isPresented = false
+                                }
                             }
                     }
                 }

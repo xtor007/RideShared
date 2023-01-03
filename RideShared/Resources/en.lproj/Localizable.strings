@@ -17,6 +17,7 @@
 
 "button.finish" = "Finish";
 "button.close" = "Close";
+"button.confirm" = "Confirm";
 
 "musicBlock.placeholder" = "Write your music wishes";
 
@@ -52,3 +53,5 @@
 "driverInfo.status.notConfirmed" = "Wait for our employee to contact you";
 
 "searchLocation.where" = "Where are you going?";
+
+"confirmRoad.currentLocation" = "Current location";

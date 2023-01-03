@@ -13,6 +13,8 @@ internal enum Strings {
   internal enum Button {
     /// Close
     internal static let close = Strings.tr("Localizable", "button.close", fallback: "Close")
+    /// Confirm
+    internal static let confirm = Strings.tr("Localizable", "button.confirm", fallback: "Confirm")
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
   }
@@ -23,6 +25,10 @@ internal enum Strings {
     internal static let light = Strings.tr("Localizable", "carColor.light", fallback: "Light")
     /// White
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
+  }
+  internal enum ConfirmRoad {
+    /// Current location
+    internal static let currentLocation = Strings.tr("Localizable", "confirmRoad.currentLocation", fallback: "Current location")
   }
   internal enum DriverInfo {
     /// Select your car color
