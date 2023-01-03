@@ -26,12 +26,14 @@ struct ConfirmRoadView: View {
                 Rectangle()
                     .fill(Asset.Colors.elementBackgroundColor.swiftUIColor)
                     .frame(width: 6, height: 50)
-                Text("Montana")
-                    .padding(Paddings.padding16)
-                    .background {
-                        Capsule()
-                            .fill(Asset.Colors.elementBackgroundColor.swiftUIColor)
-                    }
+                if let location = searchLocationModel.location {
+                    Text(location.title)
+                        .padding(Paddings.padding16)
+                        .background {
+                            Capsule()
+                                .fill(Asset.Colors.elementBackgroundColor.swiftUIColor)
+                        }
+                }
             }
             .foregroundColor(Asset.Colors.textColor.swiftUIColor)
             

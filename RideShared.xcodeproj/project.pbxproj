@@ -37,6 +37,7 @@
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
 		FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2A2964BFD100C3645E /* PriceManager.swift */; };
+		FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
 		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
 		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
@@ -108,6 +109,7 @@
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
 		FFAF0C2A2964BFD100C3645E /* PriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceManager.swift; sourceTree = "<group>"; };
+		FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWithTitle.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
 		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
 		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				FFD92136294E284D00B89B35 /* User.swift */,
 				FF31E04E29521EA300CC56BC /* SelectionParameters.swift */,
 				FF55552E295772CD001B9646 /* TaxiData.swift */,
+				FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
 				FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */,
+				FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
 				FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */,
 				FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */,

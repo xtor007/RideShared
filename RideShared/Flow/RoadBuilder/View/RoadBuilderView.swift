@@ -35,7 +35,7 @@ struct RoadBuilderView: View {
         }
         .onChange(of: state) { newValue in
             if newValue == .clear {
-                searchLocationModel.selectedLocationCoordinate = nil
+                searchLocationModel.location = nil
             }
         }
         .onReceive(LocationManager.shared.$userLocation) { location in

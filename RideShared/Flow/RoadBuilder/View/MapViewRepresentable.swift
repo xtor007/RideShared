@@ -29,7 +29,7 @@ struct MapViewRepresentable: UIViewRepresentable {
             context.coordinator.clearMap()
         case .buildRoad:
             context.coordinator.clearMap()
-            if let coordinate = searchLocationModel.selectedLocationCoordinate {
+            if let coordinate = searchLocationModel.location?.coordinate {
                 context.coordinator.addAnnotation(forCoordinate: coordinate)
                 context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
             }

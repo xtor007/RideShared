@@ -11,7 +11,7 @@ import MapKit
 class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var locations = [MKLocalSearchCompletion]()
-    @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
+    @Published var location: LocationWithTitle?
     
     private let searchCompleter = MKLocalSearchCompleter()
     var locationName = "" {
@@ -35,7 +35,8 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
     func setLocation(_ location: MKLocalSearchCompletion) {
         locationSearch(forLocalCompletion: location) { res, error in
             guard let item = res?.mapItems.first else { return } //ERRROOR FOR FUTURE
-            self.selectedLocationCoordinate = item.placemark.coordinate
+            let coordinate = item.placemark.coordinate
+            self.location = LocationWithTitle(title: location.title, coordinate: coordinate)
         }
     }
     
@@ -47,14 +48,14 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
     }
     
     func computePrice() -> Double {
-        guard let selectedLocationCoordinate else {
+        guard let goalLocation = location?.coordinate else {
             return 0
         }
         guard let userLocation else {
             return 0
         }
         let userLocationPoint = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-        let goalLocationPoint = CLLocation(latitude: selectedLocationCoordinate.latitude, longitude: selectedLocationCoordinate.longitude)
+        let goalLocationPoint = CLLocation(latitude: goalLocation.latitude, longitude: goalLocation.longitude)
         let distance = userLocationPoint.distance(from: goalLocationPoint)
         return PriceManager.shared.getPrice(forDistance: distance)
     }
