@@ -24,6 +24,10 @@
 		FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */; };
 		FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */; };
 		FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D992965F66600B39A1F /* DriverWorkView.swift */; };
+		FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */; };
+		FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D9E2966052100B39A1F /* DriverWorkState.swift */; };
+		FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */; };
+		FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */; };
 		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
 		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
 		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
@@ -97,6 +101,10 @@
 		FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderConstants.swift; sourceTree = "<group>"; };
 		FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePointSliderView.swift; sourceTree = "<group>"; };
 		FF402D992965F66600B39A1F /* DriverWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkView.swift; sourceTree = "<group>"; };
+		FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapViewRepresentable.swift; sourceTree = "<group>"; };
+		FF402D9E2966052100B39A1F /* DriverWorkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkState.swift; sourceTree = "<group>"; };
+		FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapCoordinator.swift; sourceTree = "<group>"; };
+		FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkViewModel.swift; sourceTree = "<group>"; };
 		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
 		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
 		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
@@ -256,6 +264,8 @@
 		FF402D972965F62700B39A1F /* DriverWork */ = {
 			isa = PBXGroup;
 			children = (
+				FF402DA22966095900B39A1F /* ViewModel */,
+				FF402D9D2966050D00B39A1F /* Model */,
 				FF402D982965F65300B39A1F /* View */,
 			);
 			path = DriverWork;
@@ -265,8 +275,26 @@
 			isa = PBXGroup;
 			children = (
 				FF402D992965F66600B39A1F /* DriverWorkView.swift */,
+				FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FF402D9D2966050D00B39A1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF402D9E2966052100B39A1F /* DriverWorkState.swift */,
+				FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF402DA22966095900B39A1F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FF4D9B67294F101000CA2B84 /* Questionnaire */ = {
@@ -686,9 +714,11 @@
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
 				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
+				FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */,
 				FF55552F295772CD001B9646 /* TaxiData.swift in Sources */,
 				FF31E0522952374900CC56BC /* ErrorView.swift in Sources */,
 				FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */,
+				FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FFC858F029649E0A003E50EA /* Double+price.swift in Sources */,
 				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
@@ -701,6 +731,7 @@
 				FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
+				FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
 				FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */,
 				FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */,
@@ -719,6 +750,7 @@
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
+				FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */,
 				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
