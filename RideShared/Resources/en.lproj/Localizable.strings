@@ -39,6 +39,7 @@
 
 "tabBar.profile" = "Profile";
 "tabBar.road" = "Road";
+"tabBar.work" = "Work";
 
 "profileList.priotitets" = "Prioritets";
 "profileList.adresses" = "My Adresses";

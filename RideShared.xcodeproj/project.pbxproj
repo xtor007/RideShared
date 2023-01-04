@@ -23,6 +23,7 @@
 		FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1E294F4C19001C0F17 /* Triangle.swift */; };
 		FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */; };
 		FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */; };
+		FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D992965F66600B39A1F /* DriverWorkView.swift */; };
 		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
 		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
 		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
@@ -95,6 +96,7 @@
 		FF3BCC1E294F4C19001C0F17 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderConstants.swift; sourceTree = "<group>"; };
 		FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePointSliderView.swift; sourceTree = "<group>"; };
+		FF402D992965F66600B39A1F /* DriverWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkView.swift; sourceTree = "<group>"; };
 		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
 		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
 		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,22 @@
 			path = DoublePointSlider;
 			sourceTree = "<group>";
 		};
+		FF402D972965F62700B39A1F /* DriverWork */ = {
+			isa = PBXGroup;
+			children = (
+				FF402D982965F65300B39A1F /* View */,
+			);
+			path = DriverWork;
+			sourceTree = "<group>";
+		};
+		FF402D982965F65300B39A1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF402D992965F66600B39A1F /* DriverWorkView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FF4D9B67294F101000CA2B84 /* Questionnaire */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,7 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				FFB87AEE296193640020B8C1 /* Model */,
-				FFB87AE929618C140020B8C1 /* ViewModel */,
 				FFB87AE829618A7B0020B8C1 /* View */,
 			);
 			path = RoadBuilder;
@@ -348,13 +365,6 @@
 				FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FFB87AE929618C140020B8C1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FFB87AEE296193640020B8C1 /* Model */ = {
@@ -476,6 +486,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FF402D972965F62700B39A1F /* DriverWork */,
 				FFB87AF42961B4E90020B8C1 /* SearchLocation */,
 				FFB87AE729618A690020B8C1 /* RoadBuilder */,
 				FFE561FC295CC1A9000B0371 /* DriverInfo */,
@@ -684,6 +695,7 @@
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
+				FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */,
 				FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */,

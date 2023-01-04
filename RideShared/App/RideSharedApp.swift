@@ -16,6 +16,7 @@ struct RideSharedApp: App {
     @State var errorText = ""
     
     @StateObject var searchLocationModel = SearchLocationViewModel()
+    @StateObject var drivarLocationModel = SearchLocationViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -52,6 +53,13 @@ struct RideSharedApp: App {
                                 .tabItem {
                                     Label(Strings.TabBar.profile, systemImage: "person.fill")
                                 }
+                            if let taxiData = user.taxiData, taxiData.isConfirmed {
+                                DriverWorkView()
+                                    .environmentObject(drivarLocationModel)
+                                    .tabItem {
+                                        Label(Strings.TabBar.work, systemImage: "car.front.waves.up.fill")
+                                    }
+                            }
                         }
                         .onAppear {
                             let appearance = UITabBarAppearance()
