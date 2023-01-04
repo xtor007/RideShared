@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct DriverWorkView: View {
+    
+    @State var state = DriverWorkState.notWorking
+    
     var body: some View {
-        ZStack {
-            MapViewRepresentable(state: .constant(.clear))
+        ZStack(alignment: .bottom) {
+            DriverMapViewRepresentable(state: $state)
+                .ignoresSafeArea()
+            if state == .notWorking {
+                BigButton(title: Strings.Button.start.uppercased()) {
+                    state = .searching
+                }
+                .padding(.bottom, Paddings.padding10)
+            }
         }
-        .ignoresSafeArea()
     }
+    
 }
 
 struct DriverWorkView_Previews: PreviewProvider {
