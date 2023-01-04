@@ -36,7 +36,7 @@ class NetworkManager {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
-        URLSession.shared.uploadTask(with: request, from: postData) { data, response, error in
+        URLSession.shared.uploadTask(with: request, from: postData != nil ? postData : Data()) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse else {
                 callback(.failure(error!))
                 return
@@ -51,6 +51,20 @@ class NetworkManager {
             }
             catch {
                 callback(.failure(error))
+            }
+        }.resume()
+    }
+    
+    func makeRequest(request: URLRequest, postData: Data? = nil, callback: @escaping (Result<Void, Error>) -> Void) {
+        URLSession.shared.uploadTask(with: request, from: postData != nil ? postData : Data()) { data, response, error in
+            guard let _ = data, let response = response as? HTTPURLResponse else {
+                callback(.failure(error!))
+                return
+            }
+            if response.statusCode == 200 {
+                callback(.success(()))
+            } else {
+                callback(.failure(NetworkError.serverError()))
             }
         }.resume()
     }

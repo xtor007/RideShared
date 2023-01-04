@@ -29,7 +29,7 @@ extension NetworkManager {
         }
     }
     
-    func createRequest(withToken token: String, link: String, method: String = "POST", callback: @escaping (Result<URLRequest, Error>) -> Void) {
+    func createRequest(withToken token: String, link: String, method: String = "GET", callback: @escaping (Result<URLRequest, Error>) -> Void) {
         guard let url = URL(string:  link) else {
             callback(.failure(NetworkError.failedURL()))
             return

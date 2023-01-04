@@ -29,6 +29,7 @@
 		FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */; };
 		FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */; };
 		FF402DA7296619DC00B39A1F /* ConfirmingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA6296619DC00B39A1F /* ConfirmingUserView.swift */; };
+		FF402DA92966238A00B39A1F /* NetworkManager+UserSideTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA82966238A00B39A1F /* NetworkManager+UserSideTrip.swift */; };
 		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
 		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
 		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
@@ -107,6 +108,7 @@
 		FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapCoordinator.swift; sourceTree = "<group>"; };
 		FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkViewModel.swift; sourceTree = "<group>"; };
 		FF402DA6296619DC00B39A1F /* ConfirmingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmingUserView.swift; sourceTree = "<group>"; };
+		FF402DA82966238A00B39A1F /* NetworkManager+UserSideTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+UserSideTrip.swift"; sourceTree = "<group>"; };
 		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
 		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
 		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */,
 				FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */,
 				FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */,
+				FF402DA82966238A00B39A1F /* NetworkManager+UserSideTrip.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FFC858F029649E0A003E50EA /* Double+price.swift in Sources */,
+				FF402DA92966238A00B39A1F /* NetworkManager+UserSideTrip.swift in Sources */,
 				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,

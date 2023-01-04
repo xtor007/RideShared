@@ -17,9 +17,11 @@ enum ServerPath {
             return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/updateUser"
         case .driverConfirmed:
             return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "driver/driverConfirmed"
+        case .getDriver:
+            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "trip/getDriver"
         }
     }
     
-    case singIn, updateUser, driverConfirmed
+    case singIn, updateUser, driverConfirmed, getDriver
     
 }

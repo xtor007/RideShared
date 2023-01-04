@@ -13,6 +13,8 @@ struct ConfirmRoadView: View {
     
     @Binding var state: RoadViewState
     
+    @State var isLoading = false
+    
     var body: some View {
         VStack {
             
@@ -49,19 +51,21 @@ struct ConfirmRoadView: View {
                     }
                 }
                 BigButton(title: Strings.Button.confirm.uppercased()) {
-                    print("Confirm")
+                    isLoading = true
+                    
                 }
             }
             
         }
         .padding(Paddings.padding20)
+        .disabled(isLoading)
+        .overlay {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }
         .background(Asset.Colors.backgroundColor.swiftUIColor.cornerRadius(20).ignoresSafeArea())
     }
     
-}
-
-struct ConfirmRoadView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfirmRoadView(state: .constant(.buildRoad))
-    }
 }
