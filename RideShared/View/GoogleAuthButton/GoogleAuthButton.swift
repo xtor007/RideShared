@@ -47,7 +47,7 @@ struct GoogleAuthButton: View {
 struct GoogleAuthButton_Previews: PreviewProvider {
     static var previews: some View {
         GoogleAuthButton()
-            .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), user: .constant(User.preview)))
+            .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), appState: .constant(.notAuthorized)))
             .background(Color.blue)
     }
 }

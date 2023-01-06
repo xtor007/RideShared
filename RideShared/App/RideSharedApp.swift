@@ -11,77 +11,54 @@ import GoogleSignIn
 @main
 struct RideSharedApp: App {
 
-    @State var user: User?
-    @State var isError = false
-    @State var errorText = ""
+    @State var state = AppState.notAuthorized
     
     @StateObject var searchLocationModel = SearchLocationViewModel()
     @StateObject var driverLocationModel = DriverWorkViewModel()
 
     var body: some Scene {
         WindowGroup {
-            if let user {
-                
-                let binding = Binding {
-                    return user
-                } set: { value, _ in
-                    DispatchQueue.global(qos: .background).async {
-                        NetworkManager.shared.updateUser(user: value) { result in
-                            DispatchQueue.main.async {
-                                switch result {
-                                case .success:
-                                    self.user = value
-                                case .failure(let failure):
-                                    errorText = failure.localizedDescription
-                                    isError = true
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                if let _ = user.selectionParametrs {
-                    let userManager = UserManager(user: user)
-                    NavigationView {
-                        TabView {
-                            RoadBuilderView()
-                                .environmentObject(searchLocationModel)
-                                .tabItem {
-                                    Label(Strings.TabBar.road, systemImage: "map.fill")
-                                }
-                            ProfileView()
-                                .tabItem {
-                                    Label(Strings.TabBar.profile, systemImage: "person.fill")
-                                }
-                            if let taxiData = user.taxiData, taxiData.isConfirmed {
-                                DriverWorkView()
-                                    .environmentObject(driverLocationModel)
-                                    .tabItem {
-                                        Label(Strings.TabBar.work, systemImage: "car.front.waves.up.fill")
-                                    }
-                            }
-                        }
-                        .environmentObject(userManager)
-                        .onAppear {
-                            let appearance = UITabBarAppearance()
-                            appearance.backgroundColor = Asset.Colors.accentColor.color
-                            appearance.selectionIndicatorTintColor = Asset.Colors.accentColor.color
-                            UITabBar.appearance().standardAppearance = appearance
-                        }
-                    }
-                    .preferredColorScheme(.light)
-                } else {
-                    QuestionnaireView(user: binding, willShowingError: $isError, errorText: $errorText)
-                        .preferredColorScheme(.light)
-                }
-                
-            } else {
+            switch state {
+            case .notAuthorized:
                 AuthView()
-                    .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), user: $user))
+                    .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), appState: $state))
                     .preferredColorScheme(.light)
                     .onOpenURL { url in
                         GIDSignIn.sharedInstance.handle(url)
                     }
+            case .questionnaire(let manager):
+                QuestionnaireView(appState: $state)
+                    .environmentObject(manager)
+                    .preferredColorScheme(.light)
+            case .main(let manager):
+                NavigationView {
+                    TabView {
+                        RoadBuilderView()
+                            .environmentObject(searchLocationModel)
+                            .tabItem {
+                                Label(Strings.TabBar.road, systemImage: "map.fill")
+                            }
+                        ProfileView()
+                            .tabItem {
+                                Label(Strings.TabBar.profile, systemImage: "person.fill")
+                            }
+                        if let taxiData = manager.user.taxiData, taxiData.isConfirmed {
+                            DriverWorkView()
+                                .environmentObject(driverLocationModel)
+                                .tabItem {
+                                    Label(Strings.TabBar.work, systemImage: "car.front.waves.up.fill")
+                                }
+                        }
+                    }
+                    .environmentObject(manager)
+                    .onAppear {
+                        let appearance = UITabBarAppearance()
+                        appearance.backgroundColor = Asset.Colors.accentColor.color
+                        appearance.selectionIndicatorTintColor = Asset.Colors.accentColor.color
+                        UITabBar.appearance().standardAppearance = appearance
+                    }
+                }
+                .preferredColorScheme(.light)
             }
         }
     }

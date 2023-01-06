@@ -26,13 +26,13 @@ enum ProfileListElement: ScreenListElement {
             return AnyView(Text("s"))
         case .driver(let userManager):
             return AnyView(DriverInfoView(userManager: userManager))
-        case .prioritets(let user, let showingError, let errorText):
-            return AnyView(QuestionnaireView(user: user, willShowingError: showingError, errorText: errorText))
+        case .prioritets:
+            return AnyView(QuestionnaireView())
         }
     }
     
     case adresses
-    case prioritets(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>)
+    case prioritets
     case driver(userManager: UserManager)
     
 }

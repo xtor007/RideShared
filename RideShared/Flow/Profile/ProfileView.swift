@@ -36,11 +36,7 @@ struct ProfileView: View {
             .padding(.top, Paddings.padding30)
             
             ScreenListView(data: [
-                ProfileListElement.prioritets(
-                    user: $userManager.user,
-                    willShowingError: $userManager.willShowError,
-                    errorText: $userManager.errorMessage
-                ),
+                ProfileListElement.prioritets,
                 ProfileListElement.adresses,
                 ProfileListElement.driver(userManager: userManager)
             ])

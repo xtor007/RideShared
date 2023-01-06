@@ -38,6 +38,9 @@ struct QuestionnaireBlockView: View {
         .onChange(of: selectedIndex) { newValue in
             priority = BlockImportance(rawValue: newValue)!
         }
+        .onChange(of: priority) { newValue in
+            self.selectedIndex = newValue.rawValue
+        }
     }
 
     init(blockName: String, contentView: AnyView, priority: Binding<BlockImportance>) {

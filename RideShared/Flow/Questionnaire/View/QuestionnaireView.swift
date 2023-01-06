@@ -10,8 +10,9 @@ import SwiftUI
 struct QuestionnaireView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var userManager: UserManager
     
-    @Binding var user: User
+    var appState: Binding<AppState>? = nil
     
     @State var musicalPreferences = ""
     @State var genderIndex = 0
@@ -21,9 +22,6 @@ struct QuestionnaireView: View {
     @State var rightAgeIndex = 99
     
     @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
-    
-    @Binding var willShowingError: Bool
-    @Binding var errorText: String
     
     @State var isLoading = false
 
@@ -54,28 +52,7 @@ struct QuestionnaireView: View {
                 }
             }
             BigButton(title: Strings.Button.finish.uppercased()) {
-                if musicalPreferences.isEmpty && priorities[0] != .notMatter {
-                    errorText = Strings.Error.Questionnaire.musicField
-                    withAnimation {
-                        willShowingError = true
-                    }
-                } else {
-                    user.selectionParametrs = SelectionParametrs(
-                        musicalPreferences: priorities[0] == .notMatter ? nil : musicalPreferences,
-                        musicalPrioritet: priorities[0].rawValue,
-                        driverGenderIndex: priorities[1] == .notMatter ? nil : genderIndex,
-                        genderPrioritet: priorities[1].rawValue,
-                        driverMinAge: priorities[2] == .notMatter ? nil : leftAgeIndex,
-                        driverMaxAge: priorities[2] == .notMatter ? nil : rightAgeIndex,
-                        agePrioritet: priorities[2].rawValue,
-                        speedIndex: priorities[3] == .notMatter ? nil : speedIndex,
-                        speedPrioritet: priorities[3].rawValue,
-                        carColorIndex: priorities[4] == .notMatter ? nil : carColorIndex,
-                        colorPrioritet: priorities[4].rawValue
-                    )
-                    isLoading = true
-                    presentationMode.wrappedValue.dismiss()
-                }
+                save()
             }
         }
         .frame(maxWidth: .infinity)
@@ -90,7 +67,7 @@ struct QuestionnaireView: View {
         )
         .disabled(isLoading)
         .overlay(
-            ErrorView(isShowing: $willShowingError, title: Strings.Error.Questionnaire.title, message: errorText)
+            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Questionnaire.title, message: userManager.errorMessage)
                 .transition(.opacity.animation(.default))
         )
         .overlay {
@@ -99,39 +76,66 @@ struct QuestionnaireView: View {
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }
-        .onChange(of: willShowingError) { newValue in
+        .onChange(of: userManager.willShowError) { newValue in
             isLoading = false
+        }
+        .onAppear {
+            setPrioritets()
         }
         
     }
     
-    init(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>) {
-        self._user = user
-        self._willShowingError = willShowingError
-        self._errorText = errorText
-        if let priorities = user.wrappedValue.selectionParametrs {
-            self._priorities = State(
-                initialValue: priorities.getPriorities().compactMap({ value in
-                    return BlockImportance(rawValue: value)
-                })
-            )
+    private func setPrioritets() {
+        if let priorities = userManager.user.selectionParametrs {
+            self.priorities = priorities.getPriorities().compactMap({ value in
+                return BlockImportance(rawValue: value)
+            })
             if let musicalPregerences = priorities.musicalPreferences {
-                self._musicalPreferences = State(initialValue: musicalPregerences)
+                self.musicalPreferences = musicalPregerences
             }
             if let genderIndex = priorities.driverGenderIndex {
-                self._genderIndex = State(initialValue: genderIndex)
+                self.genderIndex = genderIndex
             }
             if let speedIndex = priorities.speedIndex {
-                self._speedIndex = State(initialValue: speedIndex)
+                self.speedIndex = speedIndex
             }
             if let carColorIndex = priorities.carColorIndex {
-                self._carColorIndex = State(initialValue: carColorIndex)
+                self.carColorIndex = carColorIndex
             }
             if let leftAgeIndex = priorities.driverMinAge {
-                self._leftAgeIndex = State(initialValue: leftAgeIndex)
+                self.leftAgeIndex = leftAgeIndex
             }
             if let rightAgeIndex = priorities.driverMaxAge {
-                self._rightAgeIndex = State(initialValue: rightAgeIndex)
+                self.rightAgeIndex = rightAgeIndex
+            }
+        }
+    }
+    
+    private func save() {
+        if musicalPreferences.isEmpty && priorities[0] != .notMatter {
+            userManager.errorMessage = Strings.Error.Questionnaire.musicField
+            withAnimation {
+                userManager.willShowError = true
+            }
+        } else {
+            userManager.user.selectionParametrs = SelectionParametrs(
+                musicalPreferences: priorities[0] == .notMatter ? nil : musicalPreferences,
+                musicalPrioritet: priorities[0].rawValue,
+                driverGenderIndex: priorities[1] == .notMatter ? nil : genderIndex,
+                genderPrioritet: priorities[1].rawValue,
+                driverMinAge: priorities[2] == .notMatter ? nil : leftAgeIndex,
+                driverMaxAge: priorities[2] == .notMatter ? nil : rightAgeIndex,
+                agePrioritet: priorities[2].rawValue,
+                speedIndex: priorities[3] == .notMatter ? nil : speedIndex,
+                speedPrioritet: priorities[3].rawValue,
+                carColorIndex: priorities[4] == .notMatter ? nil : carColorIndex,
+                colorPrioritet: priorities[4].rawValue
+            )
+            isLoading = true
+            if let appState {
+                appState.wrappedValue = .main(manager: userManager)
+            } else {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }
@@ -140,6 +144,7 @@ struct QuestionnaireView: View {
 
 struct QuestionnaireView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionnaireView(user: .constant(User.preview), willShowingError: .constant(false), errorText: .constant(""))
+        QuestionnaireView(appState: .constant(.questionnaire(manager: UserManager(user: User.preview))))
+            .environmentObject(UserManager(user: User.preview))
     }
 }

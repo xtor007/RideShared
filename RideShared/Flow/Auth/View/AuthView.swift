@@ -33,6 +33,9 @@ struct AuthView: View {
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView()
-            .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), user: .constant(User.preview)))
+            .environmentObject(AuthViewModel(
+                authManager: GoogleAuthManager(),
+                appState: .constant(.notAuthorized)
+            ))
     }
 }

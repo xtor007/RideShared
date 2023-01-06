@@ -12,14 +12,14 @@ class AuthViewModel: ObservableObject {
     let authManager: AuthManager
     let provider = AuthProvider()
 
-    @Binding var user: User?
+    @Binding var appState: AppState
     @Published var willShowingError = false
     @Published var errorText = ""
     @Published var isLoading = false
 
-    init(authManager: AuthManager, user: Binding<User?>) {
+    init(authManager: AuthManager, appState: Binding<AppState>) {
         self.authManager = authManager
-        self._user = user
+        self._appState = appState
     }
     
     func buttonTapAction(rootViewController: UIViewController) {
@@ -38,7 +38,8 @@ class AuthViewModel: ObservableObject {
             self.isLoading = false
             switch result {
             case .success(let success):
-                self.user = success
+                let userManager = UserManager(user: success)
+                self.appState = success.selectionParametrs == nil ? .questionnaire(manager: userManager) : .main(manager: userManager)
             case .failure(let failure):
                 self.errorText = failure.localizedDescription
                 self.willShowingError = true

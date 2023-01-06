@@ -55,7 +55,6 @@
 		FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */; };
 		FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */; };
 		FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */; };
-		FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */; };
 		FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */; };
 		FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */; };
 		FFC858F029649E0A003E50EA /* Double+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858EF29649E09003E50EA /* Double+price.swift */; };
@@ -63,6 +62,8 @@
 		FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9D29684B1D00EF533A /* SharedWay.swift */; };
 		FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA12968655E00EF533A /* AuthViewModel.swift */; };
 		FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA329686F4500EF533A /* AuthProvider.swift */; };
+		FFCA5CA62968934E00EF533A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA52968934E00EF533A /* AppState.swift */; };
+		FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA929689B4200EF533A /* UserProvider.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -138,7 +139,6 @@
 		FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellView.swift; sourceTree = "<group>"; };
 		FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewModel.swift; sourceTree = "<group>"; };
 		FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Token.swift"; sourceTree = "<group>"; };
-		FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Auth.swift"; sourceTree = "<group>"; };
 		FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Driver.swift"; sourceTree = "<group>"; };
 		FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRoadView.swift; sourceTree = "<group>"; };
 		FFC858EF29649E09003E50EA /* Double+price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+price.swift"; sourceTree = "<group>"; };
@@ -146,6 +146,8 @@
 		FFCA5C9D29684B1D00EF533A /* SharedWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWay.swift; sourceTree = "<group>"; };
 		FFCA5CA12968655E00EF533A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FFCA5CA329686F4500EF533A /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		FFCA5CA52968934E00EF533A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FFCA5CA929689B4200EF533A /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -382,7 +384,6 @@
 				FF55552A29576302001B9646 /* ServerPath.swift */,
 				FF55552C2957656D001B9646 /* NetworkError.swift */,
 				FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */,
-				FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */,
 				FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */,
 				FF402DA82966238A00B39A1F /* NetworkManager+UserSideTrip.swift */,
 			);
@@ -484,6 +485,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FFCA5CA829689B2300EF533A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
+				FFCA5CA929689B4200EF533A /* UserProvider.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +540,7 @@
 				FFF88D3829573D40007BA886 /* Auth */,
 				FFF88D3B29573F55007BA886 /* Info.plist */,
 				FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */,
+				FFCA5CA52968934E00EF533A /* AppState.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -595,11 +606,11 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFCA5CA829689B2300EF533A /* User */,
 				FFAF0C292964BFBD00C3645E /* Price */,
 				FFB87AF1296196100020B8C1 /* Location */,
 				FF55552729576167001B9646 /* Network */,
 				FFF88D3E29574F81007BA886 /* Auth */,
-				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -756,6 +767,7 @@
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
 				FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
+				FFCA5CA62968934E00EF533A /* AppState.swift in Sources */,
 				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
 				FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */,
 				FF55552F295772CD001B9646 /* TaxiData.swift in Sources */,
@@ -772,9 +784,9 @@
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
 				FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */,
 				FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */,
+				FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */,
-				FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
 				FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */,
