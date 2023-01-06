@@ -9,11 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     
-    @Binding var user: User?
-    let authManager: AuthManager
-    
-    @State var willShowingError = false
-    @State var errorText = ""
+    @EnvironmentObject var model: AuthViewModel
     
     var body: some View {
         VStack {
@@ -22,20 +18,12 @@ struct AuthView: View {
                 .font(.title)
                 .foregroundColor(Color(Asset.Colors.textColor.color))
             Spacer()
-            GoogleAuthButton(authManager: authManager) { result in
-                switch result {
-                case .success(let success):
-                    user = success
-                case .failure(let failure):
-                    errorText = failure.localizedDescription
-                    willShowingError = true
-                }
-            }
+            GoogleAuthButton()
             .padding(.horizontal, Paddings.padding16)
         }
         .background(Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all))
         .overlay(
-            ErrorView(isShowing: $willShowingError, title: Strings.Error.SingIn.title, message: errorText)
+            ErrorView(isShowing: $model.willShowingError, title: Strings.Error.SingIn.title, message: model.errorText)
                 .transition(.opacity.animation(.default))
         )
     }
@@ -44,6 +32,7 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(user: .constant(User.preview), authManager: GoogleAuthManager())
+        AuthView()
+            .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), user: .constant(User.preview)))
     }
 }

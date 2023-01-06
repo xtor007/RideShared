@@ -9,17 +9,6 @@ import Foundation
 
 extension NetworkManager {
     
-    func auth(token: String, callback: @escaping (Result<User, Error>) -> Void) {
-        createRequest(withToken: token, link: ServerPath.singIn.path) { result in
-            switch result {
-            case .success(let success):
-                self.makeRequest(request: success, callback: callback)
-            case .failure(let failure):
-                callback(.failure(failure))
-            }
-        }
-    }
-    
     func updateUser(user: User, callback: @escaping (Result<Void, Error>) -> Void) {
         generateUserToken(user: user) { result in
             switch result {

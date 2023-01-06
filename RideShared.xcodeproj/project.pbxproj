@@ -61,6 +61,8 @@
 		FFC858F029649E0A003E50EA /* Double+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858EF29649E09003E50EA /* Double+price.swift */; };
 		FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9B29684A2900EF533A /* SharedLocation.swift */; };
 		FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9D29684B1D00EF533A /* SharedWay.swift */; };
+		FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA12968655E00EF533A /* AuthViewModel.swift */; };
+		FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA329686F4500EF533A /* AuthProvider.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -142,6 +144,8 @@
 		FFC858EF29649E09003E50EA /* Double+price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+price.swift"; sourceTree = "<group>"; };
 		FFCA5C9B29684A2900EF533A /* SharedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocation.swift; sourceTree = "<group>"; };
 		FFCA5C9D29684B1D00EF533A /* SharedWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWay.swift; sourceTree = "<group>"; };
+		FFCA5CA12968655E00EF533A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FFCA5CA329686F4500EF533A /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -463,6 +467,23 @@
 			path = SearchLocationField;
 			sourceTree = "<group>";
 		};
+		FFCA5C9F2968653600EF533A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9211F294E137E00B89B35 /* AuthView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFCA5CA02968654600EF533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CA12968655E00EF533A /* AuthViewModel.swift */,
+				FFCA5CA329686F4500EF533A /* AuthProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FFD920FE294E12CA00B89B35 = {
 			isa = PBXGroup;
 			children = (
@@ -586,7 +607,8 @@
 		FFD9211E294E137000B89B35 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FFD9211F294E137E00B89B35 /* AuthView.swift */,
+				FFCA5CA02968654600EF533A /* ViewModel */,
+				FFCA5C9F2968653600EF533A /* View */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -732,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
+				FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
 				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
 				FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */,
@@ -741,6 +764,7 @@
 				FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FFC858F029649E0A003E50EA /* Double+price.swift in Sources */,
+				FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */,
 				FF402DA92966238A00B39A1F /* NetworkManager+UserSideTrip.swift in Sources */,
 				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,

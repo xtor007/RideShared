@@ -76,7 +76,8 @@ struct RideSharedApp: App {
                 }
                 
             } else {
-                AuthView(user: $user, authManager: GoogleAuthManager())
+                AuthView()
+                    .environmentObject(AuthViewModel(authManager: GoogleAuthManager(), user: $user))
                     .preferredColorScheme(.light)
                     .onOpenURL { url in
                         GIDSignIn.sharedInstance.handle(url)
