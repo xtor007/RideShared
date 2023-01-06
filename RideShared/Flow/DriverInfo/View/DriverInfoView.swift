@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DriverInfoView: View {
     
-    @ObservedObject var userManager: UserManager
+    @EnvironmentObject var userManager: UserManager
     
     @State var isShowingChooseData = false
     
@@ -25,7 +25,12 @@ struct DriverInfoView: View {
                     .transition(.opacity.animation(.default))
             )
             .fullScreenCover(isPresented: $isShowingChooseData) {
-                ChooseDriverDataView(userManager: userManager, isPresented: $isShowingChooseData)
+                ChooseDriverDataView(
+                    model: ChooseDriverDataViewModel(
+                        isPresented: $isShowingChooseData,
+                        manager: userManager
+                    )
+                )
             }
     }
     
@@ -76,6 +81,7 @@ struct DriverInfoView: View {
 
 struct DriverInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        DriverInfoView(userManager: UserManager(user: User.preview))
+        DriverInfoView()
+            .environmentObject(UserManager(user: User.preview))
     }
 }

@@ -38,7 +38,7 @@ struct ProfileView: View {
             ScreenListView(data: [
                 ProfileListElement.prioritets,
                 ProfileListElement.adresses,
-                ProfileListElement.driver(userManager: userManager)
+                ProfileListElement.driver
             ])
             .padding(.horizontal, Paddings.padding20)
             

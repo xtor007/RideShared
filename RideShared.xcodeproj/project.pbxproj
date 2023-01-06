@@ -55,7 +55,6 @@
 		FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */; };
 		FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */; };
 		FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */; };
-		FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */; };
 		FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */; };
 		FFC858F029649E0A003E50EA /* Double+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858EF29649E09003E50EA /* Double+price.swift */; };
 		FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9B29684A2900EF533A /* SharedLocation.swift */; };
@@ -64,6 +63,8 @@
 		FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA329686F4500EF533A /* AuthProvider.swift */; };
 		FFCA5CA62968934E00EF533A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA52968934E00EF533A /* AppState.swift */; };
 		FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA929689B4200EF533A /* UserProvider.swift */; };
+		FFCA5CAE2968A36400EF533A /* ChooseDriverDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */; };
+		FFCA5CB02968A61C00EF533A /* ChooseDriverDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -139,7 +140,6 @@
 		FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellView.swift; sourceTree = "<group>"; };
 		FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewModel.swift; sourceTree = "<group>"; };
 		FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Token.swift"; sourceTree = "<group>"; };
-		FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Driver.swift"; sourceTree = "<group>"; };
 		FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRoadView.swift; sourceTree = "<group>"; };
 		FFC858EF29649E09003E50EA /* Double+price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+price.swift"; sourceTree = "<group>"; };
 		FFCA5C9B29684A2900EF533A /* SharedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocation.swift; sourceTree = "<group>"; };
@@ -148,6 +148,8 @@
 		FFCA5CA329686F4500EF533A /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		FFCA5CA52968934E00EF533A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FFCA5CA929689B4200EF533A /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataViewModel.swift; sourceTree = "<group>"; };
+		FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataProvider.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -384,7 +386,6 @@
 				FF55552A29576302001B9646 /* ServerPath.swift */,
 				FF55552C2957656D001B9646 /* NetworkError.swift */,
 				FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */,
-				FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */,
 				FF402DA82966238A00B39A1F /* NetworkManager+UserSideTrip.swift */,
 			);
 			path = Network;
@@ -492,6 +493,24 @@
 				FFCA5CA929689B4200EF533A /* UserProvider.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		FFCA5CAB2968A33600EF533A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */,
+				FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFCA5CAC2968A34300EF533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */,
+				FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FFD920FE294E12CA00B89B35 = {
@@ -635,8 +654,8 @@
 		FFE561FC295CC1A9000B0371 /* DriverInfo */ = {
 			isa = PBXGroup;
 			children = (
-				FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */,
-				FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */,
+				FFCA5CAC2968A34300EF533A /* ViewModel */,
+				FFCA5CAB2968A33600EF533A /* View */,
 			);
 			path = DriverInfo;
 			sourceTree = "<group>";
@@ -783,7 +802,6 @@
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
 				FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */,
-				FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */,
 				FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */,
@@ -803,6 +821,7 @@
 				FFB87AFB2961B5790020B8C1 /* SearchLocationField.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
+				FFCA5CB02968A61C00EF533A /* ChooseDriverDataProvider.swift in Sources */,
 				FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
 				FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */,
@@ -833,6 +852,7 @@
 				FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */,
 				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
 				FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */,
+				FFCA5CAE2968A36400EF533A /* ChooseDriverDataViewModel.swift in Sources */,
 				FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */,
 				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,
 				FF4D9B77294F2CCF00CA2B84 /* MusicBlockView.swift in Sources */,

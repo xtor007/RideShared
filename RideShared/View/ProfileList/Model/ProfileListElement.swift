@@ -24,8 +24,8 @@ enum ProfileListElement: ScreenListElement {
         switch self {
         case .adresses:
             return AnyView(Text("s"))
-        case .driver(let userManager):
-            return AnyView(DriverInfoView(userManager: userManager))
+        case .driver:
+            return AnyView(DriverInfoView())
         case .prioritets:
             return AnyView(QuestionnaireView())
         }
@@ -33,6 +33,6 @@ enum ProfileListElement: ScreenListElement {
     
     case adresses
     case prioritets
-    case driver(userManager: UserManager)
+    case driver
     
 }
