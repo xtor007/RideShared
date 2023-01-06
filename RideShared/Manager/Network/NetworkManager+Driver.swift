@@ -13,14 +13,10 @@ extension NetworkManager {
         generateUserToken(user: user) { result in
             switch result {
             case .success(let success):
-                guard let userData = try? JSONEncoder().encode(["idToken": success]) else {
-                    callback(.failure(NetworkError.failedData()))
-                    return
-                }
                 self.createRequest(withToken: success, link: ServerPath.driverConfirmed.path) { result in
                     switch result {
                     case .success(let success):
-                        self.makePostRequest(request: success, postData: userData, callback: callback)
+                        self.makeRequest(request: success, callback: callback)
                     case .failure(let failure):
                         callback(.failure(failure))
                     }

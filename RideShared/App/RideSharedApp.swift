@@ -49,7 +49,7 @@ struct RideSharedApp: App {
                                 .tabItem {
                                     Label(Strings.TabBar.road, systemImage: "map.fill")
                                 }
-                            ProfileView(userManager: userManager)
+                            ProfileView()
                                 .tabItem {
                                     Label(Strings.TabBar.profile, systemImage: "person.fill")
                                 }
@@ -61,6 +61,7 @@ struct RideSharedApp: App {
                                     }
                             }
                         }
+                        .environmentObject(userManager)
                         .onAppear {
                             let appearance = UITabBarAppearance()
                             appearance.backgroundColor = Asset.Colors.accentColor.color

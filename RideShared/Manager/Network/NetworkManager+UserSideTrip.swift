@@ -9,14 +9,19 @@ import Foundation
 
 extension NetworkManager {
     
-    func getDriver(user: User, callback: @escaping (Result<User, Error>) -> Void) {
+    func getDriver(user: User, way: SharedWay, callback: @escaping (Result<User, Error>) -> Void) {
         generateUserToken(user: user) { result in
             switch result {
             case .success(let success):
-                self.createRequest(withToken: success, link: ServerPath.getDriver.path) { result in
+                self.createRequest(withToken: success, link: ServerPath.getDriver.path, method: "POST") { result in
                     switch result {
                     case .success(let success):
-                        self.makeRequest(request: success, callback: callback)
+                        do {
+                            let postData = try JSONEncoder().encode(way)
+                            self.makeRequest(request: success, postData: postData, callback: callback)
+                        } catch {
+                            callback(.failure(error))
+                        }
                     case .failure(let failure):
                         callback(.failure(failure))
                     }

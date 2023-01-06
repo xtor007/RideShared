@@ -11,7 +11,7 @@ import GoogleSignIn
 class GoogleAuthManager: AuthManager {
     
     func singIn(rootViewController: UIViewController, _ handler: @escaping (Result<GIDSignInResult, Error>) -> Void) {
-        let clientID = ProcessInfo.processInfo.environment[EnviromentVariables.googleClientID]!
+        let clientID = EnviromentVariables.googleClientID
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
         GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { signInResult, error in

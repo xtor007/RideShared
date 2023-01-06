@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
 
-    @ObservedObject var userManager: UserManager
+    @EnvironmentObject var userManager: UserManager
 
     var body: some View {
         VStack(alignment: .leading, spacing: Paddings.padding20) {
@@ -60,6 +60,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(userManager: UserManager(user: User.preview))
+        ProfileView()
+            .environmentObject(UserManager(user: User.preview))
     }
 }
