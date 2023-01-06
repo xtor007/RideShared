@@ -15,7 +15,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
     
     func setLocation(_ location: MKLocalSearchCompletion) {
         locationSearch(forLocalCompletion: location) { res, error in
-            guard let item = res?.mapItems.first else { return } //ERRROOR FOR FUTURE
+            guard let item = res?.mapItems.first else { return }
             let coordinate = item.placemark.coordinate
             self.location = LocationWithTitle(title: location.title, coordinate: coordinate)
         }

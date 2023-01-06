@@ -12,6 +12,8 @@ struct ConfirmRoadView: View {
     @EnvironmentObject var searchLocationModel: SearchLocationViewModel
     @EnvironmentObject var userManager: UserManager
     
+    let provider: UserSideTripProvider
+    
     @Binding var state: RoadViewState
     
     @State var isLoading = false
@@ -53,32 +55,16 @@ struct ConfirmRoadView: View {
                 }
                 BigButton(title: Strings.Button.confirm.uppercased()) {
                     isLoading = true
-                    DispatchQueue.global(qos: .background).async {
-                        guard let startCoordinate = searchLocationModel.userLocation else {
-                            return
-                        }
-                        guard let finishCoordinate = searchLocationModel.location?.coordinate else {
-                            return
-                        }
-                        NetworkManager.shared.getDriver(
-                            user: userManager.user,
-                            way: SharedWay(
-                                start: SharedLocation(
-                                    latitude: startCoordinate.latitude,
-                                    longitude: startCoordinate.longitude
-                                ),
-                                finish: SharedLocation(
-                                    latitude: finishCoordinate.latitude,
-                                    longitude: finishCoordinate.longitude
-                                )
-                            )
-                        ) { result in
-                            switch result {
-                            case .success(let success):
-                                print(success)
-                            case .failure(let failure):
-                                print(failure)
-                            }
+                    provider.confirmWay(
+                        userLocation: searchLocationModel.userLocation,
+                        goalLocation: searchLocationModel.location?.coordinate,
+                        user: userManager.user
+                    ) { result in
+                        switch result {
+                        case .success(let success):
+                            print(success)
+                        case .failure(let failure):
+                            print(failure)
                         }
                     }
                 }

@@ -14,6 +14,8 @@ struct RoadBuilderView: View {
     @State private var willShowingSearchView = false
     @State private var state: RoadViewState = .clear
     
+    let provider = UserSideTripProvider()
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
@@ -26,7 +28,7 @@ struct RoadBuilderView: View {
                 }
             }
             if state == .buildRoad {
-                ConfirmRoadView(state: $state)
+                ConfirmRoadView(provider: provider, state: $state)
                     .transition(.move(edge: .bottom))
             }
         }
