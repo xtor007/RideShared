@@ -9,7 +9,14 @@ import SwiftUI
 
 struct DriverWorkView: View {
     
+    @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var driverWorkModel: DriverWorkViewModel
+    
     @State var state = DriverWorkState.notWorking
+    private let provider = DriverSideTripProvider()
+    
+    @State var willShowError = false
+    @State var errorMessage = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -17,9 +24,49 @@ struct DriverWorkView: View {
                 .ignoresSafeArea()
             if state == .notWorking {
                 BigButton(title: Strings.Button.start.uppercased()) {
-                    state = .searching
+                    searchClient()
                 }
+                .padding(.horizontal, Paddings.padding16)
                 .padding(.bottom, Paddings.padding10)
+            }
+            if state == .searching {
+                BigButton(title: Strings.Button.cancel) {
+                    state = .notWorking
+                    provider.cancelSearching()
+                }
+                .padding(.horizontal, Paddings.padding16)
+                .padding(.bottom, Paddings.padding10)
+            }
+        }
+        .overlay(
+            ErrorView(isShowing: $willShowError, title: Strings.Error.Error.title, message: errorMessage)
+                .transition(.opacity.animation(.default))
+        )
+        .onReceive(LocationManager.shared.$userLocation) { location in
+            if let location {
+                driverWorkModel.userLocation = location
+            }
+        }
+    }
+    
+    private func searchClient() {
+        if let location = driverWorkModel.userLocation {
+            state = .searching
+            provider.getClient(
+                user: userManager.user,
+                location: SharedLocation(
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                )
+            ) { result in
+                switch result {
+                case .success(let success):
+                    print(success)
+                case .failure(let failure):
+                    errorMessage = failure.localizedDescription
+                    willShowError = true
+                    self.state = .notWorking
+                }
             }
         }
     }

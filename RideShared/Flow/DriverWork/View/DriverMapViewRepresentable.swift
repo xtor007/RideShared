@@ -13,7 +13,7 @@ struct DriverMapViewRepresentable: UIViewRepresentable {
     let mapView = MKMapView()
     let locationManager = LocationManager.shared
     @Binding var state: DriverWorkState
-    @EnvironmentObject var searchLocationModel: DriverWorkViewModel
+    @EnvironmentObject var driverWorkModel: DriverWorkViewModel
     
     func makeUIView(context: Context) -> some UIView {
         mapView.delegate = context.coordinator

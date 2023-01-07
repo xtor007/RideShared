@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
   internal enum Button {
+    /// Cancel
+    internal static let cancel = Strings.tr("Localizable", "button.cancel", fallback: "Cancel")
     /// Close
     internal static let close = Strings.tr("Localizable", "button.close", fallback: "Close")
     /// Confirm

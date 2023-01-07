@@ -20,9 +20,11 @@ enum ServerPath {
             return path + "/driver/driverConfirmed"
         case .getDriver:
             return path + "/trip/getDriver"
+        case .getClient:
+            return path + "/trip/getClient"
         }
     }
     
-    case singIn, updateUser, driverConfirmed, getDriver
+    case singIn, updateUser, driverConfirmed, getDriver, getClient
     
 }

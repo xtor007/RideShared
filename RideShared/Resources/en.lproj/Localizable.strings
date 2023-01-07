@@ -19,6 +19,7 @@
 "button.close" = "Close";
 "button.confirm" = "Confirm";
 "button.start" = "Start";
+"button.cancel" = "Cancel";
 
 "musicBlock.placeholder" = "Write your music wishes";
 
