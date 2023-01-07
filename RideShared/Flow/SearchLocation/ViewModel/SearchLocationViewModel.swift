@@ -12,6 +12,7 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
     
     @Published var locations = [MKLocalSearchCompletion]()
     @Published var location: LocationWithTitle?
+    @Published var driver: User?
     
     private let searchCompleter = MKLocalSearchCompleter()
     var locationName = "" {

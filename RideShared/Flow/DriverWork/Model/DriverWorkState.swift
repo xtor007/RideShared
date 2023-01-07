@@ -8,5 +8,5 @@
 import Foundation
 
 enum DriverWorkState {
-    case notWorking, searching, inRoad
+    case notWorking, searching, confirmClient
 }

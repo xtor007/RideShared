@@ -27,7 +27,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         switch state {
         case .clear:
             context.coordinator.clearMap()
-        case .buildRoad:
+        case .buildRoad, .confirmDriver:
             context.coordinator.clearMap()
             if let coordinate = searchLocationModel.location?.coordinate {
                 context.coordinator.addAnnotation(forCoordinate: coordinate)

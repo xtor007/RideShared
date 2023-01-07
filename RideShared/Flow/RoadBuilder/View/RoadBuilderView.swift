@@ -31,6 +31,15 @@ struct RoadBuilderView: View {
                 ConfirmRoadView(provider: provider, state: $state)
                     .transition(.move(edge: .bottom))
             }
+            if state == .confirmDriver {
+                VStack {
+                    Spacer()
+                    ConfirmingUserView(user: searchLocationModel.driver!) { isConfirmed in
+                        print(isConfirmed)
+                    }
+                    Spacer()
+                }
+            }
         }
         .fullScreenCover(isPresented: $willShowingSearchView) {
             SearchLocationView(isPresented: $willShowingSearchView, state: $state)

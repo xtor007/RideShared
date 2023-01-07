@@ -37,6 +37,15 @@ struct DriverWorkView: View {
                 .padding(.horizontal, Paddings.padding16)
                 .padding(.bottom, Paddings.padding10)
             }
+            if state == .confirmClient {
+                VStack {
+                    Spacer()
+                    ConfirmingUserView(user: driverWorkModel.client!) { isConfirmed in
+                        print(isConfirmed)
+                    }
+                    Spacer()
+                }
+            }
         }
         .overlay(
             ErrorView(isShowing: $willShowError, title: Strings.Error.Error.title, message: errorMessage)
@@ -61,7 +70,8 @@ struct DriverWorkView: View {
             ) { result in
                 switch result {
                 case .success(let success):
-                    print(success)
+                    driverWorkModel.client = success
+                    state = .confirmClient
                 case .failure(let failure):
                     errorMessage = failure.localizedDescription
                     willShowError = true

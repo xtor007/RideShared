@@ -15,6 +15,7 @@ class DriverSideTripProvider {
     
     func getClient(user: User, location: SharedLocation, callback: @escaping (Result<User,Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
+            self.isWorking = true
             while self.isWorking {
                 self.sendWorkRequest(user: user, location: location) { result in
                     DispatchQueue.main.async {

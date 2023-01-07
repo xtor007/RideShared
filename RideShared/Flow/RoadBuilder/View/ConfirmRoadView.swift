@@ -62,9 +62,10 @@ struct ConfirmRoadView: View {
                     ) { result in
                         switch result {
                         case .success(let success):
-                            print(success)
-                        case .failure(let failure):
-                            print(failure)
+                            state = .confirmDriver
+                            searchLocationModel.driver = success
+                        case .failure(_):
+                            isLoading = false
                         }
                     }
                 }

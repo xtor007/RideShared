@@ -12,6 +12,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
     
     @Published var location: LocationWithTitle?
     var userLocation: CLLocationCoordinate2D?
+    @Published var client: User?
     
     func setLocation(_ location: MKLocalSearchCompletion) {
         locationSearch(forLocalCompletion: location) { res, error in
