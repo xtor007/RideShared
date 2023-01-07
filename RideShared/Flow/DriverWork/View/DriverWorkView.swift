@@ -41,10 +41,15 @@ struct DriverWorkView: View {
                 VStack {
                     Spacer()
                     ConfirmingUserView(user: driverWorkModel.client!) { isConfirmed in
-                        print(isConfirmed)
+                        if isConfirmed {
+                            print("GO")
+                        } else {
+                            state = .notWorking
+                        }
                     }
                     Spacer()
                 }
+                .padding(.horizontal, Paddings.padding16)
             }
         }
         .overlay(
