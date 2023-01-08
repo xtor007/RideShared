@@ -133,6 +133,8 @@ internal enum Strings {
     internal static let slow = Strings.tr("Localizable", "speedBlock.slow", fallback: "Slow")
   }
   internal enum TabBar {
+    /// History
+    internal static let history = Strings.tr("Localizable", "tabBar.history", fallback: "History")
     /// Profile
     internal static let profile = Strings.tr("Localizable", "tabBar.profile", fallback: "Profile")
     /// Road

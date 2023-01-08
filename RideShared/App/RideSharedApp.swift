@@ -38,6 +38,10 @@ struct RideSharedApp: App {
                             .tabItem {
                                 Label(Strings.TabBar.road, systemImage: "map.fill")
                             }
+                        HistoryView(model: HistroryViewModel())
+                            .tabItem {
+                                Label(Strings.TabBar.history, systemImage: "clock.fill")
+                            }
                         ProfileView()
                             .tabItem {
                                 Label(Strings.TabBar.profile, systemImage: "person.fill")

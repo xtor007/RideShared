@@ -22,9 +22,11 @@ enum ServerPath {
             return path + "/trip/getDriver"
         case .getClient:
             return path + "/trip/getClient"
+        case.getAllTrips:
+            return path + "/history/getAllTrips"
         }
     }
     
-    case singIn, updateUser, driverConfirmed, getDriver, getClient
+    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips
     
 }

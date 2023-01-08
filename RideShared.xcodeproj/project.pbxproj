@@ -17,6 +17,11 @@
 		FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2079082953824500DFC4B9 /* ScreenListView.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
+		FF32BC04296AE582007E04FC /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC03296AE582007E04FC /* Trip.swift */; };
+		FF32BC08296AE705007E04FC /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC07296AE705007E04FC /* HistoryViewModel.swift */; };
+		FF32BC0A296AE7B8007E04FC /* HistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */; };
+		FF32BC0D296AE954007E04FC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC0C296AE954007E04FC /* HistoryView.swift */; };
+		FF32BC0F296AEAC4007E04FC /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC0E296AEAC4007E04FC /* TripView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
 		FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */; };
 		FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */; };
@@ -106,6 +111,11 @@
 		FF2079082953824500DFC4B9 /* ScreenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenListView.swift; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FF32BC03296AE582007E04FC /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		FF32BC07296AE705007E04FC /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryProvider.swift; sourceTree = "<group>"; };
+		FF32BC0C296AE954007E04FC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		FF32BC0E296AEAC4007E04FC /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
 		FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorBlockView.swift; sourceTree = "<group>"; };
 		FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointView.swift; sourceTree = "<group>"; };
@@ -272,6 +282,33 @@
 				FF31E0512952374800CC56BC /* ErrorView.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		FF32BC05296AE6E9007E04FC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC0B296AE940007E04FC /* View */,
+				FF32BC06296AE6F3007E04FC /* ViewModel */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FF32BC06296AE6F3007E04FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC07296AE705007E04FC /* HistoryViewModel.swift */,
+				FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF32BC0B296AE940007E04FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC0C296AE954007E04FC /* HistoryView.swift */,
+				FF32BC0E296AEAC4007E04FC /* TripView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */ = {
@@ -608,6 +645,7 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FF32BC05296AE6E9007E04FC /* History */,
 				FF402DA52966199800B39A1F /* ConfirmingUser */,
 				FF402D972965F62700B39A1F /* DriverWork */,
 				FFB87AF42961B4E90020B8C1 /* SearchLocation */,
@@ -644,6 +682,7 @@
 				FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */,
 				FFCA5C9B29684A2900EF533A /* SharedLocation.swift */,
 				FFCA5C9D29684B1D00EF533A /* SharedWay.swift */,
+				FF32BC03296AE582007E04FC /* Trip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -816,6 +855,7 @@
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
 				FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
+				FF32BC0F296AEAC4007E04FC /* TripView.swift in Sources */,
 				FFCA5CA62968934E00EF533A /* AppState.swift in Sources */,
 				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
 				FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */,
@@ -826,11 +866,13 @@
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
 				FFC858F029649E0A003E50EA /* Double+price.swift in Sources */,
 				FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */,
+				FF32BC08296AE705007E04FC /* HistoryViewModel.swift in Sources */,
 				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
 				FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */,
+				FF32BC0A296AE7B8007E04FC /* HistoryProvider.swift in Sources */,
 				FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
 				FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */,
@@ -861,6 +903,8 @@
 				FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */,
+				FF32BC0D296AE954007E04FC /* HistoryView.swift in Sources */,
+				FF32BC04296AE582007E04FC /* Trip.swift in Sources */,
 				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
