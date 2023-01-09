@@ -42,7 +42,7 @@ struct RideSharedApp: App {
                             .tabItem {
                                 Label(Strings.TabBar.history, systemImage: "clock.fill")
                             }
-                        ProfileView()
+                        ProfileView(appState: $state)
                             .tabItem {
                                 Label(Strings.TabBar.profile, systemImage: "person.fill")
                             }

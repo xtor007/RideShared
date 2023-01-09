@@ -71,8 +71,6 @@
 		FFCA5CB02968A61C00EF533A /* ChooseDriverDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */; };
 		FFCA5CB32968AE7600EF533A /* UserSideTripProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CB22968AE7600EF533A /* UserSideTripProvider.swift */; };
 		FFCA5CB5296966AF00EF533A /* DriverSideTripProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CB4296966AE00EF533A /* DriverSideTripProvider.swift */; };
-		FFCA5CBB2969698100EF533A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = FFCA5CBA2969698100EF533A /* Starscream */; };
-		FFCA5CBE2969996F00EF533A /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = FFCA5CBD2969996F00EF533A /* SocketIO */; };
 		FFCA5CC02969DEC700EF533A /* OptionalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CBF2969DEC700EF533A /* OptionalUser.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
@@ -198,9 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */,
-				FFCA5CBE2969996F00EF533A /* SocketIO in Frameworks */,
 				FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */,
-				FFCA5CBB2969698100EF533A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,8 +758,6 @@
 			packageProductDependencies = (
 				FFF88D3429573CA4007BA886 /* GoogleSignIn */,
 				FFF88D3629573CA4007BA886 /* GoogleSignInSwift */,
-				FFCA5CBA2969698100EF533A /* Starscream */,
-				FFCA5CBD2969996F00EF533A /* SocketIO */,
 			);
 			productName = RideShared;
 			productReference = FFD92107294E12CA00B89B35 /* RideShared.app */;
@@ -1186,16 +1180,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FFCA5CBA2969698100EF533A /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FFCA5CB62969686500EF533A /* XCRemoteSwiftPackageReference "Starscream" */;
-			productName = Starscream;
-		};
-		FFCA5CBD2969996F00EF533A /* SocketIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FFCA5CBC2969996F00EF533A /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
-		};
 		FFF88D3429573CA4007BA886 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFF88D3329573CA4007BA886 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

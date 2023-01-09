@@ -35,6 +35,7 @@ internal enum Asset {
     internal static let elementBackgroundColor = ColorAsset(name: "elementBackgroundColor")
     internal static let sampleColor = ColorAsset(name: "sampleColor")
     internal static let textColor = ColorAsset(name: "textColor")
+    internal static let threatenColor = ColorAsset(name: "threatenColor")
   }
   internal enum Images {
     internal static let defaultAvatar = ImageAsset(name: "defaultAvatar")

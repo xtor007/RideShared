@@ -20,6 +20,7 @@
 "button.confirm" = "Confirm";
 "button.start" = "Start";
 "button.cancel" = "Cancel";
+"button.signOut" = "Sign out";
 
 "musicBlock.placeholder" = "Write your music wishes";
 

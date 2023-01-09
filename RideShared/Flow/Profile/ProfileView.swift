@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
 
     @EnvironmentObject var userManager: UserManager
+    
+    @Binding var appState: AppState
 
     var body: some View {
         VStack(alignment: .leading, spacing: Paddings.padding20) {
@@ -44,6 +46,18 @@ struct ProfileView: View {
             
             Spacer()
             
+            HStack {
+                Spacer()
+                Button {
+                    appState = .notAuthorized
+                } label: {
+                    Text(Strings.Button.signOut)
+                        .foregroundColor(Asset.Colors.threatenColor.swiftUIColor)
+                }
+            }
+            .padding(.horizontal, Paddings.padding16)
+            .padding(.bottom, Paddings.padding16)
+            
         }
         .overlay(
             ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
@@ -56,7 +70,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(appState: .constant(.main(manager: UserManager(user: User.preview))))
             .environmentObject(UserManager(user: User.preview))
     }
 }

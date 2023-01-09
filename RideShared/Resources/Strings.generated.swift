@@ -19,6 +19,8 @@ internal enum Strings {
     internal static let confirm = Strings.tr("Localizable", "button.confirm", fallback: "Confirm")
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
+    /// Sign out
+    internal static let signOut = Strings.tr("Localizable", "button.signOut", fallback: "Sign out")
     /// Start
     internal static let start = Strings.tr("Localizable", "button.start", fallback: "Start")
   }
