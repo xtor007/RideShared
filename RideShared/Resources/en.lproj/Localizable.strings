@@ -60,3 +60,8 @@
 "searchLocation.where" = "Where are you going?";
 
 "confirmRoad.currentLocation" = "Current location";
+
+"rating.rate" = "Rate for better selection in the future";
+"rating.rating" = "Global rating";
+"rating.music" = "Music rating";
+"rating.speed" = "Speed rating";

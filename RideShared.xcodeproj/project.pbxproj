@@ -50,6 +50,8 @@
 		FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2A2964BFD100C3645E /* PriceManager.swift */; };
 		FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
+		FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B46296CC59200FF7A3C /* RatingView.swift */; };
+		FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */; };
 		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
 		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
 		FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEF296193770020B8C1 /* MapCoordinator.swift */; };
@@ -142,6 +144,8 @@
 		FFAF0C2A2964BFD100C3645E /* PriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceManager.swift; sourceTree = "<group>"; };
 		FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWithTitle.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
+		FFB62B46296CC59200FF7A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingView.swift; sourceTree = "<group>"; };
 		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
 		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		FFB87AEF296193770020B8C1 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
@@ -441,6 +445,15 @@
 			path = Price;
 			sourceTree = "<group>";
 		};
+		FFB62B45296CC56700FF7A3C /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				FFB62B46296CC59200FF7A3C /* RatingView.swift */,
+				FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */,
+			);
+			path = RatingView;
+			sourceTree = "<group>";
+		};
 		FFB87AE729618A690020B8C1 /* RoadBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +670,7 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFB62B45296CC56700FF7A3C /* RatingView */,
 				FFB87AF92961B55C0020B8C1 /* SearchLocationField */,
 				FF2079032953760000DFC4B9 /* ProfileList */,
 				FF2078FC295374B300DFC4B9 /* ScreenList */,
@@ -872,6 +886,7 @@
 				FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
 				FFCA5CC02969DEC700EF533A /* OptionalUser.swift in Sources */,
+				FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
 				FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
@@ -903,6 +918,7 @@
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
 				FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */,
+				FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */,
 				FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */,
 				FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,

@@ -122,6 +122,16 @@ internal enum Strings {
     /// Fill out the questionnaire for a better driver selection
     internal static let title = Strings.tr("Localizable", "questionnaire.title", fallback: "Fill out the questionnaire for a better driver selection")
   }
+  internal enum Rating {
+    /// Music rating
+    internal static let music = Strings.tr("Localizable", "rating.music", fallback: "Music rating")
+    /// Rate for better selection in the future
+    internal static let rate = Strings.tr("Localizable", "rating.rate", fallback: "Rate for better selection in the future")
+    /// Global rating
+    internal static let rating = Strings.tr("Localizable", "rating.rating", fallback: "Global rating")
+    /// Speed rating
+    internal static let speed = Strings.tr("Localizable", "rating.speed", fallback: "Speed rating")
+  }
   internal enum SearchLocation {
     /// Where are you going?
     internal static let `where` = Strings.tr("Localizable", "searchLocation.where", fallback: "Where are you going?")
