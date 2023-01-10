@@ -10,4 +10,5 @@ import Foundation
 struct SharedLocation: Codable {
     let latitude: Double
     let longitude: Double
+    var description: String?
 }

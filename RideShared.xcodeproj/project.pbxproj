@@ -49,6 +49,11 @@
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
 		FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2A2964BFD100C3645E /* PriceManager.swift */; };
 		FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */; };
+		FFB20AE6296E023A00F3666A /* SearchDriverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE1296E023900F3666A /* SearchDriverData.swift */; };
+		FFB20AE7296E023A00F3666A /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE2296E023A00F3666A /* Rating.swift */; };
+		FFB20AE8296E023A00F3666A /* SearchClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE3296E023A00F3666A /* SearchClientData.swift */; };
+		FFB20AE9296E023A00F3666A /* TripID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE4296E023A00F3666A /* TripID.swift */; };
+		FFB20AEA296E023A00F3666A /* DriverLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE5296E023A00F3666A /* DriverLocation.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
 		FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B46296CC59200FF7A3C /* RatingView.swift */; };
 		FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */; };
@@ -144,6 +149,11 @@
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
 		FFAF0C2A2964BFD100C3645E /* PriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceManager.swift; sourceTree = "<group>"; };
 		FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWithTitle.swift; sourceTree = "<group>"; };
+		FFB20AE1296E023900F3666A /* SearchDriverData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDriverData.swift; sourceTree = "<group>"; };
+		FFB20AE2296E023A00F3666A /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		FFB20AE3296E023A00F3666A /* SearchClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClientData.swift; sourceTree = "<group>"; };
+		FFB20AE4296E023A00F3666A /* TripID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripID.swift; sourceTree = "<group>"; };
+		FFB20AE5296E023A00F3666A /* DriverLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverLocation.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
 		FFB62B46296CC59200FF7A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingView.swift; sourceTree = "<group>"; };
@@ -689,6 +699,11 @@
 		FFD9211C294E133D00B89B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFB20AE5296E023A00F3666A /* DriverLocation.swift */,
+				FFB20AE2296E023A00F3666A /* Rating.swift */,
+				FFB20AE3296E023A00F3666A /* SearchClientData.swift */,
+				FFB20AE1296E023900F3666A /* SearchDriverData.swift */,
+				FFB20AE4296E023A00F3666A /* TripID.swift */,
 				FFD92136294E284D00B89B35 /* User.swift */,
 				FF31E04E29521EA300CC56BC /* SelectionParameters.swift */,
 				FF55552E295772CD001B9646 /* TaxiData.swift */,
@@ -865,6 +880,7 @@
 			files = (
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
 				FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */,
+				FFB20AE7296E023A00F3666A /* Rating.swift in Sources */,
 				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
 				FF32BC0F296AEAC4007E04FC /* TripView.swift in Sources */,
 				FFCA5CA62968934E00EF533A /* AppState.swift in Sources */,
@@ -916,18 +932,21 @@
 				FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
 				FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */,
+				FFB20AE9296E023A00F3666A /* TripID.swift in Sources */,
 				FF32BC0D296AE954007E04FC /* HistoryView.swift in Sources */,
 				FF32BC04296AE582007E04FC /* Trip.swift in Sources */,
 				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
 				FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */,
+				FFB20AE8296E023A00F3666A /* SearchClientData.swift in Sources */,
 				FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */,
 				FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */,
 				FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
 				FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */,
 				FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */,
+				FFB20AEA296E023A00F3666A /* DriverLocation.swift in Sources */,
 				FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */,
 				FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */,
 				FFCA5CB5296966AF00EF533A /* DriverSideTripProvider.swift in Sources */,
@@ -936,6 +955,7 @@
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
 				FFCA5CB32968AE7600EF533A /* UserSideTripProvider.swift in Sources */,
+				FFB20AE6296E023A00F3666A /* SearchDriverData.swift in Sources */,
 				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
 				FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
