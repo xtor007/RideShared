@@ -10,11 +10,12 @@ import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
     
+    @EnvironmentObject var roadBuilderModel: RoadBuilderViewModel
+    @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
+    
     let mapView = MKMapView()
     let locationManager = LocationManager.shared
-    @Binding var state: RoadViewState
-    @EnvironmentObject var searchLocationModel: SearchLocationViewModel
-    
+
     func makeUIView(context: Context) -> some UIView {
         mapView.delegate = context.coordinator
         mapView.isRotateEnabled = false
@@ -24,12 +25,12 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        switch state {
+        switch roadBuilderModel.state {
         case .clear:
             context.coordinator.clearMap()
         case .buildRoad, .confirmDriver:
             context.coordinator.clearMap()
-            if let coordinate = searchLocationModel.location?.coordinate {
+            if let coordinate = searchLocationViewModel.location?.coordinate {
                 context.coordinator.addAnnotation(forCoordinate: coordinate)
                 context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
             }

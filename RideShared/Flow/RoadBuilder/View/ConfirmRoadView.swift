@@ -9,14 +9,9 @@ import SwiftUI
 
 struct ConfirmRoadView: View {
     
-    @EnvironmentObject var searchLocationModel: SearchLocationViewModel
+    @EnvironmentObject var roadBuilderModel: RoadBuilderViewModel
+    @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
     @EnvironmentObject var userManager: UserManager
-    
-    let provider: UserSideTripProvider
-    
-    @Binding var state: RoadViewState
-    
-    @State var isLoading = false
     
     var body: some View {
         VStack {
@@ -31,7 +26,7 @@ struct ConfirmRoadView: View {
                 Rectangle()
                     .fill(Asset.Colors.elementBackgroundColor.swiftUIColor)
                     .frame(width: 6, height: 50)
-                if let location = searchLocationModel.location {
+                if let location = searchLocationViewModel.location {
                     Text(location.title)
                         .padding(Paddings.padding16)
                         .background {
@@ -42,7 +37,7 @@ struct ConfirmRoadView: View {
             }
             .foregroundColor(Asset.Colors.textColor.swiftUIColor)
             
-            Text(searchLocationModel.computePrice().price)
+            Text(roadBuilderModel.computePrice(forLocation: searchLocationViewModel.location).price)
                 .foregroundColor(Asset.Colors.textColor.swiftUIColor)
                 .font(.system(size: 65, weight: .semibold))
             
@@ -50,32 +45,19 @@ struct ConfirmRoadView: View {
             HStack {
                 BigButton(title: Strings.Button.close) {
                     withAnimation {
-                        state = .clear
+                        roadBuilderModel.state = .clear
                     }
                 }
                 BigButton(title: Strings.Button.confirm.uppercased()) {
-                    isLoading = true
-                    provider.confirmWay(
-                        userLocation: searchLocationModel.userLocation,
-                        goalLocation: searchLocationModel.location?.coordinate,
-                        user: userManager.user
-                    ) { result in
-                        switch result {
-                        case .success(let success):
-                            state = .confirmDriver
-                            searchLocationModel.driver = success
-                        case .failure(_):
-                            isLoading = false
-                        }
-                    }
+                    roadBuilderModel.confirmRoad(location: searchLocationViewModel.location, user: userManager.user)
                 }
             }
             
         }
         .padding(Paddings.padding20)
-        .disabled(isLoading)
+        .disabled(roadBuilderModel.isLoadingInConfirmRoad)
         .overlay {
-            if isLoading {
+            if roadBuilderModel.isLoadingInConfirmRoad {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }

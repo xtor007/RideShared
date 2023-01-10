@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SearchLocationView: View {
     
-    @Binding var isPresented: Bool
-    @Binding var state: RoadViewState
+    let close: (Bool) -> Void
     
     @EnvironmentObject var model: SearchLocationViewModel
     
@@ -20,7 +19,7 @@ struct SearchLocationView: View {
             HStack {
                 Spacer()
                 Button {
-                    isPresented = false
+                    close(false)
                 } label: {
                     Text(Strings.Button.close)
                         .foregroundColor(Asset.Colors.textColor.swiftUIColor)
@@ -39,8 +38,7 @@ struct SearchLocationView: View {
                             .onTapGesture {
                                 withAnimation {
                                     model.setLocation(location)
-                                    state = .buildRoad
-                                    isPresented = false
+                                    close(true)
                                 }
                             }
                     }
@@ -56,6 +54,8 @@ struct SearchLocationView: View {
 
 struct SearchLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchLocationView(isPresented: .constant(true), state: .constant(.clear))
+        SearchLocationView() { a in
+            print(a)
+        }
     }
 }

@@ -12,7 +12,6 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
     
     @Published var locations = [MKLocalSearchCompletion]()
     @Published var location: LocationWithTitle?
-    @Published var driver: User?
     
     private let searchCompleter = MKLocalSearchCompleter()
     var locationName = "" {
@@ -20,8 +19,6 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
             searchCompleter.queryFragment = locationName
         }
     }
-    
-    var userLocation: CLLocationCoordinate2D?
     
     override init() {
         super.init()
@@ -38,6 +35,7 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
             guard let item = res?.mapItems.first else { return }
             let coordinate = item.placemark.coordinate
             self.location = LocationWithTitle(title: location.title, coordinate: coordinate)
+            print(self.location)
         }
     }
     
@@ -46,19 +44,6 @@ class SearchLocationViewModel: NSObject, ObservableObject, MKLocalSearchComplete
         request.naturalLanguageQuery = localCompletion.title.appending(localCompletion.subtitle)
         let search = MKLocalSearch(request: request)
         search.start(completionHandler: completion)
-    }
-    
-    func computePrice() -> Double {
-        guard let goalLocation = location?.coordinate else {
-            return 0
-        }
-        guard let userLocation else {
-            return 0
-        }
-        let userLocationPoint = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-        let goalLocationPoint = CLLocation(latitude: goalLocation.latitude, longitude: goalLocation.longitude)
-        let distance = userLocationPoint.distance(from: goalLocationPoint)
-        return PriceManager.shared.getPrice(forDistance: distance)
     }
     
 }

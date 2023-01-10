@@ -9,54 +9,51 @@ import SwiftUI
 
 struct RoadBuilderView: View {
     
-    @EnvironmentObject var searchLocationModel: SearchLocationViewModel
-    
-    @State private var willShowingSearchView = false
-    @State private var state: RoadViewState = .clear
+    @EnvironmentObject var model: RoadBuilderViewModel
+    @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
     
     let provider = UserSideTripProvider()
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
-                MapViewRepresentable(state: $state)
+                MapViewRepresentable()
                     .ignoresSafeArea()
-                if state == .clear {
-                    SearchLocationField(willPresentSearch: $willShowingSearchView)
+                if model.state == .clear {
+                    SearchLocationField(willPresentSearch: $model.willShowingSearchView)
                         .padding(.top, Paddings.padding20)
                         .padding(.horizontal, Paddings.padding16)
                 }
             }
-            if state == .buildRoad {
-                ConfirmRoadView(provider: provider, state: $state)
+            if model.state == .buildRoad {
+                ConfirmRoadView()
                     .transition(.move(edge: .bottom))
             }
-            if state == .confirmDriver {
+            if model.state == .confirmDriver {
                 VStack {
                     Spacer()
-                    ConfirmingUserView(user: searchLocationModel.driver!) { isConfirmed in
-                        if isConfirmed {
-                            print("GO")
-                        } else {
-                            state = .buildRoad
-                        }
+                    ConfirmingUserView(user: model.driver!) { isConfirmed in
+                        model.confirmDriver(isConfirmed: isConfirmed)
                     }
                     Spacer()
                 }
                 .padding(.horizontal, Paddings.padding16)
             }
         }
-        .fullScreenCover(isPresented: $willShowingSearchView) {
-            SearchLocationView(isPresented: $willShowingSearchView, state: $state)
+        .fullScreenCover(isPresented: $model.willShowingSearchView) {
+            SearchLocationView() { isFinished in
+                model.willShowingSearchView = false
+                model.state = isFinished ? .buildRoad : .clear
+            }
         }
-        .onChange(of: state) { newValue in
+        .onChange(of: model.state) { newValue in
             if newValue == .clear {
-                searchLocationModel.location = nil
+                searchLocationViewModel.location = nil
             }
         }
         .onReceive(LocationManager.shared.$userLocation) { location in
             if let location {
-                searchLocationModel.userLocation = location
+                model.userLocation = location
             }
         }
     }

@@ -13,8 +13,9 @@ struct RideSharedApp: App {
 
     @State var state = AppState.notAuthorized
     
-    @StateObject var searchLocationModel = SearchLocationViewModel()
+    @StateObject var roadBuilderModel = RoadBuilderViewModel()
     @StateObject var driverLocationModel = DriverWorkViewModel()
+    @StateObject var searchLocationViewModel = SearchLocationViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -34,7 +35,8 @@ struct RideSharedApp: App {
                 NavigationView {
                     TabView {
                         RoadBuilderView()
-                            .environmentObject(searchLocationModel)
+                            .environmentObject(roadBuilderModel)
+                            .environmentObject(searchLocationViewModel)
                             .tabItem {
                                 Label(Strings.TabBar.road, systemImage: "map.fill")
                             }

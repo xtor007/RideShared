@@ -52,6 +52,7 @@
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
 		FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B46296CC59200FF7A3C /* RatingView.swift */; };
 		FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */; };
+		FFB62B4B296DA4AF00FF7A3C /* RoadBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */; };
 		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
 		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
 		FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEF296193770020B8C1 /* MapCoordinator.swift */; };
@@ -146,6 +147,7 @@
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
 		FFB62B46296CC59200FF7A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingView.swift; sourceTree = "<group>"; };
+		FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderViewModel.swift; sourceTree = "<group>"; };
 		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
 		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		FFB87AEF296193770020B8C1 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				FFCA5CB22968AE7600EF533A /* UserSideTripProvider.swift */,
+				FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
 				FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */,
+				FFB62B4B296DA4AF00FF7A3C /* RoadBuilderViewModel.swift in Sources */,
 				FF402DA7296619DC00B39A1F /* ConfirmingUserView.swift in Sources */,
 				FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
