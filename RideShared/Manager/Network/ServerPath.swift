@@ -24,9 +24,19 @@ enum ServerPath {
             return path + "/trip/getClient"
         case.getAllTrips:
             return path + "/history/getAllTrips"
+        case .confirmDriver:
+            return path + "/trip/confirmDriver"
+        case .confirmClient:
+            return path + "/trip/confirmClient"
+        case .getDriverLocation:
+            return path + "/trip/getDriverLocation"
+        case .postDriverLocation:
+            return path + "/trip/postDriverLocation"
+        case .postRating:
+            return path + "/trip/postRating"
         }
     }
     
-    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips
+    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips, confirmDriver, confirmClient, getDriverLocation, postDriverLocation, postRating
     
 }

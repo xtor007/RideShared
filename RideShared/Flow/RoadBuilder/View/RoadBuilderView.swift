@@ -11,6 +11,7 @@ struct RoadBuilderView: View {
     
     @EnvironmentObject var model: RoadBuilderViewModel
     @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
+    @EnvironmentObject var userManager: UserManager
     
     let provider = UserSideTripProvider()
     
@@ -33,7 +34,7 @@ struct RoadBuilderView: View {
                 VStack {
                     Spacer()
                     ConfirmingUserView(user: model.driver!) { isConfirmed in
-                        model.confirmDriver(isConfirmed: isConfirmed)
+                        model.confirmDriver(isConfirmed: isConfirmed, forUser: userManager.user)
                     }
                     Spacer()
                 }
@@ -53,8 +54,7 @@ struct RoadBuilderView: View {
         }
         .onReceive(LocationManager.shared.$userLocation) { location in
             if let location {
-                model.userLocation = location
-            }
+                model.userLocation = location            }
         }
     }
 

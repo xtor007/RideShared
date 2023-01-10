@@ -12,6 +12,7 @@ class LocationManager: NSObject, ObservableObject {
     static let shared = LocationManager()
     
     @Published var userLocation: CLLocationCoordinate2D?
+    @Published var locationAdress: String?
     private let locationManager = CLLocationManager()
     
     override init() {
@@ -31,6 +32,7 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         self.userLocation = location.coordinate
+        self.locationAdress = location.description
         locationManager.stopUpdatingLocation()
     }
     

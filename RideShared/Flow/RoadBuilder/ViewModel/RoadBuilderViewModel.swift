@@ -19,6 +19,9 @@ class RoadBuilderViewModel: ObservableObject {
     
     let provider = UserSideTripProvider()
     
+    var finalLocation: LocationWithTitle?
+    var price: Double?
+    
     func computePrice(forLocation location: LocationWithTitle?) -> Double {
         guard let goalLocation = location?.coordinate else {
             return 0
@@ -29,11 +32,13 @@ class RoadBuilderViewModel: ObservableObject {
         let userLocationPoint = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
         let goalLocationPoint = CLLocation(latitude: goalLocation.latitude, longitude: goalLocation.longitude)
         let distance = userLocationPoint.distance(from: goalLocationPoint)
-        return PriceManager.shared.getPrice(forDistance: distance)
+        price = PriceManager.shared.getPrice(forDistance: distance)
+        return price!
     }
     
     func confirmRoad(location: LocationWithTitle?, user: User) {
         isLoadingInConfirmRoad = true
+        finalLocation = location
         provider.confirmWay(
             userLocation: userLocation,
             goalLocation: location?.coordinate,
@@ -49,9 +54,28 @@ class RoadBuilderViewModel: ObservableObject {
         }
     }
     
-    func confirmDriver(isConfirmed: Bool) {
+    func confirmDriver(isConfirmed: Bool, forUser user: User) {
         if isConfirmed {
-            print("GO")
+            if let driver, let userLocation, let finalLocation, let price {
+                provider.confirmDriver(
+                    user: user,
+                    searchData: SearchDriverData(
+                        driver: driver,
+                        way: SharedWay(
+                            start: SharedLocation(latitude: userLocation.latitude, longitude: userLocation.longitude, description: LocationManager.shared.locationAdress),
+                            finish: SharedLocation(latitude: finalLocation.coordinate.latitude, longitude: finalLocation.coordinate.longitude, description: finalLocation.title)
+                        ),
+                        price: price
+                    )
+                ) { result in
+                    switch result {
+                    case .success(let success):
+                        print(success)
+                    case .failure(_):
+                        self.state = .buildRoad
+                    }
+                }
+            }
         } else {
             state = .buildRoad
             //CODE
