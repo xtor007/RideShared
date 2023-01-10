@@ -21,6 +21,7 @@ class RoadBuilderViewModel: ObservableObject {
     
     var finalLocation: LocationWithTitle?
     var price: Double?
+    var id: UUID?
     
     func computePrice(forLocation location: LocationWithTitle?) -> Double {
         guard let goalLocation = location?.coordinate else {
@@ -48,6 +49,7 @@ class RoadBuilderViewModel: ObservableObject {
             case .success(let success):
                 self.state = .confirmDriver
                 self.driver = success
+                self.isLoadingInConfirmRoad = false
             case .failure(_):
                 self.isLoadingInConfirmRoad = false
             }
@@ -70,7 +72,12 @@ class RoadBuilderViewModel: ObservableObject {
                 ) { result in
                     switch result {
                     case .success(let success):
-                        print(success)
+                        guard let id = success.id else {
+                            self.state = .buildRoad
+                            return
+                        }
+                        self.id = id
+                        self.state = .road
                     case .failure(_):
                         self.state = .buildRoad
                     }

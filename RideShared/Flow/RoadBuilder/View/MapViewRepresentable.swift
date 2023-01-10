@@ -34,6 +34,8 @@ struct MapViewRepresentable: UIViewRepresentable {
                 context.coordinator.addAnnotation(forCoordinate: coordinate)
                 context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
             }
+        case .road:
+            print("Add")
         }
     }
     

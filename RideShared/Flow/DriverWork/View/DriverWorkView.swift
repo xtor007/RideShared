@@ -12,40 +12,30 @@ struct DriverWorkView: View {
     @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var driverWorkModel: DriverWorkViewModel
     
-    @State var state = DriverWorkState.notWorking
-    private let provider = DriverSideTripProvider()
-    
-    @State var willShowError = false
-    @State var errorMessage = ""
-    
     var body: some View {
         ZStack(alignment: .bottom) {
-            DriverMapViewRepresentable(state: $state)
+            DriverMapViewRepresentable(state: $driverWorkModel.state)
                 .ignoresSafeArea()
-            if state == .notWorking {
+            if driverWorkModel.state == .notWorking {
                 BigButton(title: Strings.Button.start.uppercased()) {
-                    searchClient()
+                    driverWorkModel.searchClient(user: userManager.user)
                 }
                 .padding(.horizontal, Paddings.padding16)
                 .padding(.bottom, Paddings.padding10)
             }
-            if state == .searching {
+            if driverWorkModel.state == .searching {
                 BigButton(title: Strings.Button.cancel) {
-                    state = .notWorking
-                    provider.cancelSearching()
+                    driverWorkModel.state = .notWorking
+                    driverWorkModel.provider.cancelSearching()
                 }
                 .padding(.horizontal, Paddings.padding16)
                 .padding(.bottom, Paddings.padding10)
             }
-            if state == .confirmClient {
+            if driverWorkModel.state == .confirmClient {
                 VStack {
                     Spacer()
                     ConfirmingUserView(user: driverWorkModel.client!) { isConfirmed in
-                        if isConfirmed {
-                            print("GO")
-                        } else {
-                            state = .notWorking
-                        }
+                        driverWorkModel.confirmUser(isConfirmed: isConfirmed)
                     }
                     Spacer()
                 }
@@ -53,35 +43,12 @@ struct DriverWorkView: View {
             }
         }
         .overlay(
-            ErrorView(isShowing: $willShowError, title: Strings.Error.Error.title, message: errorMessage)
+            ErrorView(isShowing: $driverWorkModel.willShowError, title: Strings.Error.Error.title, message: driverWorkModel.errorMessage)
                 .transition(.opacity.animation(.default))
         )
         .onReceive(LocationManager.shared.$userLocation) { location in
             if let location {
                 driverWorkModel.userLocation = location
-            }
-        }
-    }
-    
-    private func searchClient() {
-        if let location = driverWorkModel.userLocation {
-            state = .searching
-            provider.getClient(
-                user: userManager.user,
-                location: SharedLocation(
-                    latitude: location.latitude,
-                    longitude: location.longitude
-                )
-            ) { result in
-                switch result {
-                case .success(let success):
-                    driverWorkModel.client = success
-                    state = .confirmClient
-                case .failure(let failure):
-                    errorMessage = failure.localizedDescription
-                    willShowError = true
-                    self.state = .notWorking
-                }
             }
         }
     }
