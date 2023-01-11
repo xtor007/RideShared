@@ -10,6 +10,9 @@ import MapKit
 
 class UserSideTripProvider {
     
+    private let semaphore = DispatchSemaphore(value: 0)
+    var isDriverLocationLoading = false
+    
     func confirmWay(userLocation: CLLocationCoordinate2D?, goalLocation: CLLocationCoordinate2D?, user: User, callback: @escaping (Result<User,Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             guard let startCoordinate = userLocation else {
@@ -45,6 +48,42 @@ class UserSideTripProvider {
                     callback(result)
                 }
             }
+        }
+    }
+    
+    func observeDriverLocation(tripID: UUID, callback: @escaping (Result<SharedLocation, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            let timer = DispatchSource.makeTimerSource()
+            timer.setEventHandler() {
+                self.semaphore.signal()
+            }
+            timer.schedule(deadline: .now() + .seconds(1), repeating: 1)
+            timer.activate()
+            self.isDriverLocationLoading = true
+            while self.isDriverLocationLoading {
+                self.getDriverLocation(tripID: tripID) { result in
+                    DispatchQueue.main.async {
+                        callback(result)
+                    }
+                }
+                self.semaphore.wait()
+            }
+        }
+    }
+    
+    private func getDriverLocation(tripID: UUID, callback: @escaping (Result<SharedLocation, Error>) -> Void) {
+        guard let url = URL(string:  ServerPath.getDriverLocation.path) else {
+            callback(.failure(NetworkError.failedURL()))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let postData = try JSONEncoder().encode(tripID)
+            NetworkManager.shared.makeRequest(request: request, postData: postData, callback: callback)
+        } catch {
+            callback(.failure(error))
         }
     }
     

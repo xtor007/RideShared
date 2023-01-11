@@ -17,6 +17,8 @@ extension MapViewRepresentable {
         var userLocationCoordinate: CLLocationCoordinate2D?
         var currentRegion: MKCoordinateRegion?
         
+        private let reuseDriverId = "driver"
+        
         init(parent: MapViewRepresentable) {
             self.parent = parent
             super.init()
@@ -45,6 +47,31 @@ extension MapViewRepresentable {
             annotation.coordinate = coordinate
             parent.mapView.addAnnotation(annotation)
             parent.mapView.selectAnnotation(annotation, animated: true)
+        }
+        
+        func addDriver(withCoordinate coordinate: CLLocationCoordinate2D) {
+            let driverAnnotation = MKPointAnnotation()
+            driverAnnotation.coordinate = coordinate
+            driverAnnotation.title = reuseDriverId
+            parent.mapView.addAnnotation(driverAnnotation)
+        }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if (annotation is MKUserLocation) {
+                return nil
+            }
+            guard annotation.title == reuseDriverId else {
+                return nil
+            }
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseDriverId)
+            if let annotationView {
+                annotationView.annotation = annotation
+            } else {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseDriverId)
+            }
+            let image = Asset.Images.driverLocationImage.image
+            annotationView?.image = image
+            return annotationView
         }
         
         func configurePolyline(withGoalCoordinates coordinates: CLLocationCoordinate2D) {

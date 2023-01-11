@@ -35,7 +35,10 @@ struct MapViewRepresentable: UIViewRepresentable {
                 context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
             }
         case .road:
-            print("Add")
+            if let driverLocation = roadBuilderModel.driverLocation, let finishCoordinate = searchLocationViewModel.location?.coordinate {
+                let driverCoordinate = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude).coordinate
+                context.coordinator.addDriver(withCoordinate: driverCoordinate)
+            }
         }
     }
     

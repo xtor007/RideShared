@@ -12,7 +12,7 @@ class RoadBuilderViewModel: ObservableObject {
     
     @Published var driver: User?
     var userLocation: CLLocationCoordinate2D?
-    
+    @Published var driverLocation: SharedLocation?
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear
     @Published var isLoadingInConfirmRoad = false
@@ -78,6 +78,7 @@ class RoadBuilderViewModel: ObservableObject {
                         }
                         self.id = id
                         self.state = .road
+                        self.observeDriverLocation()
                     case .failure(_):
                         self.state = .buildRoad
                     }
@@ -86,6 +87,21 @@ class RoadBuilderViewModel: ObservableObject {
         } else {
             state = .buildRoad
             //CODE
+        }
+    }
+    
+    private func observeDriverLocation() {
+        if let id {
+            provider.observeDriverLocation(tripID: id) { result in
+                switch result {
+                case .success(let success):
+                    withAnimation {
+                        self.driverLocation = success
+                    }
+                case .failure(_):
+                    return
+                }
+            }
         }
     }
     

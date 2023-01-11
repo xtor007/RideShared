@@ -35,7 +35,7 @@ struct DriverWorkView: View {
                 VStack {
                     Spacer()
                     ConfirmingUserView(user: driverWorkModel.client!) { isConfirmed in
-                        driverWorkModel.confirmUser(isConfirmed: isConfirmed)
+                        driverWorkModel.confirmUser(isConfirmed: isConfirmed, forUser: userManager.user)
                     }
                     Spacer()
                 }

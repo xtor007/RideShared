@@ -20,6 +20,8 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
     @Published var willShowError = false
     @Published var errorMessage = ""
     
+    var id: UUID?
+    
     func setLocation(_ location: MKLocalSearchCompletion) {
         locationSearch(forLocalCompletion: location) { res, error in
             guard let item = res?.mapItems.first else { return }
@@ -58,11 +60,31 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
         }
     }
     
-    func confirmUser(isConfirmed: Bool) {
-        if isConfirmed {
-            print("GO")
-        } else {
-            state = .notWorking
+    func confirmUser(isConfirmed: Bool, forUser user: User) {
+        if let client, let userLocation {
+            if isConfirmed {
+                provider.confirmClient(
+                    user: user,
+                    searchData: SearchClientData(
+                        client: client,
+                        location: SharedLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                    )
+                ) { result in
+                    switch result {
+                    case .success(let success):
+                        guard let id = success.id else {
+                            self.state = .notWorking
+                            return
+                        }
+                        self.id = id
+                        self.state = .toClient
+                    case .failure(_):
+                        self.state = .notWorking
+                    }
+                }
+            } else {
+                state = .notWorking
+            }
         }
     }
     

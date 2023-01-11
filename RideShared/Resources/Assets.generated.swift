@@ -39,6 +39,7 @@ internal enum Asset {
   }
   internal enum Images {
     internal static let defaultAvatar = ImageAsset(name: "defaultAvatar")
+    internal static let driverLocationImage = ImageAsset(name: "driverLocationImage")
     internal static let errorIcon = ImageAsset(name: "errorIcon")
     internal static let googleIcon = ImageAsset(name: "googleIcon")
     internal static let sampleImage = ImageAsset(name: "sampleImage")

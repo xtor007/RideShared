@@ -45,6 +45,45 @@ class DriverSideTripProvider {
         semaphore.signal()
     }
     
+    func confirmClient(user: User, searchData: SearchClientData, callback: @escaping (Result<TripID, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            self.getID(user: user, searchData: searchData) { result in
+                DispatchQueue.main.async {
+                    callback(result)
+                }
+            }
+        }
+    }
+    
+    private func getID(user: User, searchData: SearchClientData, callback: @escaping (Result<TripID, Error>) -> Void) {
+        NetworkManager.shared.generateUserToken(user: user) { result in
+            let encoder = JSONEncoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            encoder.dateEncodingStrategy = .formatted(dateFormatter)
+            switch result {
+            case .success(let success):
+                NetworkManager.shared.createRequest(withToken: success, link: ServerPath.confirmClient.path, method: "POST") { result in
+                    switch result {
+                    case .success(let success):
+                        var request = success
+                        request.timeoutInterval = 100
+                        do {
+                            let postData = try encoder.encode(searchData)
+                            NetworkManager.shared.makeRequest(request: success, postData: postData, callback: callback)
+                        } catch {
+                            callback(.failure(error))
+                        }
+                    case .failure(let failure):
+                        callback(.failure(failure))
+                    }
+                }
+            case .failure(let failure):
+                callback(.failure(failure))
+            }
+        }
+    }
+    
     private func sendWorkRequest(user: User, location: SharedLocation, callback: @escaping (Result<OptionalUser,Error>) -> Void) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             switch result {
