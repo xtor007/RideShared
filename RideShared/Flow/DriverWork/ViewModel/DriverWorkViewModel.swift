@@ -11,7 +11,13 @@ import MapKit
 class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var location: LocationWithTitle?
-    var userLocation: CLLocationCoordinate2D?
+    var userLocation: CLLocationCoordinate2D? {
+        didSet {
+            if let userLocation, state == .toClient || state == .toFinish {
+                sendLocation(location: userLocation)
+            }
+        }
+    }
     @Published var client: User?
     
     @Published var state = DriverWorkState.notWorking
@@ -84,6 +90,21 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
                 }
             } else {
                 state = .notWorking
+            }
+        }
+    }
+    
+    func sendLocation(location: CLLocationCoordinate2D) {
+        if let id {
+            let driverLocation = DriverLocation(
+                id: id,
+                location: SharedLocation(
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                )
+            )
+            provider.sendLocation(location: driverLocation) { _ in
+                return
             }
         }
     }

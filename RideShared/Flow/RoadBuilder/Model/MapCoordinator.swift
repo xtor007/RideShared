@@ -50,6 +50,14 @@ extension MapViewRepresentable {
         }
         
         func addDriver(withCoordinate coordinate: CLLocationCoordinate2D) {
+            let annotationsForRemove = parent.mapView.annotations.compactMap { annotation in
+                if annotation.title == reuseDriverId {
+                    return annotation
+                } else {
+                    return nil
+                }
+            }
+            parent.mapView.removeAnnotations(annotationsForRemove)
             let driverAnnotation = MKPointAnnotation()
             driverAnnotation.coordinate = coordinate
             driverAnnotation.title = reuseDriverId

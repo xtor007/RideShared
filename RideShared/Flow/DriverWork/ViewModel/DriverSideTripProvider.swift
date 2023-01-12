@@ -55,6 +55,32 @@ class DriverSideTripProvider {
         }
     }
     
+    func sendLocation(location: DriverLocation, callback: @escaping (Result<Void, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            self.postLocation(location: location) { result in
+                DispatchQueue.main.async {
+                    callback(result)
+                }
+            }
+        }
+    }
+    
+    private func postLocation(location: DriverLocation, callback: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string:  ServerPath.postDriverLocation.path) else {
+            callback(.failure(NetworkError.failedURL()))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let postData = try JSONEncoder().encode(location)
+            NetworkManager.shared.makeRequest(request: request, postData: postData, callback: callback)
+        } catch {
+            callback(.failure(error))
+        }
+    }
+    
     private func getID(user: User, searchData: SearchClientData, callback: @escaping (Result<TripID, Error>) -> Void) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             let encoder = JSONEncoder()

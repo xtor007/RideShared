@@ -33,7 +33,6 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         self.userLocation = location.coordinate
         self.locationAdress = location.description
-        locationManager.stopUpdatingLocation()
     }
     
 }
