@@ -11,11 +11,29 @@ import MapKit
 class RoadBuilderViewModel: ObservableObject {
     
     @Published var driver: User?
-    @Published var userLocation: CLLocationCoordinate2D?
+    @Published var userLocation: CLLocationCoordinate2D? {
+        didSet {
+            if let userLocation {
+                if let finalLocation, state == .road {
+                    if abs(userLocation.longitude - finalLocation.coordinate.longitude) < 0.001 && abs(userLocation.latitude - finalLocation.coordinate.latitude) < 0.001 {
+                        provider.isDriverLocationLoading = false
+                        state = .ended
+                    }
+                }
+            }
+        }
+    }
     @Published var driverLocation: SharedLocation?
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear
     @Published var isLoadingInConfirmRoad = false
+    
+    @Published var rating = 5.0
+    @Published var musicRating = 5.0
+    @Published var speedRating = 5.0
+    
+    @Published var willShowError = false
+    @Published var errorMessage = ""
     
     let provider = UserSideTripProvider()
     
@@ -87,6 +105,27 @@ class RoadBuilderViewModel: ObservableObject {
         } else {
             state = .buildRoad
             //CODE
+        }
+    }
+    
+    func finishTrip() {
+        if let id {
+            provider.setRating(rating: Rating(id: id, rating: rating, music: musicRating, speed: speedRating)) { result in
+                switch result {
+                case .success(_):
+                    self.driver = nil
+                    self.driverLocation = nil
+                    self.willShowingSearchView = false
+                    self.isLoadingInConfirmRoad = false
+                    self.rating = 5.0
+                    self.musicRating = 5.0
+                    self.speedRating = 5.0
+                    self.state = .clear
+                case .failure(let failure):
+                    self.errorMessage = failure.localizedDescription
+                    self.willShowError = true
+                }
+            }
         }
     }
     

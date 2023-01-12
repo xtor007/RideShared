@@ -71,6 +71,32 @@ class UserSideTripProvider {
         }
     }
     
+    func setRating(rating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            self.postRating(rating: rating) { result in
+                DispatchQueue.main.async {
+                    callback(result)
+                }
+            }
+        }
+    }
+    
+    private func postRating(rating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string:  ServerPath.postRating.path) else {
+            callback(.failure(NetworkError.failedURL()))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let postData = try JSONEncoder().encode(rating)
+            NetworkManager.shared.makeRequest(request: request, postData: postData, callback: callback)
+        } catch {
+            callback(.failure(error))
+        }
+    }
+    
     private func getDriverLocation(tripID: UUID, callback: @escaping (Result<SharedLocation, Error>) -> Void) {
         guard let url = URL(string:  ServerPath.getDriverLocation.path) else {
             callback(.failure(NetworkError.failedURL()))

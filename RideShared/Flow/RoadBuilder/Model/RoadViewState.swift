@@ -8,5 +8,5 @@
 import Foundation
 
 enum RoadViewState {
-    case clear, buildRoad, confirmDriver, road
+    case clear, buildRoad, confirmDriver, road, ended
 }

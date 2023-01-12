@@ -27,7 +27,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         context.coordinator.userLocationCoordinate = roadBuilderModel.userLocation
         switch roadBuilderModel.state {
-        case .clear:
+        case .clear, .ended:
             context.coordinator.clearMap()
         case .buildRoad, .confirmDriver:
             context.coordinator.clearMap()

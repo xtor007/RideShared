@@ -49,6 +49,7 @@ struct DriverWorkView: View {
                     }
                     Spacer()
                 }
+                .padding(.horizontal, Paddings.padding16)
             }
         }
         .overlay(

@@ -40,7 +40,25 @@ struct RoadBuilderView: View {
                 }
                 .padding(.horizontal, Paddings.padding16)
             }
+            if model.state == .ended {
+                VStack {
+                    Spacer()
+                    SetRatingView(
+                        rating: $model.rating,
+                        musicRating: $model.musicRating,
+                        speedRating: $model.speedRating
+                    ) {
+                        model.finishTrip()
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, Paddings.padding16)
+            }
         }
+        .overlay(
+            ErrorView(isShowing: $model.willShowError, title: Strings.Error.Error.title, message: model.errorMessage)
+                .transition(.opacity.animation(.default))
+        )
         .fullScreenCover(isPresented: $model.willShowingSearchView) {
             SearchLocationView() { isFinished in
                 model.willShowingSearchView = false
