@@ -41,6 +41,15 @@ struct DriverWorkView: View {
                 }
                 .padding(.horizontal, Paddings.padding16)
             }
+            if driverWorkModel.state == .ended {
+                VStack {
+                    Spacer()
+                    SetRatingView(rating: $driverWorkModel.clientRating) {
+                        self.driverWorkModel.finishTrip()
+                    }
+                    Spacer()
+                }
+            }
         }
         .overlay(
             ErrorView(isShowing: $driverWorkModel.willShowError, title: Strings.Error.Error.title, message: driverWorkModel.errorMessage)

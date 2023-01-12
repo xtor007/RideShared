@@ -20,11 +20,19 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
                         state = .toFinish
                     }
                 }
+                if let way, state == .toFinish {
+                    if abs(userLocation.longitude - way.finish.longitude) < 0.001 && abs(userLocation.latitude - way.finish.latitude) < 0.001 {
+                        state = .ended
+
+                    }
+                }
             }
         }
     }
     @Published var client: User?
     @Published var way: SharedWay?
+    
+    @Published var clientRating = 5.0
     
     @Published var state = DriverWorkState.notWorking
     let provider = DriverSideTripProvider()
@@ -114,6 +122,24 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
             )
             provider.sendLocation(location: driverLocation) { _ in
                 return
+            }
+        }
+    }
+    
+    func finishTrip() {
+        if let id {
+            provider.setRating(clientRating: Rating(id: id, rating: clientRating, music: nil, speed: nil)) { result in
+                switch result {
+                case .success(_):
+                    self.location = nil
+                    self.client = nil
+                    self.way = nil
+                    self.clientRating = 5.0
+                    self.state = .notWorking
+                case .failure(let failure):
+                    self.errorMessage = failure.localizedDescription
+                    self.willShowError = true
+                }
             }
         }
     }

@@ -11,7 +11,7 @@ import MapKit
 class RoadBuilderViewModel: ObservableObject {
     
     @Published var driver: User?
-    var userLocation: CLLocationCoordinate2D?
+    @Published var userLocation: CLLocationCoordinate2D?
     @Published var driverLocation: SharedLocation?
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear

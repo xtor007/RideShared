@@ -88,6 +88,32 @@ class DriverSideTripProvider {
         }
     }
     
+    func setRating(clientRating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            self.postRating(clientRating: clientRating) { result in
+                DispatchQueue.main.async {
+                    callback(result)
+                }
+            }
+        }
+    }
+    
+    private func postRating(clientRating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string:  ServerPath.postRating.path) else {
+            callback(.failure(NetworkError.failedURL()))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let postData = try JSONEncoder().encode(clientRating)
+            NetworkManager.shared.makeRequest(request: request, postData: postData, callback: callback)
+        } catch {
+            callback(.failure(error))
+        }
+    }
+    
     private func getWay(id: UUID, callback: @escaping (Result<SharedWay, Error>) -> Void) {
         guard let url = URL(string:  ServerPath.getWay.path) else {
             callback(.failure(NetworkError.failedURL()))

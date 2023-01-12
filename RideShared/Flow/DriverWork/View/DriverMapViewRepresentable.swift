@@ -26,7 +26,7 @@ struct DriverMapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         context.coordinator.userLocationCoordinate = driverWorkModel.userLocation
         switch state {
-        case .notWorking, .searching, .confirmClient:
+        case .notWorking, .searching, .confirmClient, .ended:
             context.coordinator.clearMap()
         case .toClient:
             context.coordinator.clearMap()
