@@ -19,6 +19,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
         }
     }
     @Published var client: User?
+    @Published var way: SharedWay?
     
     @Published var state = DriverWorkState.notWorking
     let provider = DriverSideTripProvider()
@@ -83,6 +84,9 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
                             return
                         }
                         self.id = id
+                        self.provider.getRoadData(id: id) { way in
+                            self.way = way
+                        }
                         self.state = .toClient
                     case .failure(_):
                         self.state = .notWorking

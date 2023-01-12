@@ -65,6 +65,45 @@ class DriverSideTripProvider {
         }
     }
     
+    func getRoadData(id: UUID, callback: @escaping (SharedWay) -> Void) {
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global(qos: .background).async {
+            var way: SharedWay?
+            while way == nil {
+                self.getWay(id: id) { result in
+                    switch result {
+                    case .success(let success):
+                        way = success
+                        semaphore.signal()
+                    case .failure(let failure):
+                        semaphore.signal()
+                        return
+                    }
+                }
+                semaphore.wait()
+            }
+            DispatchQueue.main.async {
+                callback(way!)
+            }
+        }
+    }
+    
+    private func getWay(id: UUID, callback: @escaping (Result<SharedWay, Error>) -> Void) {
+        guard let url = URL(string:  ServerPath.getWay.path) else {
+            callback(.failure(NetworkError.failedURL()))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let postData = try JSONEncoder().encode(id)
+            NetworkManager.shared.makeRequest(request: request, postData: postData, callback: callback)
+        } catch {
+            callback(.failure(error))
+        }
+    }
+    
     private func postLocation(location: DriverLocation, callback: @escaping (Result<Void, Error>) -> Void) {
         guard let url = URL(string:  ServerPath.postDriverLocation.path) else {
             callback(.failure(NetworkError.failedURL()))

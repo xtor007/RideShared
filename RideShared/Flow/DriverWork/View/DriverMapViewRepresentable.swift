@@ -34,7 +34,19 @@ struct DriverMapViewRepresentable: UIViewRepresentable {
 //                context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
 //            }
 //        }
-        print("OK")
+        switch state {
+        case .notWorking, .searching, .confirmClient:
+            context.coordinator.clearMap()
+        case .toClient:
+            if let clientCoordinate = driverWorkModel.way?.start {
+                let coordinates2D = CLLocationCoordinate2D(latitude: clientCoordinate.latitude, longitude: clientCoordinate.longitude)
+                context.coordinator.addAnnotation(forCoordinate: coordinates2D)
+                context.coordinator.configurePolyline(withGoalCoordinates: coordinates2D)
+            }
+        case .toFinish:
+            context.coordinator.clearMap()
+            return
+        }
     }
     
     func makeCoordinator() -> MapCoordinator {
