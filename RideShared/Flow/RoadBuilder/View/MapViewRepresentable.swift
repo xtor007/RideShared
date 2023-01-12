@@ -25,6 +25,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        context.coordinator.userLocationCoordinate = roadBuilderModel.userLocation
         switch roadBuilderModel.state {
         case .clear:
             context.coordinator.clearMap()
@@ -35,8 +36,11 @@ struct MapViewRepresentable: UIViewRepresentable {
                 context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
             }
         case .road:
+            context.coordinator.clearMap()
             if let driverLocation = roadBuilderModel.driverLocation, let finishCoordinate = searchLocationViewModel.location?.coordinate {
                 let driverCoordinate = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude).coordinate
+                context.coordinator.addAnnotation(forCoordinate: finishCoordinate)
+                context.coordinator.configurePolyline(withGoalCoordinates: finishCoordinate)
                 context.coordinator.addDriver(withCoordinate: driverCoordinate)
             }
         }

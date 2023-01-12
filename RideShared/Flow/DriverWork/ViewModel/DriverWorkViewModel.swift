@@ -11,10 +11,15 @@ import MapKit
 class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var location: LocationWithTitle?
-    var userLocation: CLLocationCoordinate2D? {
+    @Published var userLocation: CLLocationCoordinate2D? {
         didSet {
             if let userLocation, state == .toClient || state == .toFinish {
                 sendLocation(location: userLocation)
+                if let way, state == .toClient {
+                    if abs(userLocation.longitude - way.start.longitude) < 0.001 && abs(userLocation.latitude - way.start.latitude) < 0.001 {
+                        state = .toFinish
+                    }
+                }
             }
         }
     }

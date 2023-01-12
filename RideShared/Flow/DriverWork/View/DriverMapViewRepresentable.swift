@@ -24,20 +24,12 @@ struct DriverMapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-//        switch state {
-//        case .clear:
-//            context.coordinator.clearMap()
-//        case .buildRoad:
-//            context.coordinator.clearMap()
-//            if let coordinate = searchLocationModel.location?.coordinate {
-//                context.coordinator.addAnnotation(forCoordinate: coordinate)
-//                context.coordinator.configurePolyline(withGoalCoordinates: coordinate)
-//            }
-//        }
+        context.coordinator.userLocationCoordinate = driverWorkModel.userLocation
         switch state {
         case .notWorking, .searching, .confirmClient:
             context.coordinator.clearMap()
         case .toClient:
+            context.coordinator.clearMap()
             if let clientCoordinate = driverWorkModel.way?.start {
                 let coordinates2D = CLLocationCoordinate2D(latitude: clientCoordinate.latitude, longitude: clientCoordinate.longitude)
                 context.coordinator.addAnnotation(forCoordinate: coordinates2D)
@@ -45,7 +37,11 @@ struct DriverMapViewRepresentable: UIViewRepresentable {
             }
         case .toFinish:
             context.coordinator.clearMap()
-            return
+            if let clientCoordinate = driverWorkModel.way?.finish {
+                let coordinates2D = CLLocationCoordinate2D(latitude: clientCoordinate.latitude, longitude: clientCoordinate.longitude)
+                context.coordinator.addAnnotation(forCoordinate: coordinates2D)
+                context.coordinator.configurePolyline(withGoalCoordinates: coordinates2D)
+            }
         }
     }
     
