@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ErrorView: View {
-    
+
     @Binding var isShowing: Bool
     let title: String
     let message: String
-    
+
     private let size: CGFloat = 250
-    
+
     var body: some View {
         ZStack {
             if isShowing {
@@ -46,7 +46,7 @@ struct ErrorView: View {
             }
         }
     }
-    
+
 }
 
 struct ErrorView_Previews: PreviewProvider {

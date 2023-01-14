@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct QuestionnaireView: View {
-    
+
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var userManager: UserManager
-    
-    var appState: Binding<AppState>? = nil
-    
+
+    var appState: Binding<AppState>?
+
     @State var musicalPreferences = ""
     @State var genderIndex = 0
     @State var speedIndex = 0
     @State var carColorIndex = 0
     @State var leftAgeIndex = 18
     @State var rightAgeIndex = 99
-    
+
     @State var priorities = Array(repeating: BlockImportance.notMatter, count: 5)
-    
+
     @State var isLoading = false
 
     var body: some View {
-        
+
         let blocks: [QuestionnaireBlock] = [
             .music($musicalPreferences),
             .driverGender($genderIndex),
@@ -34,7 +34,7 @@ struct QuestionnaireView: View {
             .speed($speedIndex),
             .carColor($carColorIndex)
         ]
-        
+
         VStack {
             Text(Strings.Questionnaire.title)
                 .multilineTextAlignment(.center)
@@ -62,12 +62,17 @@ struct QuestionnaireView: View {
             Color(Asset.Colors.backgroundColor.color).edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     // Close keyboard
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    UIApplication.shared
+                        .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }
         )
         .disabled(isLoading)
         .overlay(
-            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Questionnaire.title, message: userManager.errorMessage)
+            ErrorView(
+                isShowing: $userManager.willShowError,
+                title: Strings.Error.Questionnaire.title,
+                message: userManager.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .overlay {
@@ -76,15 +81,15 @@ struct QuestionnaireView: View {
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }
-        .onChange(of: userManager.willShowError) { newValue in
+        .onChange(of: userManager.willShowError) { _ in
             isLoading = false
         }
         .onAppear {
             setPrioritets()
         }
-        
+
     }
-    
+
     private func setPrioritets() {
         if let priorities = userManager.user.selectionParametrs {
             self.priorities = priorities.getPriorities().compactMap({ value in
@@ -110,7 +115,7 @@ struct QuestionnaireView: View {
             }
         }
     }
-    
+
     private func save() {
         if musicalPreferences.isEmpty && priorities[0] != .notMatter {
             userManager.errorMessage = Strings.Error.Questionnaire.musicField

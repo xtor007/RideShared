@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SearchLocationView: View {
-    
+
     let close: (Bool) -> Void
-    
+
     @EnvironmentObject var model: SearchLocationViewModel
-    
+
     var body: some View {
         VStack {
-            
+
             HStack {
                 Spacer()
                 Button {
@@ -26,11 +26,11 @@ struct SearchLocationView: View {
                 }
 
             }
-            
+
             TextField(Strings.SearchLocation.where, text: $model.locationName)
                 .textFieldStyle(.roundedBorder)
                 .frame(height: 50)
-            
+
             ScrollView(showsIndicators: false) {
                 VStack {
                     ForEach(model.locations, id: \.self) { location in
@@ -44,18 +44,10 @@ struct SearchLocationView: View {
                     }
                 }
             }
-            
+
         }
         .padding(.horizontal, Paddings.padding16)
         .background(Asset.Colors.backgroundColor.swiftUIColor)
     }
-    
-}
 
-struct SearchLocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchLocationView() { a in
-            print(a)
-        }
-    }
 }

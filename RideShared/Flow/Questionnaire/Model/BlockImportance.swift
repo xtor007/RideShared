@@ -8,7 +8,7 @@
 import Foundation
 
 enum BlockImportance: Int, CaseIterable {
-    
+
     var title: String {
         switch self {
         case .notMatter:
@@ -21,10 +21,10 @@ enum BlockImportance: Int, CaseIterable {
             return Strings.Importance.hight
         }
     }
-    
+
     case notMatter = 0
     case low = 1
     case medium = 2
     case hight = 3
-    
+
 }

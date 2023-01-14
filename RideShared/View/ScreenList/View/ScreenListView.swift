@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ScreenListView: View {
-    
+
     let data: [any ScreenListElement]
-    
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: Paddings.padding20) {
@@ -20,5 +20,5 @@ struct ScreenListView: View {
             }
         }
     }
-    
+
 }

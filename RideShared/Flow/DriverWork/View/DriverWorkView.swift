@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DriverWorkView: View {
-    
+
     @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var driverWorkModel: DriverWorkViewModel
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             DriverMapViewRepresentable(state: $driverWorkModel.state)
@@ -53,7 +53,11 @@ struct DriverWorkView: View {
             }
         }
         .overlay(
-            ErrorView(isShowing: $driverWorkModel.willShowError, title: Strings.Error.Error.title, message: driverWorkModel.errorMessage)
+            ErrorView(
+                isShowing: $driverWorkModel.willShowError,
+                title: Strings.Error.Error.title,
+                message: driverWorkModel.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .onReceive(LocationManager.shared.$userLocation) { location in
@@ -62,7 +66,7 @@ struct DriverWorkView: View {
             }
         }
     }
-    
+
 }
 
 struct DriverWorkView_Previews: PreviewProvider {

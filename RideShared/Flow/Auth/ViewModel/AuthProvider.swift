@@ -9,7 +9,8 @@ import SwiftUI
 
 class AuthProvider {
 
-    func signIn(manager: AuthManager, rootViewController: UIViewController, callback: @escaping (Result<User, Error>) -> Void) {
+    func signIn(manager: AuthManager, rootViewController: UIViewController,
+                callback: @escaping (Result<User, Error>) -> Void) {
         manager.singIn(rootViewController: rootViewController) { result in
             switch result {
             case .success(let success):
@@ -27,7 +28,7 @@ class AuthProvider {
             }
         }
     }
-    
+
     private func auth(token: String, callback: @escaping (Result<User, Error>) -> Void) {
         NetworkManager.shared.createRequest(withToken: token, link: ServerPath.singIn.path) { result in
             switch result {

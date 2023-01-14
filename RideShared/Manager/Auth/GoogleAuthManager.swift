@@ -9,7 +9,7 @@ import Foundation
 import GoogleSignIn
 
 class GoogleAuthManager: AuthManager {
-    
+
     func singIn(rootViewController: UIViewController, _ handler: @escaping (Result<GIDSignInResult, Error>) -> Void) {
         let clientID = EnviromentVariables.googleClientID
         let config = GIDConfiguration(clientID: clientID)
@@ -22,5 +22,5 @@ class GoogleAuthManager: AuthManager {
             handler(.success(result))
         }
     }
-    
+
 }

@@ -8,22 +8,22 @@
 import SwiftUI
 
 class ChooseDriverDataViewModel: ObservableObject {
-    
+
     @ObservedObject var userManager: UserManager
-    
+
     let provider = ChooseDriverDataProvider()
-    
+
     @Binding var isPresented: Bool
-    
+
     @State var genderIndex = 0
     @State var dateOfBirth = Date(timeIntervalSince1970: 0)
     @State var yourCarColorIndex = 0
-    
+
     init(isPresented: Binding<Bool>, manager: UserManager) {
         self._isPresented = isPresented
         self.userManager = manager
     }
-    
+
     func saveData() {
         userManager.user.taxiData = TaxiData(
             isConfirmed: false,
@@ -39,7 +39,7 @@ class ChooseDriverDataViewModel: ObservableObject {
         }
         provider.saveDriverData(user: userManager.user) { result in
             switch result {
-            case .success(_):
+            case .success:
                 return
             case .failure(let failure):
                 self.userManager.user.taxiData = nil
@@ -48,5 +48,5 @@ class ChooseDriverDataViewModel: ObservableObject {
             }
         }
     }
-    
+
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SearchLocationField: View {
-    
+
     @Binding var willPresentSearch: Bool
-    
+
     var body: some View {
         HStack {
             Text(Strings.SearchLocation.where)

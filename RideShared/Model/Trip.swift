@@ -22,5 +22,13 @@ struct Trip: Codable, Hashable {
 }
 
 extension Trip {
-    static let preview = Trip(driverEmail: "driver@m.com", clientEmail: "client@m.com", status: 1, date: .now, start: "A", finish: "B", price: 40)
+    static let preview = Trip(
+        driverEmail: "driver@m.com",
+        clientEmail: "client@m.com",
+        status: 1,
+        date: .now,
+        start: "A",
+        finish: "B",
+        price: 40
+    )
 }

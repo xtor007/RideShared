@@ -11,9 +11,9 @@ struct QuestionnaireBlockView: View {
 
     let blockName: String
     let contentView: AnyView
-    
+
     @State private var selectedIndex: Int
-    
+
     @Binding var priority: BlockImportance
 
     var body: some View {

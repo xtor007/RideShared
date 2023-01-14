@@ -9,13 +9,14 @@ import SwiftUI
 import MapKit
 
 class RoadBuilderViewModel: ObservableObject {
-    
+
     @Published var driver: User?
     @Published var userLocation: CLLocationCoordinate2D? {
         didSet {
             if let userLocation {
                 if let finalLocation, state == .road {
-                    if abs(userLocation.longitude - finalLocation.coordinate.longitude) < 0.001 && abs(userLocation.latitude - finalLocation.coordinate.latitude) < 0.001 {
+                    if abs(userLocation.longitude - finalLocation.coordinate.longitude) < 0.001
+                        && abs(userLocation.latitude - finalLocation.coordinate.latitude) < 0.001 {
                         provider.isDriverLocationLoading = false
                         state = .ended
                     }
@@ -27,20 +28,20 @@ class RoadBuilderViewModel: ObservableObject {
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear
     @Published var isLoadingInConfirmRoad = false
-    
+
     @Published var rating = 5.0
     @Published var musicRating = 5.0
     @Published var speedRating = 5.0
-    
+
     @Published var willShowError = false
     @Published var errorMessage = ""
-    
+
     let provider = UserSideTripProvider()
-    
+
     var finalLocation: LocationWithTitle?
     var price: Double?
     var id: UUID?
-    
+
     func computePrice(forLocation location: LocationWithTitle?) -> Double {
         guard let goalLocation = location?.coordinate else {
             return 0
@@ -54,7 +55,7 @@ class RoadBuilderViewModel: ObservableObject {
         price = PriceManager.shared.getPrice(forDistance: distance)
         return price!
     }
-    
+
     func confirmRoad(location: LocationWithTitle?, user: User) {
         isLoadingInConfirmRoad = true
         finalLocation = location
@@ -68,12 +69,12 @@ class RoadBuilderViewModel: ObservableObject {
                 self.state = .confirmDriver
                 self.driver = success
                 self.isLoadingInConfirmRoad = false
-            case .failure(_):
+            case .failure:
                 self.isLoadingInConfirmRoad = false
             }
         }
     }
-    
+
     func confirmDriver(isConfirmed: Bool, forUser user: User) {
         if isConfirmed {
             if let driver, let userLocation, let finalLocation, let price {
@@ -82,8 +83,16 @@ class RoadBuilderViewModel: ObservableObject {
                     searchData: SearchDriverData(
                         driver: driver,
                         way: SharedWay(
-                            start: SharedLocation(latitude: userLocation.latitude, longitude: userLocation.longitude, description: LocationManager.shared.locationAdress),
-                            finish: SharedLocation(latitude: finalLocation.coordinate.latitude, longitude: finalLocation.coordinate.longitude, description: finalLocation.title)
+                            start: SharedLocation(
+                                latitude: userLocation.latitude,
+                                longitude: userLocation.longitude,
+                                description: LocationManager.shared.locationAdress
+                            ),
+                            finish: SharedLocation(
+                                latitude: finalLocation.coordinate.latitude,
+                                longitude: finalLocation.coordinate.longitude,
+                                description: finalLocation.title
+                            )
                         ),
                         price: price
                     )
@@ -97,22 +106,25 @@ class RoadBuilderViewModel: ObservableObject {
                         self.id = id
                         self.state = .road
                         self.observeDriverLocation()
-                    case .failure(_):
+                    case .failure:
                         self.state = .buildRoad
                     }
                 }
             }
         } else {
             state = .buildRoad
-            //CODE
         }
     }
-    
+
     func finishTrip() {
         if let id {
-            provider.setRating(rating: Rating(id: id, rating: rating, music: musicRating, speed: speedRating)) { result in
+            provider.setRating(rating: Rating(
+                id: id, rating: rating,
+                music: musicRating,
+                speed: speedRating
+            )) { result in
                 switch result {
-                case .success(_):
+                case .success:
                     self.driver = nil
                     self.driverLocation = nil
                     self.willShowingSearchView = false
@@ -128,7 +140,7 @@ class RoadBuilderViewModel: ObservableObject {
             }
         }
     }
-    
+
     private func observeDriverLocation() {
         if let id {
             provider.observeDriverLocation(tripID: id) { result in
@@ -137,11 +149,11 @@ class RoadBuilderViewModel: ObservableObject {
                     withAnimation {
                         self.driverLocation = success
                     }
-                case .failure(_):
+                case .failure:
                     return
                 }
             }
         }
     }
-    
+
 }

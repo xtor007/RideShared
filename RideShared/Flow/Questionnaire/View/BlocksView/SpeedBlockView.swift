@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SpeedBlockView: View {
-    
+
     @Binding var speedIndex: Int
-    
+
     var body: some View {
         Picker("", selection: $speedIndex) {
             ForEach(0..<Speed.allCases.count, id: \.self) { index in
@@ -19,7 +19,7 @@ struct SpeedBlockView: View {
         }
         .pickerStyle(.segmented)
     }
-    
+
 }
 
 struct SpeedBlockView_Previews: PreviewProvider {

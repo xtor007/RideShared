@@ -12,7 +12,7 @@ import GoogleSignIn
 struct RideSharedApp: App {
 
     @State var state = AppState.notAuthorized
-    
+
     @StateObject var roadBuilderModel = RoadBuilderViewModel()
     @StateObject var driverLocationModel = DriverWorkViewModel()
     @StateObject var searchLocationViewModel = SearchLocationViewModel()

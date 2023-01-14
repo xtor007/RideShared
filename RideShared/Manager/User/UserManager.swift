@@ -8,9 +8,9 @@
 import SwiftUI
 
 class UserManager: ObservableObject {
-    
+
     private let provider = UserProvider()
-    
+
     @Published var user: User {
         didSet {
             provider.updateUser(newValue: self.user) { result in
@@ -27,7 +27,7 @@ class UserManager: ObservableObject {
     @Published private(set) var avatar: UIImage
     @Published var willShowError = false
     @Published var errorMessage = ""
-    
+
     init(user: User) {
         self.user = user
         avatar = Asset.Images.defaultAvatar.image
@@ -36,11 +36,11 @@ class UserManager: ObservableObject {
                 switch result {
                 case .success(let success):
                     self.avatar = success
-                case .failure(_):
+                case .failure:
                     break
                 }
             }
         }
     }
-    
+
 }

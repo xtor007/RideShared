@@ -8,7 +8,7 @@
 import Foundation
 
 enum CarColor: Int, CaseIterable {
-    
+
     var title: String {
         switch self {
         case .white:
@@ -19,9 +19,9 @@ enum CarColor: Int, CaseIterable {
             return Strings.CarColor.black
         }
     }
-    
+
     case white = 0
     case light = 1
     case black = 2
-    
+
 }

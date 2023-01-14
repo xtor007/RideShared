@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HistoryView: View {
-    
+
     @EnvironmentObject var userManager: UserManager
-    
+
     @ObservedObject var model: HistroryViewModel
-    
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: Paddings.padding10) {
@@ -32,11 +32,19 @@ struct HistoryView: View {
         .frame(maxWidth: .infinity)
         .padding(Paddings.padding16)
         .overlay(
-            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Questionnaire.title, message: userManager.errorMessage)
+            ErrorView(
+                isShowing: $userManager.willShowError,
+                title: Strings.Error.Questionnaire.title,
+                message: userManager.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .overlay(
-            ErrorView(isShowing: $model.willShowError, title: Strings.Error.Questionnaire.title, message: model.errorMessage)
+            ErrorView(
+                isShowing: $model.willShowError,
+                title: Strings.Error.Questionnaire.title,
+                message: model.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .overlay {

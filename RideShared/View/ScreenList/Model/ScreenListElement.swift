@@ -8,8 +8,8 @@
 import SwiftUI
 
 protocol ScreenListElement {
-    
+
     var title: String { get }
     var content: AnyView { get }
-    
+
 }

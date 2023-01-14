@@ -9,9 +9,9 @@ import SwiftUI
 import GoogleSignIn
 
 struct GoogleAuthButton: View {
-    
+
     @EnvironmentObject var model: AuthViewModel
-    
+
     var body: some View {
         HStack {
             Image(uiImage: Asset.Images.googleIcon.image)
@@ -41,7 +41,7 @@ struct GoogleAuthButton: View {
           GIDSignIn.sharedInstance.restorePreviousSignIn { _, _ in}
         }
     }
-    
+
 }
 
 struct GoogleAuthButton_Previews: PreviewProvider {

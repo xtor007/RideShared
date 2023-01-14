@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DriverInfoView: View {
-    
+
     @EnvironmentObject var userManager: UserManager
-    
+
     @State var isShowingChooseData = false
-    
+
     var body: some View {
         content()
             .foregroundColor(Asset.Colors.textColor.swiftUIColor)
@@ -21,7 +21,11 @@ struct DriverInfoView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Asset.Colors.backgroundColor.swiftUIColor.edgesIgnoringSafeArea(.all))
             .overlay(
-                ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
+                ErrorView(
+                    isShowing: $userManager.willShowError,
+                    title: Strings.Error.Error.title,
+                    message: userManager.errorMessage
+                )
                     .transition(.opacity.animation(.default))
             )
             .fullScreenCover(isPresented: $isShowingChooseData) {
@@ -33,7 +37,7 @@ struct DriverInfoView: View {
                 )
             }
     }
-    
+
     @ViewBuilder
     private func content() -> some View {
         if let taxiData = userManager.user.taxiData {
@@ -41,9 +45,17 @@ struct DriverInfoView: View {
                 VStack(alignment: .leading, spacing: Paddings.padding20) {
                     HStack {
                         Circle()
-                            .fill(taxiData.isConfirmed ? Asset.Colors.confirmed.swiftUIColor : Asset.Colors.notConfirmed.swiftUIColor)
+                            .fill(
+                                taxiData.isConfirmed
+                                  ? Asset.Colors.confirmed.swiftUIColor
+                                  : Asset.Colors.notConfirmed.swiftUIColor
+                            )
                             .frame(width: 16, height: 16)
-                        Text(taxiData.isConfirmed ? Strings.DriverInfo.Status.confirmed : Strings.DriverInfo.Status.notConfirmed)
+                        Text(
+                            taxiData.isConfirmed
+                            ? Strings.DriverInfo.Status.confirmed
+                            : Strings.DriverInfo.Status.notConfirmed
+                        )
                     }
                     Text(userManager.user.name)
                         .font(.title)

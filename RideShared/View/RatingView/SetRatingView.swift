@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SetRatingView: View {
-    
+
     @Binding var rating: Double
     var musicRating: Binding<Double>?
     var speedRating: Binding<Double>?
     let callback: () -> Void
-    
+
     var body: some View {
         VStack(spacing: Paddings.padding20) {
             Text(Strings.Rating.rate)
@@ -46,7 +46,7 @@ struct SetRatingView: View {
                 .cornerRadius(20)
         )
     }
-    
+
 }
 
 struct SetRatingView_Previews: PreviewProvider {

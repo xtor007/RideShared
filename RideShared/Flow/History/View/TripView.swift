@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TripView: View {
-    
+
     let date: Date
     let price: Double
     let start: String
     let finish: String
-    
+
     var body: some View {
         VStack(spacing: Paddings.padding8) {
             HStack {
@@ -31,7 +31,7 @@ struct TripView: View {
         }
         .foregroundColor(Asset.Colors.textColor.swiftUIColor)
     }
-    
+
 }
 
 struct TripView_Previews: PreviewProvider {

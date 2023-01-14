@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ConfirmRoadView: View {
-    
+
     @EnvironmentObject var roadBuilderModel: RoadBuilderViewModel
     @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
     @EnvironmentObject var userManager: UserManager
-    
+
     var body: some View {
         VStack {
-            
+
             VStack(spacing: Paddings.padding0) {
                 Text(Strings.ConfirmRoad.currentLocation)
                     .padding(Paddings.padding16)
@@ -36,12 +36,11 @@ struct ConfirmRoadView: View {
                 }
             }
             .foregroundColor(Asset.Colors.textColor.swiftUIColor)
-            
+
             Text(roadBuilderModel.computePrice(forLocation: searchLocationViewModel.location).price)
                 .foregroundColor(Asset.Colors.textColor.swiftUIColor)
                 .font(.system(size: 65, weight: .semibold))
-            
-            
+
             HStack {
                 BigButton(title: Strings.Button.close) {
                     withAnimation {
@@ -52,7 +51,7 @@ struct ConfirmRoadView: View {
                     roadBuilderModel.confirmRoad(location: searchLocationViewModel.location, user: userManager.user)
                 }
             }
-            
+
         }
         .padding(Paddings.padding20)
         .disabled(roadBuilderModel.isLoadingInConfirmRoad)
@@ -64,5 +63,5 @@ struct ConfirmRoadView: View {
         }
         .background(Asset.Colors.backgroundColor.swiftUIColor.cornerRadius(20).ignoresSafeArea())
     }
-    
+
 }

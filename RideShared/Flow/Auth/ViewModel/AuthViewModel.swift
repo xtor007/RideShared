@@ -21,7 +21,7 @@ class AuthViewModel: ObservableObject {
         self.authManager = authManager
         self._appState = appState
     }
-    
+
     func buttonTapAction(rootViewController: UIViewController) {
         if !isLoading {
             withAnimation {
@@ -39,7 +39,9 @@ class AuthViewModel: ObservableObject {
             switch result {
             case .success(let success):
                 let userManager = UserManager(user: success)
-                self.appState = success.selectionParametrs == nil ? .questionnaire(manager: userManager) : .main(manager: userManager)
+                self.appState = success.selectionParametrs == nil
+                ? .questionnaire(manager: userManager)
+                : .main(manager: userManager)
             case .failure(let failure):
                 self.errorText = failure.localizedDescription
                 self.willShowingError = true

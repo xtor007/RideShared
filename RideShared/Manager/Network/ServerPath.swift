@@ -8,7 +8,7 @@
 import Foundation
 
 enum ServerPath {
-    
+
     var path: String {
         let path = EnviromentVariables.serverURL
         switch self {
@@ -38,7 +38,8 @@ enum ServerPath {
             return path + "/trip/postRating"
         }
     }
-    
-    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips, confirmDriver, confirmClient, getWay, getDriverLocation, postDriverLocation, postRating
-    
+
+    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips
+    case confirmDriver, confirmClient, getWay, getDriverLocation, postDriverLocation, postRating
+
 }

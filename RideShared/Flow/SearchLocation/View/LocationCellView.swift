@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LocationCellView: View {
-    
+
     let locationName: String
     let locationAdress: String
-    
+
     var body: some View {
         HStack {
             Image(systemName: "mappin.circle.fill")
@@ -26,7 +26,7 @@ struct LocationCellView: View {
             }
         }
     }
-    
+
 }
 
 struct LocationCellView_Previews: PreviewProvider {

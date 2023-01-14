@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RatingView: View {
-    
+
     @Binding var rating: Double
 
     var body: some View {

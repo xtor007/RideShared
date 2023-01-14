@@ -49,7 +49,8 @@ struct DoublePointSliderView: View {
                 Capsule()
                     .fill(Color(Asset.Colors.borderColor.color))
                     .frame(
-                        width: (rightPosition - leftPosition + rightTranslation - leftTranslation) * (maxValue - minValue),
+                        width: (rightPosition - leftPosition + rightTranslation - leftTranslation)
+                        * (maxValue - minValue),
                         height: DoubleSliderConstants.lineHeight
                     )
                     .offset(x: (leftPosition + leftTranslation) * (maxValue - minValue))
@@ -57,7 +58,9 @@ struct DoublePointSliderView: View {
                 SliderPointView(text: rightName)
                     .offset(
                         x: (rightPosition + rightTranslation) * (maxValue - minValue) - Paddings.padding10,
-                        y: DoubleSliderConstants.triangleSize + DoubleSliderConstants.triangleTopDistande + DoubleSliderConstants.pointSize / 2
+                        y: DoubleSliderConstants.triangleSize
+                        + DoubleSliderConstants.triangleTopDistande
+                        + DoubleSliderConstants.pointSize / 2
                     )
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -82,8 +85,11 @@ struct DoublePointSliderView: View {
 
                 SliderPointView(text: leftName)
                     .offset(
-                        x: (leftPosition + leftTranslation) * (maxValue - minValue) - DoubleSliderConstants.triangleSideDistance,
-                        y: DoubleSliderConstants.triangleSize + DoubleSliderConstants.triangleTopDistande + DoubleSliderConstants.pointSize / 2
+                        x: (leftPosition + leftTranslation)
+                        * (maxValue - minValue) - DoubleSliderConstants.triangleSideDistance,
+                        y: DoubleSliderConstants.triangleSize
+                        + DoubleSliderConstants.triangleTopDistande
+                        + DoubleSliderConstants.pointSize / 2
                     )
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -109,7 +115,12 @@ struct DoublePointSliderView: View {
             }
 
         }
-        .padding(.bottom, DoubleSliderConstants.triangleSize + DoubleSliderConstants.triangleTopDistande + DoubleSliderConstants.pointSize)
+        .padding(
+            .bottom,
+            DoubleSliderConstants.triangleSize
+            + DoubleSliderConstants.triangleTopDistande
+            + DoubleSliderConstants.pointSize
+        )
     }
 
     init(data: ClosedRange<Int>, leftIndex: Binding<Int>, rightIndex: Binding<Int>) {
@@ -124,7 +135,6 @@ struct DoublePointSliderView: View {
     }
 
 }
-
 
 struct DoublePointSliderView_Previews: PreviewProvider {
     static var previews: some View {

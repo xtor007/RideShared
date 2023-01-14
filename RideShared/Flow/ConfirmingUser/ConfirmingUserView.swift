@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ConfirmingUserView: View {
-    
+
     let user: User
     let callback: (Bool) -> Void
-    
+
     @State private var avatar = Asset.Images.defaultAvatar.image
 
     var body: some View {
         VStack(spacing: Paddings.padding20) {
-            
+
             HStack {
-                
+
                 Image(uiImage: avatar)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80)
                     .clipShape(Circle())
-                
+
                 Spacer()
-                
+
                 VStack(alignment: .leading, spacing: Paddings.padding10) {
                     Text(user.name)
                         .font(.bold(.title)())
@@ -48,9 +48,9 @@ struct ConfirmingUserView: View {
                     )
                 }
                 .foregroundColor(Color(Asset.Colors.textColor.color))
-                
+
             }
-            
+
             HStack {
                 BigButton(title: Strings.Button.close) {
                     callback(false)
@@ -59,7 +59,7 @@ struct ConfirmingUserView: View {
                     callback(true)
                 }
             }
-            
+
         }
         .padding(.horizontal, Paddings.padding16)
         .onAppear {
@@ -70,7 +70,7 @@ struct ConfirmingUserView: View {
                             switch result {
                             case .success(let success):
                                 self.avatar = success
-                            case .failure(_):
+                            case .failure:
                                 break
                             }
                         }

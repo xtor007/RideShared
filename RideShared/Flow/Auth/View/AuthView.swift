@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AuthView: View {
-    
+
     @EnvironmentObject var model: AuthViewModel
-    
+
     var body: some View {
         VStack {
             Spacer()
@@ -27,7 +27,7 @@ struct AuthView: View {
                 .transition(.opacity.animation(.default))
         )
     }
-    
+
 }
 
 struct AuthView_Previews: PreviewProvider {

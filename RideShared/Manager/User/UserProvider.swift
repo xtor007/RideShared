@@ -8,7 +8,7 @@
 import SwiftUI
 
 class UserProvider {
-    
+
     func updateUser(newValue: User, callback: @escaping (Result<Void, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.updateUser(user: newValue) { result in
@@ -18,7 +18,7 @@ class UserProvider {
             }
         }
     }
-    
+
     func loadAvatar(link: String, callback: @escaping (Result<UIImage, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             NetworkManager.shared.loadImage(link: link) { result in
@@ -28,7 +28,7 @@ class UserProvider {
             }
         }
     }
-    
+
     private func updateUser(user: User, callback: @escaping (Result<Void, Error>) -> Void) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             switch result {
@@ -46,5 +46,5 @@ class UserProvider {
             }
         }
     }
-    
+
 }

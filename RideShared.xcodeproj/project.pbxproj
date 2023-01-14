@@ -778,6 +778,7 @@
 			buildConfigurationList = FFD92115294E12CF00B89B35 /* Build configuration list for PBXNativeTarget "RideShared" */;
 			buildPhases = (
 				FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */,
+				FFD6198E2972D9F10025294C /* [SwiftLint] Validate Sources */,
 				FFD92103294E12CA00B89B35 /* Sources */,
 				FFD92104294E12CA00B89B35 /* Frameworks */,
 				FFD92105294E12CA00B89B35 /* Resources */,
@@ -852,6 +853,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FFD6198E2972D9F10025294C /* [SwiftLint] Validate Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Validate Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

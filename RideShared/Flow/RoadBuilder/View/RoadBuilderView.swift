@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct RoadBuilderView: View {
-    
+
     @EnvironmentObject var model: RoadBuilderViewModel
     @EnvironmentObject var searchLocationViewModel: SearchLocationViewModel
     @EnvironmentObject var userManager: UserManager
-    
-    let provider = UserSideTripProvider()
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
@@ -60,7 +58,7 @@ struct RoadBuilderView: View {
                 .transition(.opacity.animation(.default))
         )
         .fullScreenCover(isPresented: $model.willShowingSearchView) {
-            SearchLocationView() { isFinished in
+            SearchLocationView { isFinished in
                 model.willShowingSearchView = false
                 model.state = isFinished ? .buildRoad : .clear
             }
@@ -72,7 +70,8 @@ struct RoadBuilderView: View {
         }
         .onReceive(LocationManager.shared.$userLocation) { location in
             if let location {
-                model.userLocation = location            }
+                model.userLocation = location
+            }
         }
     }
 

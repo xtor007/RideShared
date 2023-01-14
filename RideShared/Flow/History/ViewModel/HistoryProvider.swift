@@ -8,8 +8,8 @@
 import Foundation
 
 class HistoryProvider {
-    
-    func loadTrips(forUser user: User, callback: @escaping (Result<[Trip],Error>) -> Void) {
+
+    func loadTrips(forUser user: User, callback: @escaping (Result<[Trip], Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.getTripsRequest(user: user) { result in
                 DispatchQueue.main.async {
@@ -18,8 +18,8 @@ class HistoryProvider {
             }
         }
     }
-    
-    private func getTripsRequest(user: User, callback: @escaping (Result<[Trip],Error>) -> Void) {
+
+    private func getTripsRequest(user: User, callback: @escaping (Result<[Trip], Error>) -> Void) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             switch result {
             case .success(let success):
@@ -36,5 +36,5 @@ class HistoryProvider {
             }
         }
     }
-    
+
 }

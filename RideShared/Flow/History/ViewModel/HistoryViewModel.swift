@@ -8,15 +8,15 @@
 import SwiftUI
 
 class HistroryViewModel: ObservableObject {
-    
+
     @Published var trips = [Trip]()
     @Published var isLoading = false
-    
+
     @Published var errorMessage = ""
     @Published var willShowError = false
-    
+
     private let provider = HistoryProvider()
-    
+
     func loadData(forUser user: User) {
         isLoading = true
         provider.loadTrips(forUser: user) { result in
@@ -32,5 +32,5 @@ class HistroryViewModel: ObservableObject {
             }
         }
     }
-    
+
 }

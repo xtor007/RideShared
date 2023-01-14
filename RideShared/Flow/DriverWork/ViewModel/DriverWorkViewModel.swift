@@ -9,19 +9,21 @@ import Foundation
 import MapKit
 
 class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
-    
+
     @Published var location: LocationWithTitle?
     @Published var userLocation: CLLocationCoordinate2D? {
         didSet {
             if let userLocation, state == .toClient || state == .toFinish {
                 sendLocation(location: userLocation)
                 if let way, state == .toClient {
-                    if abs(userLocation.longitude - way.start.longitude) < 0.001 && abs(userLocation.latitude - way.start.latitude) < 0.001 {
+                    if abs(userLocation.longitude - way.start.longitude) < 0.001
+                        && abs(userLocation.latitude - way.start.latitude) < 0.001 {
                         state = .toFinish
                     }
                 }
                 if let way, state == .toFinish {
-                    if abs(userLocation.longitude - way.finish.longitude) < 0.001 && abs(userLocation.latitude - way.finish.latitude) < 0.001 {
+                    if abs(userLocation.longitude - way.finish.longitude) < 0.001
+                        && abs(userLocation.latitude - way.finish.latitude) < 0.001 {
                         state = .ended
 
                     }
@@ -31,32 +33,35 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
     }
     @Published var client: User?
     @Published var way: SharedWay?
-    
+
     @Published var clientRating = 5.0
-    
+
     @Published var state = DriverWorkState.notWorking
     let provider = DriverSideTripProvider()
-    
+
     @Published var willShowError = false
     @Published var errorMessage = ""
-    
+
     var id: UUID?
-    
+
     func setLocation(_ location: MKLocalSearchCompletion) {
-        locationSearch(forLocalCompletion: location) { res, error in
+        locationSearch(forLocalCompletion: location) { res, _ in
             guard let item = res?.mapItems.first else { return }
             let coordinate = item.placemark.coordinate
             self.location = LocationWithTitle(title: location.title, coordinate: coordinate)
         }
     }
-    
-    func locationSearch(forLocalCompletion localCompletion: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler) {
+
+    func locationSearch(
+        forLocalCompletion localCompletion: MKLocalSearchCompletion,
+        completion: @escaping MKLocalSearch.CompletionHandler
+    ) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = localCompletion.title.appending(localCompletion.subtitle)
         let search = MKLocalSearch(request: request)
         search.start(completionHandler: completion)
     }
-    
+
     func searchClient(user: User) {
         if let location = userLocation {
             state = .searching
@@ -79,7 +84,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
             }
         }
     }
-    
+
     func confirmUser(isConfirmed: Bool, forUser user: User) {
         if let client, let userLocation {
             if isConfirmed {
@@ -101,7 +106,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
                             self.way = way
                         }
                         self.state = .toClient
-                    case .failure(_):
+                    case .failure:
                         self.state = .notWorking
                     }
                 }
@@ -110,7 +115,7 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
             }
         }
     }
-    
+
     func sendLocation(location: CLLocationCoordinate2D) {
         if let id {
             let driverLocation = DriverLocation(
@@ -125,12 +130,12 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
             }
         }
     }
-    
+
     func finishTrip() {
         if let id {
             provider.setRating(clientRating: Rating(id: id, rating: clientRating, music: nil, speed: nil)) { result in
                 switch result {
-                case .success(_):
+                case .success:
                     self.location = nil
                     self.client = nil
                     self.way = nil
@@ -143,5 +148,5 @@ class DriverWorkViewModel: NSObject, ObservableObject, MKLocalSearchCompleterDel
             }
         }
     }
-    
+
 }

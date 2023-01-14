@@ -8,11 +8,11 @@
 import SwiftUI
 
 class NetworkManager {
-    
+
     static let shared = NetworkManager()
-    
+
     private init() {}
-    
+
     func loadImage(link: String, callback: @escaping (Result<UIImage, Error>) -> Void) {
         guard let url = URL(string: link) else {
             callback(.failure(NetworkError.failedURL()))
@@ -25,13 +25,16 @@ class NetworkManager {
             } else {
                 callback(.failure(NetworkError.failedData()))
             }
-        }
-        catch {
+        } catch {
             callback(.failure(error))
         }
     }
-    
-    func makeRequest<GetType: Decodable>(request: URLRequest, postData: Data = Data(), callback: @escaping (Result<GetType, Error>) -> Void) {
+
+    func makeRequest<GetType: Decodable>(
+        request: URLRequest,
+        postData: Data = Data(),
+        callback: @escaping (Result<GetType, Error>) -> Void
+    ) {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
@@ -48,16 +51,15 @@ class NetworkManager {
                 } else {
                     callback(.failure(NetworkError.serverError()))
                 }
-            }
-            catch {
+            } catch {
                 callback(.failure(error))
             }
         }.resume()
     }
-    
+
     func makeRequest(request: URLRequest, postData: Data = Data(), callback: @escaping (Result<Void, Error>) -> Void) {
         URLSession.shared.uploadTask(with: request, from: postData) { data, response, error in
-            guard let _ = data, let response = response as? HTTPURLResponse else {
+            guard let response = response as? HTTPURLResponse, data != nil else {
                 callback(.failure(error!))
                 return
             }
@@ -68,5 +70,5 @@ class NetworkManager {
             }
         }.resume()
     }
-    
+
 }

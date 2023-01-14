@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MusicBlockView: View {
-    
+
     @Binding var musicalPreferences: String
-    
+
     var body: some View {
         TextField(Strings.MusicBlock.placeholder, text: $musicalPreferences)
             .textFieldStyle(.roundedBorder)

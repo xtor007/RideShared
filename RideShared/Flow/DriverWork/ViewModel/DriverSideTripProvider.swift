@@ -9,11 +9,11 @@ import Foundation
 import SocketIO
 
 class DriverSideTripProvider {
-    
+
     private let semaphore = DispatchSemaphore(value: 0)
     private var isWorking = true
-    
-    func getClient(user: User, location: SharedLocation, callback: @escaping (Result<User,Error>) -> Void) {
+
+    func getClient(user: User, location: SharedLocation, callback: @escaping (Result<User, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.isWorking = true
             while self.isWorking {
@@ -39,12 +39,12 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
     func cancelSearching() {
         isWorking = false
         semaphore.signal()
     }
-    
+
     func confirmClient(user: User, searchData: SearchClientData, callback: @escaping (Result<TripID, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.getID(user: user, searchData: searchData) { result in
@@ -54,7 +54,7 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
     func sendLocation(location: DriverLocation, callback: @escaping (Result<Void, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.postLocation(location: location) { result in
@@ -64,7 +64,7 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
     func getRoadData(id: UUID, callback: @escaping (SharedWay) -> Void) {
         let semaphore = DispatchSemaphore(value: 0)
         DispatchQueue.global(qos: .background).async {
@@ -75,7 +75,7 @@ class DriverSideTripProvider {
                     case .success(let success):
                         way = success
                         semaphore.signal()
-                    case .failure(let failure):
+                    case .failure:
                         semaphore.signal()
                         return
                     }
@@ -87,7 +87,7 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
     func setRating(clientRating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             self.postRating(clientRating: clientRating) { result in
@@ -97,9 +97,9 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
     private func postRating(clientRating: Rating, callback: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string:  ServerPath.postRating.path) else {
+        guard let url = URL(string: ServerPath.postRating.path) else {
             callback(.failure(NetworkError.failedURL()))
             return
         }
@@ -113,9 +113,9 @@ class DriverSideTripProvider {
             callback(.failure(error))
         }
     }
-    
+
     private func getWay(id: UUID, callback: @escaping (Result<SharedWay, Error>) -> Void) {
-        guard let url = URL(string:  ServerPath.getWay.path) else {
+        guard let url = URL(string: ServerPath.getWay.path) else {
             callback(.failure(NetworkError.failedURL()))
             return
         }
@@ -129,9 +129,9 @@ class DriverSideTripProvider {
             callback(.failure(error))
         }
     }
-    
+
     private func postLocation(location: DriverLocation, callback: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string:  ServerPath.postDriverLocation.path) else {
+        guard let url = URL(string: ServerPath.postDriverLocation.path) else {
             callback(.failure(NetworkError.failedURL()))
             return
         }
@@ -145,7 +145,7 @@ class DriverSideTripProvider {
             callback(.failure(error))
         }
     }
-    
+
     private func getID(user: User, searchData: SearchClientData, callback: @escaping (Result<TripID, Error>) -> Void) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             let encoder = JSONEncoder()
@@ -154,7 +154,11 @@ class DriverSideTripProvider {
             encoder.dateEncodingStrategy = .formatted(dateFormatter)
             switch result {
             case .success(let success):
-                NetworkManager.shared.createRequest(withToken: success, link: ServerPath.confirmClient.path, method: "POST") { result in
+                NetworkManager.shared.createRequest(
+                    withToken: success,
+                    link: ServerPath.confirmClient.path,
+                    method: "POST"
+                ) { result in
                     switch result {
                     case .success(let success):
                         var request = success
@@ -174,12 +178,20 @@ class DriverSideTripProvider {
             }
         }
     }
-    
-    private func sendWorkRequest(user: User, location: SharedLocation, callback: @escaping (Result<OptionalUser,Error>) -> Void) {
+
+    private func sendWorkRequest(
+        user: User,
+        location: SharedLocation,
+        callback: @escaping (Result<OptionalUser, Error>) -> Void
+    ) {
         NetworkManager.shared.generateUserToken(user: user) { result in
             switch result {
             case .success(let success):
-                NetworkManager.shared.createRequest(withToken: success, link: ServerPath.getClient.path, method: "POST") { result in
+                NetworkManager.shared.createRequest(
+                    withToken: success,
+                    link: ServerPath.getClient.path,
+                    method: "POST"
+                ) { result in
                     switch result {
                     case .success(let success):
                         var request = success
@@ -199,5 +211,5 @@ class DriverSideTripProvider {
             }
         }
     }
-    
+
 }
