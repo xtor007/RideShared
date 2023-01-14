@@ -11,9 +11,9 @@ struct QuestionnaireBlockView: View {
 
     let blockName: String
     let contentView: AnyView
-    
+
     @State private var selectedIndex: Int
-    
+
     @Binding var priority: BlockImportance
 
     var body: some View {
@@ -37,6 +37,9 @@ struct QuestionnaireBlockView: View {
         }
         .onChange(of: selectedIndex) { newValue in
             priority = BlockImportance(rawValue: newValue)!
+        }
+        .onChange(of: priority) { newValue in
+            self.selectedIndex = newValue.rawValue
         }
     }
 

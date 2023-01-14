@@ -8,7 +8,7 @@
 import Foundation
 
 enum Gender: Int, CaseIterable {
-    
+
     var title: String {
         switch self {
         case .male:
@@ -17,8 +17,8 @@ enum Gender: Int, CaseIterable {
             return Strings.GenderBlock.female
         }
     }
-    
+
     case male = 0
     case female = 1
-    
+
 }

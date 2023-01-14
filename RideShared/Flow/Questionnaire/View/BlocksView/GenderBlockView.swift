@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct GenderBlockView: View {
-    
+
     @Binding var genderIndex: Int
-    
+
     var body: some View {
         Picker("", selection: $genderIndex) {
             ForEach(0..<Gender.allCases.count, id: \.self) { index in
@@ -19,7 +19,7 @@ struct GenderBlockView: View {
         }
         .pickerStyle(.segmented)
     }
-    
+
 }
 
 struct GenderBlockView_Previews: PreviewProvider {

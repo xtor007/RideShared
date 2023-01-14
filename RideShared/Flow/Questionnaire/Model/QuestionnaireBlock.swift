@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum QuestionnaireBlock {
-    
+
     var title: String {
         switch self {
         case .music:
@@ -23,7 +23,7 @@ enum QuestionnaireBlock {
             return Strings.Questionnaire.color
         }
     }
-    
+
     var content: AnyView {
         switch self {
         case .music(let musicalPreferences):
@@ -31,14 +31,20 @@ enum QuestionnaireBlock {
         case .driverGender(let genderIndex):
             return AnyView(GenderBlockView(genderIndex: genderIndex))
         case .driverAge(let leftIndex, let rightIndex):
-            return AnyView(DoublePointSliderView(data: 18...99, leftIndex: leftIndex, rightIndex: rightIndex).padding(.bottom, 50))
+            return AnyView(DoublePointSliderView(
+                data: 18...99,
+                leftIndex: leftIndex,
+                rightIndex: rightIndex
+            )
+                .padding(.bottom, 50))
         case .speed(let speedIndex):
             return AnyView(SpeedBlockView(speedIndex: speedIndex))
         case .carColor(let colorIndex):
             return AnyView(CarColorBlockView(colorIndex: colorIndex))
         }
     }
-    
-    case music(Binding<String>), driverGender(Binding<Int>), driverAge(left: Binding<Int>, right: Binding<Int>), speed(Binding<Int>), carColor(Binding<Int>)
-    
+
+    case music(Binding<String>), driverGender(Binding<Int>)
+    case driverAge(left: Binding<Int>, right: Binding<Int>), speed(Binding<Int>), carColor(Binding<Int>)
+
 }

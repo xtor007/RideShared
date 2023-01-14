@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ScreenListElementView: View {
-    
+
+    @EnvironmentObject var userManager: UserManager
+
     let element: any ScreenListElement
-    
+
     var body: some View {
         NavigationLink {
             element.content
+                .environmentObject(userManager)
         } label: {
             HStack {
                 Spacer()
@@ -29,7 +32,7 @@ struct ScreenListElementView: View {
             )
         }
     }
-    
+
 }
 
 struct ScreenListElementView_Previews: PreviewProvider {

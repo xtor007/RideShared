@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ProfileListElement: ScreenListElement {
-    
+
     var title: String {
         switch self {
         case .adresses:
@@ -19,20 +19,20 @@ enum ProfileListElement: ScreenListElement {
             return Strings.ProfileList.priotitets.uppercased()
         }
     }
-    
+
     var content: AnyView {
         switch self {
         case .adresses:
             return AnyView(Text("s"))
-        case .driver(let userManager):
-            return AnyView(DriverInfoView(userManager: userManager))
-        case .prioritets(let user, let showingError, let errorText):
-            return AnyView(QuestionnaireView(user: user, willShowingError: showingError, errorText: errorText))
+        case .driver:
+            return AnyView(DriverInfoView())
+        case .prioritets:
+            return AnyView(QuestionnaireView())
         }
     }
-    
+
     case adresses
-    case prioritets(user: Binding<User>, willShowingError: Binding<Bool>, errorText: Binding<String>)
-    case driver(userManager: UserManager)
-    
+    case prioritets
+    case driver
+
 }

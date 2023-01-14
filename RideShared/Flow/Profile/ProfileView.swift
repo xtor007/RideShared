@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ProfileView: View {
 
-    @ObservedObject var userManager: UserManager
+    @EnvironmentObject var userManager: UserManager
+
+    @Binding var appState: AppState
 
     var body: some View {
         VStack(alignment: .leading, spacing: Paddings.padding20) {
-            
+
             HStack(spacing: Paddings.padding16) {
-                
+
                 Image(uiImage: userManager.avatar)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80)
                     .clipShape(Circle())
-                
+
                 VStack(alignment: .leading, spacing: Paddings.padding10) {
                     Text(userManager.user.name)
                         .font(.title)
@@ -30,36 +32,49 @@ struct ProfileView: View {
                         .font(.bold(.subheadline)())
                 }
                 .foregroundColor(Color(Asset.Colors.textColor.color))
-                
+
             }
             .padding(.horizontal, Paddings.padding30)
             .padding(.top, Paddings.padding30)
-            
+
             ScreenListView(data: [
-                ProfileListElement.prioritets(
-                    user: $userManager.user,
-                    willShowingError: $userManager.willShowError,
-                    errorText: $userManager.errorMessage
-                ),
+                ProfileListElement.prioritets,
                 ProfileListElement.adresses,
-                ProfileListElement.driver(userManager: userManager)
+                ProfileListElement.driver
             ])
             .padding(.horizontal, Paddings.padding20)
-            
+
             Spacer()
-            
+
+            HStack {
+                Spacer()
+                Button {
+                    appState = .notAuthorized
+                } label: {
+                    Text(Strings.Button.signOut)
+                        .foregroundColor(Asset.Colors.threatenColor.swiftUIColor)
+                }
+            }
+            .padding(.horizontal, Paddings.padding16)
+            .padding(.bottom, Paddings.padding16)
+
         }
         .overlay(
-            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
+            ErrorView(
+                isShowing: $userManager.willShowError,
+                title: Strings.Error.Error.title,
+                message: userManager.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .background(Color(Asset.Colors.backgroundColor.color).ignoresSafeArea())
     }
-    
+
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(userManager: UserManager(user: User.preview))
+        ProfileView(appState: .constant(.main(manager: UserManager(user: User.preview))))
+            .environmentObject(UserManager(user: User.preview))
     }
 }

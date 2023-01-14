@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SliderPointView: View {
-    
+
     let text: String
 
     var body: some View {
@@ -37,11 +37,11 @@ struct SliderPointView: View {
 
         }
     }
-    
+
     init(text: String) {
         self.text = text.count < 2 ? text + " " : text
     }
-    
+
 }
 
 struct SliderPointView_Previews: PreviewProvider {

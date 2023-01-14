@@ -17,12 +17,23 @@
 		FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2079082953824500DFC4B9 /* ScreenListView.swift */; };
 		FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E04E29521EA300CC56BC /* SelectionParameters.swift */; };
 		FF31E0522952374900CC56BC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31E0512952374800CC56BC /* ErrorView.swift */; };
+		FF32BC04296AE582007E04FC /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC03296AE582007E04FC /* Trip.swift */; };
+		FF32BC08296AE705007E04FC /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC07296AE705007E04FC /* HistoryViewModel.swift */; };
+		FF32BC0A296AE7B8007E04FC /* HistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */; };
+		FF32BC0D296AE954007E04FC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC0C296AE954007E04FC /* HistoryView.swift */; };
+		FF32BC0F296AEAC4007E04FC /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF32BC0E296AEAC4007E04FC /* TripView.swift */; };
 		FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC17294F4827001C0F17 /* CarColor.swift */; };
 		FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */; };
 		FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */; };
 		FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC1E294F4C19001C0F17 /* Triangle.swift */; };
 		FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */; };
 		FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */; };
+		FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D992965F66600B39A1F /* DriverWorkView.swift */; };
+		FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */; };
+		FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402D9E2966052100B39A1F /* DriverWorkState.swift */; };
+		FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */; };
+		FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */; };
+		FF402DA7296619DC00B39A1F /* ConfirmingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF402DA6296619DC00B39A1F /* ConfirmingUserView.swift */; };
 		FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */; };
 		FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */; };
 		FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */; };
@@ -36,10 +47,39 @@
 		FF55552B29576302001B9646 /* ServerPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552A29576302001B9646 /* ServerPath.swift */; };
 		FF55552D2957656D001B9646 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552C2957656D001B9646 /* NetworkError.swift */; };
 		FF55552F295772CD001B9646 /* TaxiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF55552E295772CD001B9646 /* TaxiData.swift */; };
+		FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2A2964BFD100C3645E /* PriceManager.swift */; };
+		FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */; };
+		FFB20AE6296E023A00F3666A /* SearchDriverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE1296E023900F3666A /* SearchDriverData.swift */; };
+		FFB20AE7296E023A00F3666A /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE2296E023A00F3666A /* Rating.swift */; };
+		FFB20AE8296E023A00F3666A /* SearchClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE3296E023A00F3666A /* SearchClientData.swift */; };
+		FFB20AE9296E023A00F3666A /* TripID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE4296E023A00F3666A /* TripID.swift */; };
+		FFB20AEA296E023A00F3666A /* DriverLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB20AE5296E023A00F3666A /* DriverLocation.swift */; };
 		FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */; };
+		FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B46296CC59200FF7A3C /* RatingView.swift */; };
+		FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */; };
+		FFB62B4B296DA4AF00FF7A3C /* RoadBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */; };
+		FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */; };
+		FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */; };
+		FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AEF296193770020B8C1 /* MapCoordinator.swift */; };
+		FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AF2296196240020B8C1 /* LocationManager.swift */; };
+		FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AF72961B5350020B8C1 /* SearchLocationView.swift */; };
+		FFB87AFB2961B5790020B8C1 /* SearchLocationField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFA2961B5790020B8C1 /* SearchLocationField.swift */; };
+		FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */; };
+		FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */; };
 		FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */; };
-		FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */; };
-		FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */; };
+		FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */; };
+		FFC858F029649E0A003E50EA /* Double+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC858EF29649E09003E50EA /* Double+price.swift */; };
+		FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9B29684A2900EF533A /* SharedLocation.swift */; };
+		FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5C9D29684B1D00EF533A /* SharedWay.swift */; };
+		FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA12968655E00EF533A /* AuthViewModel.swift */; };
+		FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA329686F4500EF533A /* AuthProvider.swift */; };
+		FFCA5CA62968934E00EF533A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA52968934E00EF533A /* AppState.swift */; };
+		FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CA929689B4200EF533A /* UserProvider.swift */; };
+		FFCA5CAE2968A36400EF533A /* ChooseDriverDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */; };
+		FFCA5CB02968A61C00EF533A /* ChooseDriverDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */; };
+		FFCA5CB32968AE7600EF533A /* UserSideTripProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CB22968AE7600EF533A /* UserSideTripProvider.swift */; };
+		FFCA5CB5296966AF00EF533A /* DriverSideTripProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CB4296966AE00EF533A /* DriverSideTripProvider.swift */; };
+		FFCA5CC02969DEC700EF533A /* OptionalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA5CBF2969DEC700EF533A /* OptionalUser.swift */; };
 		FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */; };
 		FFD92112294E12CF00B89B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */; };
 		FFD92120294E137F00B89B35 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9211F294E137E00B89B35 /* AuthView.swift */; };
@@ -56,6 +96,7 @@
 		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */; };
 		FFE56202295D8F36000B0371 /* Date+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56201295D8F36000B0371 /* Date+description.swift */; };
+		FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA69002963715400BF0159 /* RoadViewState.swift */; };
 		FFF88D3529573CA4007BA886 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3429573CA4007BA886 /* GoogleSignIn */; };
 		FFF88D3729573CA4007BA886 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF88D3629573CA4007BA886 /* GoogleSignInSwift */; };
 		FFF88D3A29573D4D007BA886 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF88D3929573D4D007BA886 /* credentials.plist */; };
@@ -76,12 +117,23 @@
 		FF2079082953824500DFC4B9 /* ScreenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenListView.swift; sourceTree = "<group>"; };
 		FF31E04E29521EA300CC56BC /* SelectionParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionParameters.swift; sourceTree = "<group>"; };
 		FF31E0512952374800CC56BC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FF32BC03296AE582007E04FC /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		FF32BC07296AE705007E04FC /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryProvider.swift; sourceTree = "<group>"; };
+		FF32BC0C296AE954007E04FC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		FF32BC0E296AEAC4007E04FC /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
 		FF3BCC17294F4827001C0F17 /* CarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColor.swift; sourceTree = "<group>"; };
 		FF3BCC19294F4907001C0F17 /* CarColorBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorBlockView.swift; sourceTree = "<group>"; };
 		FF3BCC1C294F4BE2001C0F17 /* SliderPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointView.swift; sourceTree = "<group>"; };
 		FF3BCC1E294F4C19001C0F17 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		FF3BCC20294F4C57001C0F17 /* DoubleSliderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderConstants.swift; sourceTree = "<group>"; };
 		FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePointSliderView.swift; sourceTree = "<group>"; };
+		FF402D992965F66600B39A1F /* DriverWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkView.swift; sourceTree = "<group>"; };
+		FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapViewRepresentable.swift; sourceTree = "<group>"; };
+		FF402D9E2966052100B39A1F /* DriverWorkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkState.swift; sourceTree = "<group>"; };
+		FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapCoordinator.swift; sourceTree = "<group>"; };
+		FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverWorkViewModel.swift; sourceTree = "<group>"; };
+		FF402DA6296619DC00B39A1F /* ConfirmingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmingUserView.swift; sourceTree = "<group>"; };
 		FF4D9B68294F103700CA2B84 /* QuestionnaireBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireBlockView.swift; sourceTree = "<group>"; };
 		FF4D9B6C294F143D00CA2B84 /* BlockImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImportance.swift; sourceTree = "<group>"; };
 		FF4D9B6E294F1B3C00CA2B84 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
@@ -95,10 +147,39 @@
 		FF55552A29576302001B9646 /* ServerPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerPath.swift; sourceTree = "<group>"; };
 		FF55552C2957656D001B9646 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF55552E295772CD001B9646 /* TaxiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiData.swift; sourceTree = "<group>"; };
+		FFAF0C2A2964BFD100C3645E /* PriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceManager.swift; sourceTree = "<group>"; };
+		FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWithTitle.swift; sourceTree = "<group>"; };
+		FFB20AE1296E023900F3666A /* SearchDriverData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDriverData.swift; sourceTree = "<group>"; };
+		FFB20AE2296E023A00F3666A /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		FFB20AE3296E023A00F3666A /* SearchClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchClientData.swift; sourceTree = "<group>"; };
+		FFB20AE4296E023A00F3666A /* TripID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripID.swift; sourceTree = "<group>"; };
+		FFB20AE5296E023A00F3666A /* DriverLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverLocation.swift; sourceTree = "<group>"; };
 		FFB592CC294F42E0002BD9AE /* SpeedBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBlockView.swift; sourceTree = "<group>"; };
+		FFB62B46296CC59200FF7A3C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingView.swift; sourceTree = "<group>"; };
+		FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderViewModel.swift; sourceTree = "<group>"; };
+		FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBuilderView.swift; sourceTree = "<group>"; };
+		FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		FFB87AEF296193770020B8C1 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		FFB87AF2296196240020B8C1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FFB87AF72961B5350020B8C1 /* SearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationView.swift; sourceTree = "<group>"; };
+		FFB87AFA2961B5790020B8C1 /* SearchLocationField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationField.swift; sourceTree = "<group>"; };
+		FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellView.swift; sourceTree = "<group>"; };
+		FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewModel.swift; sourceTree = "<group>"; };
 		FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Token.swift"; sourceTree = "<group>"; };
-		FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Auth.swift"; sourceTree = "<group>"; };
-		FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Driver.swift"; sourceTree = "<group>"; };
+		FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRoadView.swift; sourceTree = "<group>"; };
+		FFC858EF29649E09003E50EA /* Double+price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+price.swift"; sourceTree = "<group>"; };
+		FFCA5C9B29684A2900EF533A /* SharedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocation.swift; sourceTree = "<group>"; };
+		FFCA5C9D29684B1D00EF533A /* SharedWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWay.swift; sourceTree = "<group>"; };
+		FFCA5CA12968655E00EF533A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FFCA5CA329686F4500EF533A /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		FFCA5CA52968934E00EF533A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FFCA5CA929689B4200EF533A /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataViewModel.swift; sourceTree = "<group>"; };
+		FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataProvider.swift; sourceTree = "<group>"; };
+		FFCA5CB22968AE7600EF533A /* UserSideTripProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSideTripProvider.swift; sourceTree = "<group>"; };
+		FFCA5CB4296966AE00EF533A /* DriverSideTripProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSideTripProvider.swift; sourceTree = "<group>"; };
+		FFCA5CBF2969DEC700EF533A /* OptionalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUser.swift; sourceTree = "<group>"; };
 		FFD92107294E12CA00B89B35 /* RideShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharedApp.swift; sourceTree = "<group>"; };
 		FFD92111294E12CF00B89B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -116,6 +197,7 @@
 		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataView.swift; sourceTree = "<group>"; };
 		FFE56201295D8F36000B0371 /* Date+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+description.swift"; sourceTree = "<group>"; };
+		FFEA69002963715400BF0159 /* RoadViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadViewState.swift; sourceTree = "<group>"; };
 		FFF88D3929573D4D007BA886 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		FFF88D3B29573F55007BA886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFF88D3C29574E08007BA886 /* View+rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rootViewController.swift"; sourceTree = "<group>"; };
@@ -151,6 +233,7 @@
 				FF2078F729536AB200DFC4B9 /* Double+rating.swift */,
 				FFF88D3C29574E08007BA886 /* View+rootViewController.swift */,
 				FFE56201295D8F36000B0371 /* Date+description.swift */,
+				FFC858EF29649E09003E50EA /* Double+price.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -213,6 +296,33 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		FF32BC05296AE6E9007E04FC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC0B296AE940007E04FC /* View */,
+				FF32BC06296AE6F3007E04FC /* ViewModel */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FF32BC06296AE6F3007E04FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC07296AE705007E04FC /* HistoryViewModel.swift */,
+				FF32BC09296AE7B8007E04FC /* HistoryProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF32BC0B296AE940007E04FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF32BC0C296AE954007E04FC /* HistoryView.swift */,
+				FF32BC0E296AEAC4007E04FC /* TripView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FF3BCC1B294F4B90001C0F17 /* DoublePointSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +332,52 @@
 				FF3BCC22294F4F55001C0F17 /* DoublePointSliderView.swift */,
 			);
 			path = DoublePointSlider;
+			sourceTree = "<group>";
+		};
+		FF402D972965F62700B39A1F /* DriverWork */ = {
+			isa = PBXGroup;
+			children = (
+				FF402DA22966095900B39A1F /* ViewModel */,
+				FF402D9D2966050D00B39A1F /* Model */,
+				FF402D982965F65300B39A1F /* View */,
+			);
+			path = DriverWork;
+			sourceTree = "<group>";
+		};
+		FF402D982965F65300B39A1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF402D992965F66600B39A1F /* DriverWorkView.swift */,
+				FF402D9B296604C600B39A1F /* DriverMapViewRepresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF402D9D2966050D00B39A1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF402D9E2966052100B39A1F /* DriverWorkState.swift */,
+				FF402DA0296605AD00B39A1F /* DriverMapCoordinator.swift */,
+				FFCA5CBF2969DEC700EF533A /* OptionalUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF402DA22966095900B39A1F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF402DA32966098700B39A1F /* DriverWorkViewModel.swift */,
+				FFCA5CB4296966AE00EF533A /* DriverSideTripProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF402DA52966199800B39A1F /* ConfirmingUser */ = {
+			isa = PBXGroup;
+			children = (
+				FF402DA6296619DC00B39A1F /* ConfirmingUserView.swift */,
+			);
+			path = ConfirmingUser;
 			sourceTree = "<group>";
 		};
 		FF4D9B67294F101000CA2B84 /* Questionnaire */ = {
@@ -289,10 +445,156 @@
 				FF55552A29576302001B9646 /* ServerPath.swift */,
 				FF55552C2957656D001B9646 /* NetworkError.swift */,
 				FFC7F536295DF3FD0071D94D /* NetworkManager+Token.swift */,
-				FFC7F538295DF4580071D94D /* NetworkManager+Auth.swift */,
-				FFC7F53A295DF7060071D94D /* NetworkManager+Driver.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FFAF0C292964BFBD00C3645E /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				FFAF0C2A2964BFD100C3645E /* PriceManager.swift */,
+			);
+			path = Price;
+			sourceTree = "<group>";
+		};
+		FFB62B45296CC56700FF7A3C /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				FFB62B46296CC59200FF7A3C /* RatingView.swift */,
+				FFB62B48296CCDE600FF7A3C /* SetRatingView.swift */,
+			);
+			path = RatingView;
+			sourceTree = "<group>";
+		};
+		FFB87AE729618A690020B8C1 /* RoadBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CB12968AE6000EF533A /* ViewModel */,
+				FFB87AEE296193640020B8C1 /* Model */,
+				FFB87AE829618A7B0020B8C1 /* View */,
+			);
+			path = RoadBuilder;
+			sourceTree = "<group>";
+		};
+		FFB87AE829618A7B0020B8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AEA29618C440020B8C1 /* RoadBuilderView.swift */,
+				FFB87AEC296191120020B8C1 /* MapViewRepresentable.swift */,
+				FFC858ED29648F2A003E50EA /* ConfirmRoadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB87AEE296193640020B8C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AEF296193770020B8C1 /* MapCoordinator.swift */,
+				FFEA69002963715400BF0159 /* RoadViewState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFB87AF1296196100020B8C1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AF2296196240020B8C1 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		FFB87AF42961B4E90020B8C1 /* SearchLocation */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AF62961B50B0020B8C1 /* ViewModel */,
+				FFB87AF52961B5050020B8C1 /* View */,
+			);
+			path = SearchLocation;
+			sourceTree = "<group>";
+		};
+		FFB87AF52961B5050020B8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AF72961B5350020B8C1 /* SearchLocationView.swift */,
+				FFB87AFC2961CDFB0020B8C1 /* LocationCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB87AF62961B50B0020B8C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AFE2961E2BD0020B8C1 /* SearchLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFB87AF92961B55C0020B8C1 /* SearchLocationField */ = {
+			isa = PBXGroup;
+			children = (
+				FFB87AFA2961B5790020B8C1 /* SearchLocationField.swift */,
+			);
+			path = SearchLocationField;
+			sourceTree = "<group>";
+		};
+		FFCA5C9F2968653600EF533A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9211F294E137E00B89B35 /* AuthView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFCA5CA02968654600EF533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CA12968655E00EF533A /* AuthViewModel.swift */,
+				FFCA5CA329686F4500EF533A /* AuthProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFCA5CA829689B2300EF533A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
+				FFCA5CA929689B4200EF533A /* UserProvider.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FFCA5CAB2968A33600EF533A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */,
+				FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFCA5CAC2968A34300EF533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CAD2968A36400EF533A /* ChooseDriverDataViewModel.swift */,
+				FFCA5CAF2968A61C00EF533A /* ChooseDriverDataProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFCA5CB12968AE6000EF533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA5CB22968AE7600EF533A /* UserSideTripProvider.swift */,
+				FFB62B4A296DA4AF00FF7A3C /* RoadBuilderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FFCA5CB92969697C00EF533A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FFD920FE294E12CA00B89B35 = {
@@ -301,6 +603,7 @@
 				FFD9212C294E1E3F00B89B35 /* swiftgen.yml */,
 				FFD92109294E12CA00B89B35 /* RideShared */,
 				FFD92108294E12CA00B89B35 /* Products */,
+				FFCA5CB92969697C00EF533A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,6 +644,7 @@
 				FFF88D3829573D40007BA886 /* Auth */,
 				FFF88D3B29573F55007BA886 /* Info.plist */,
 				FFD9210A294E12CA00B89B35 /* RideSharedApp.swift */,
+				FFCA5CA52968934E00EF533A /* AppState.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -363,6 +667,11 @@
 		FFD9211A294E133000B89B35 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				FF32BC05296AE6E9007E04FC /* History */,
+				FF402DA52966199800B39A1F /* ConfirmingUser */,
+				FF402D972965F62700B39A1F /* DriverWork */,
+				FFB87AF42961B4E90020B8C1 /* SearchLocation */,
+				FFB87AE729618A690020B8C1 /* RoadBuilder */,
 				FFE561FC295CC1A9000B0371 /* DriverInfo */,
 				FF2078F12953501900DFC4B9 /* Profile */,
 				FF4D9B67294F101000CA2B84 /* Questionnaire */,
@@ -374,6 +683,8 @@
 		FFD9211B294E133600B89B35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFB62B45296CC56700FF7A3C /* RatingView */,
+				FFB87AF92961B55C0020B8C1 /* SearchLocationField */,
 				FF2079032953760000DFC4B9 /* ProfileList */,
 				FF2078FC295374B300DFC4B9 /* ScreenList */,
 				FF2078F9295372F200DFC4B9 /* Hexagon */,
@@ -388,9 +699,18 @@
 		FFD9211C294E133D00B89B35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFB20AE5296E023A00F3666A /* DriverLocation.swift */,
+				FFB20AE2296E023A00F3666A /* Rating.swift */,
+				FFB20AE3296E023A00F3666A /* SearchClientData.swift */,
+				FFB20AE1296E023900F3666A /* SearchDriverData.swift */,
+				FFB20AE4296E023A00F3666A /* TripID.swift */,
 				FFD92136294E284D00B89B35 /* User.swift */,
 				FF31E04E29521EA300CC56BC /* SelectionParameters.swift */,
 				FF55552E295772CD001B9646 /* TaxiData.swift */,
+				FFAF0C2C2964CB2500C3645E /* LocationWithTitle.swift */,
+				FFCA5C9B29684A2900EF533A /* SharedLocation.swift */,
+				FFCA5C9D29684B1D00EF533A /* SharedWay.swift */,
+				FF32BC03296AE582007E04FC /* Trip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,9 +718,11 @@
 		FFD9211D294E134300B89B35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFCA5CA829689B2300EF533A /* User */,
+				FFAF0C292964BFBD00C3645E /* Price */,
+				FFB87AF1296196100020B8C1 /* Location */,
 				FF55552729576167001B9646 /* Network */,
 				FFF88D3E29574F81007BA886 /* Auth */,
-				FF2078F42953654D00DFC4B9 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -408,7 +730,8 @@
 		FFD9211E294E137000B89B35 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FFD9211F294E137E00B89B35 /* AuthView.swift */,
+				FFCA5CA02968654600EF533A /* ViewModel */,
+				FFCA5C9F2968653600EF533A /* View */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -424,8 +747,8 @@
 		FFE561FC295CC1A9000B0371 /* DriverInfo */ = {
 			isa = PBXGroup;
 			children = (
-				FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */,
-				FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */,
+				FFCA5CAC2968A34300EF533A /* ViewModel */,
+				FFCA5CAB2968A33600EF533A /* View */,
 			);
 			path = DriverInfo;
 			sourceTree = "<group>";
@@ -455,6 +778,7 @@
 			buildConfigurationList = FFD92115294E12CF00B89B35 /* Build configuration list for PBXNativeTarget "RideShared" */;
 			buildPhases = (
 				FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */,
+				FFD6198E2972D9F10025294C /* [SwiftLint] Validate Sources */,
 				FFD92103294E12CA00B89B35 /* Sources */,
 				FFD92104294E12CA00B89B35 /* Frameworks */,
 				FFD92105294E12CA00B89B35 /* Resources */,
@@ -499,6 +823,8 @@
 			packageReferences = (
 				FFF88D3329573CA4007BA886 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				FFE561DC295B597F000B0371 /* XCRemoteSwiftPackageReference "jwt" */,
+				FFCA5CB62969686500EF533A /* XCRemoteSwiftPackageReference "Starscream" */,
+				FFCA5CBC2969996F00EF533A /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = FFD92108294E12CA00B89B35 /* Products */;
 			projectDirPath = "";
@@ -527,6 +853,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FFD6198E2972D9F10025294C /* [SwiftLint] Validate Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Validate Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		FFD9212E294E1F9B00B89B35 /* [SwiftGen]  Generate Sources */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -554,20 +899,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5555292957618C001B9646 /* NetworkManager.swift in Sources */,
+				FFCA5CA429686F4500EF533A /* AuthProvider.swift in Sources */,
+				FFB20AE7296E023A00F3666A /* Rating.swift in Sources */,
+				FFB87AF82961B5350020B8C1 /* SearchLocationView.swift in Sources */,
+				FF32BC0F296AEAC4007E04FC /* TripView.swift in Sources */,
+				FFCA5CA62968934E00EF533A /* AppState.swift in Sources */,
+				FFAF0C2B2964BFD100C3645E /* PriceManager.swift in Sources */,
+				FF402DA1296605AD00B39A1F /* DriverMapCoordinator.swift in Sources */,
 				FF55552F295772CD001B9646 /* TaxiData.swift in Sources */,
 				FF31E0522952374900CC56BC /* ErrorView.swift in Sources */,
 				FF3BCC18294F4827001C0F17 /* CarColor.swift in Sources */,
+				FF402DA42966098700B39A1F /* DriverWorkViewModel.swift in Sources */,
 				FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */,
+				FFC858F029649E0A003E50EA /* Double+price.swift in Sources */,
+				FFCA5CA22968655E00EF533A /* AuthViewModel.swift in Sources */,
+				FF32BC08296AE705007E04FC /* HistoryViewModel.swift in Sources */,
 				FFC7F537295DF3FE0071D94D /* NetworkManager+Token.swift in Sources */,
 				FF4D9B71294F208B00CA2B84 /* QuestionnaireBlock.swift in Sources */,
 				FFD9210B294E12CA00B89B35 /* RideSharedApp.swift in Sources */,
 				FF207902295375DB00DFC4B9 /* ScreenListElementView.swift in Sources */,
-				FFC7F53B295DF7060071D94D /* NetworkManager+Driver.swift in Sources */,
+				FF402D9A2965F66600B39A1F /* DriverWorkView.swift in Sources */,
+				FF32BC0A296AE7B8007E04FC /* HistoryProvider.swift in Sources */,
+				FFCA5CAA29689B4200EF533A /* UserProvider.swift in Sources */,
 				FFD92139294E295C00B89B35 /* Padding.swift in Sources */,
-				FFC7F539295DF4580071D94D /* NetworkManager+Auth.swift in Sources */,
+				FFCA5C9E29684B1D00EF533A /* SharedWay.swift in Sources */,
 				FFD92137294E284D00B89B35 /* User.swift in Sources */,
+				FFCA5CC02969DEC700EF533A /* OptionalUser.swift in Sources */,
+				FFB62B49296CCDE600FF7A3C /* SetRatingView.swift in Sources */,
 				FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */,
+				FF402D9F2966052100B39A1F /* DriverWorkState.swift in Sources */,
 				FF55552D2957656D001B9646 /* NetworkError.swift in Sources */,
+				FFEA69012963715400BF0159 /* RoadViewState.swift in Sources */,
+				FFB62B4B296DA4AF00FF7A3C /* RoadBuilderViewModel.swift in Sources */,
+				FF402DA7296619DC00B39A1F /* ConfirmingUserView.swift in Sources */,
 				FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF55552B29576302001B9646 /* ServerPath.swift in Sources */,
@@ -575,28 +939,50 @@
 				FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
 				FFE56202295D8F36000B0371 /* Date+description.swift in Sources */,
+				FFB87AFB2961B5790020B8C1 /* SearchLocationField.swift in Sources */,
 				FFB592CD294F42E0002BD9AE /* SpeedBlockView.swift in Sources */,
 				FF3BCC1A294F4907001C0F17 /* CarColorBlockView.swift in Sources */,
+				FFCA5CB02968A61C00EF533A /* ChooseDriverDataProvider.swift in Sources */,
+				FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
+				FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,
+				FF402D9C296604C700B39A1F /* DriverMapViewRepresentable.swift in Sources */,
 				FF3BCC1D294F4BE2001C0F17 /* SliderPointView.swift in Sources */,
+				FFC858EE29648F2A003E50EA /* ConfirmRoadView.swift in Sources */,
+				FFB20AE9296E023A00F3666A /* TripID.swift in Sources */,
+				FF32BC0D296AE954007E04FC /* HistoryView.swift in Sources */,
+				FF32BC04296AE582007E04FC /* Trip.swift in Sources */,
 				FFF88D442957538D007BA886 /* EnviromentVariables.swift in Sources */,
 				FF2078FB2953730200DFC4B9 /* Hexagon.swift in Sources */,
 				FFF88D422957503E007BA886 /* GoogleAuthManager.swift in Sources */,
+				FFCA5C9C29684A2900EF533A /* SharedLocation.swift in Sources */,
+				FFB20AE8296E023A00F3666A /* SearchClientData.swift in Sources */,
+				FFB62B47296CC59200FF7A3C /* RatingView.swift in Sources */,
+				FFB87AF0296193770020B8C1 /* MapCoordinator.swift in Sources */,
+				FFAF0C2D2964CB2500C3645E /* LocationWithTitle.swift in Sources */,
 				FF2079002953756E00DFC4B9 /* ScreenListElement.swift in Sources */,
+				FFB87AFD2961CDFB0020B8C1 /* LocationCellView.swift in Sources */,
+				FFB87AF3296196240020B8C1 /* LocationManager.swift in Sources */,
+				FFB20AEA296E023A00F3666A /* DriverLocation.swift in Sources */,
 				FFF88D3D29574E09007BA886 /* View+rootViewController.swift in Sources */,
 				FF2079092953824500DFC4B9 /* ScreenListView.swift in Sources */,
+				FFCA5CB5296966AF00EF533A /* DriverSideTripProvider.swift in Sources */,
 				FF2078F829536AB200DFC4B9 /* Double+rating.swift in Sources */,
 				FFD92120294E137F00B89B35 /* AuthView.swift in Sources */,
 				FF2078F52953654E00DFC4B9 /* UserManager.swift in Sources */,
 				FF4D9B74294F241B00CA2B84 /* BigButton.swift in Sources */,
+				FFCA5CB32968AE7600EF533A /* UserSideTripProvider.swift in Sources */,
+				FFB20AE6296E023A00F3666A /* SearchDriverData.swift in Sources */,
 				FF4D9B79294F383200CA2B84 /* GenderBlockView.swift in Sources */,
+				FFB87AEB29618C440020B8C1 /* RoadBuilderView.swift in Sources */,
 				FFD92131294E219100B89B35 /* Assets.generated.swift in Sources */,
 				FFF88D4029574F94007BA886 /* AuthManager.swift in Sources */,
 				FF4D9B6F294F1B3C00CA2B84 /* QuestionnaireView.swift in Sources */,
 				FF3BCC23294F4F55001C0F17 /* DoublePointSliderView.swift in Sources */,
+				FFCA5CAE2968A36400EF533A /* ChooseDriverDataViewModel.swift in Sources */,
 				FF3BCC21294F4C57001C0F17 /* DoubleSliderConstants.swift in Sources */,
 				FF4D9B6D294F143D00CA2B84 /* BlockImportance.swift in Sources */,
 				FF4D9B77294F2CCF00CA2B84 /* MusicBlockView.swift in Sources */,
@@ -743,6 +1129,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideShared/App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -774,6 +1161,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideShared/App/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -817,6 +1205,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FFCA5CB62969686500EF533A /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		FFCA5CBC2969996F00EF533A /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FFE561DC295B597F000B0371 /* XCRemoteSwiftPackageReference "jwt" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor/jwt.git";

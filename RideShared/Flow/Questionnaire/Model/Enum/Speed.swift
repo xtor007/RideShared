@@ -8,7 +8,7 @@
 import Foundation
 
 enum Speed: Int, CaseIterable {
-    
+
     var title: String {
         switch self {
         case .slow:
@@ -19,9 +19,9 @@ enum Speed: Int, CaseIterable {
             return Strings.SpeedBlock.fast
         }
     }
-    
+
     case slow = 0
     case medium = 1
     case fast = 2
-    
+
 }

@@ -17,6 +17,10 @@
 
 "button.finish" = "Finish";
 "button.close" = "Close";
+"button.confirm" = "Confirm";
+"button.start" = "Start";
+"button.cancel" = "Cancel";
+"button.signOut" = "Sign out";
 
 "musicBlock.placeholder" = "Write your music wishes";
 
@@ -37,6 +41,9 @@
 "error.error.title" = "Error";
 
 "tabBar.profile" = "Profile";
+"tabBar.road" = "Road";
+"tabBar.work" = "Work";
+"tabBar.history" = "History";
 
 "profileList.priotitets" = "Prioritets";
 "profileList.adresses" = "My Adresses";
@@ -49,3 +56,12 @@
 "driverInfo.carColor" = "Select your car color";
 "driverInfo.status.confirmed" = "Confirmed";
 "driverInfo.status.notConfirmed" = "Wait for our employee to contact you";
+
+"searchLocation.where" = "Where are you going?";
+
+"confirmRoad.currentLocation" = "Current location";
+
+"rating.rate" = "Rate for better selection in the future";
+"rating.rating" = "Global rating";
+"rating.music" = "Music rating";
+"rating.speed" = "Speed rating";

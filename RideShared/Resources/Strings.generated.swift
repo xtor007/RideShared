@@ -11,10 +11,18 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
   internal enum Button {
+    /// Cancel
+    internal static let cancel = Strings.tr("Localizable", "button.cancel", fallback: "Cancel")
     /// Close
     internal static let close = Strings.tr("Localizable", "button.close", fallback: "Close")
+    /// Confirm
+    internal static let confirm = Strings.tr("Localizable", "button.confirm", fallback: "Confirm")
     /// Finish
     internal static let finish = Strings.tr("Localizable", "button.finish", fallback: "Finish")
+    /// Sign out
+    internal static let signOut = Strings.tr("Localizable", "button.signOut", fallback: "Sign out")
+    /// Start
+    internal static let start = Strings.tr("Localizable", "button.start", fallback: "Start")
   }
   internal enum CarColor {
     /// Black
@@ -23,6 +31,10 @@ internal enum Strings {
     internal static let light = Strings.tr("Localizable", "carColor.light", fallback: "Light")
     /// White
     internal static let white = Strings.tr("Localizable", "carColor.white", fallback: "White")
+  }
+  internal enum ConfirmRoad {
+    /// Current location
+    internal static let currentLocation = Strings.tr("Localizable", "confirmRoad.currentLocation", fallback: "Current location")
   }
   internal enum DriverInfo {
     /// Select your car color
@@ -110,6 +122,20 @@ internal enum Strings {
     /// Fill out the questionnaire for a better driver selection
     internal static let title = Strings.tr("Localizable", "questionnaire.title", fallback: "Fill out the questionnaire for a better driver selection")
   }
+  internal enum Rating {
+    /// Music rating
+    internal static let music = Strings.tr("Localizable", "rating.music", fallback: "Music rating")
+    /// Rate for better selection in the future
+    internal static let rate = Strings.tr("Localizable", "rating.rate", fallback: "Rate for better selection in the future")
+    /// Global rating
+    internal static let rating = Strings.tr("Localizable", "rating.rating", fallback: "Global rating")
+    /// Speed rating
+    internal static let speed = Strings.tr("Localizable", "rating.speed", fallback: "Speed rating")
+  }
+  internal enum SearchLocation {
+    /// Where are you going?
+    internal static let `where` = Strings.tr("Localizable", "searchLocation.where", fallback: "Where are you going?")
+  }
   internal enum SpeedBlock {
     /// Fast
     internal static let fast = Strings.tr("Localizable", "speedBlock.fast", fallback: "Fast")
@@ -119,8 +145,14 @@ internal enum Strings {
     internal static let slow = Strings.tr("Localizable", "speedBlock.slow", fallback: "Slow")
   }
   internal enum TabBar {
+    /// History
+    internal static let history = Strings.tr("Localizable", "tabBar.history", fallback: "History")
     /// Profile
     internal static let profile = Strings.tr("Localizable", "tabBar.profile", fallback: "Profile")
+    /// Road
+    internal static let road = Strings.tr("Localizable", "tabBar.road", fallback: "Road")
+    /// Work
+    internal static let work = Strings.tr("Localizable", "tabBar.work", fallback: "Work")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

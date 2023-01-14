@@ -8,7 +8,7 @@
 import Foundation
 
 extension NetworkManager {
-    
+
     func generateUserToken(user: User, callback: @escaping (Result<String, Error>) -> Void) {
         do {
             let jsonUser = try JSONEncoder().encode(user)
@@ -28,9 +28,14 @@ extension NetworkManager {
             callback(.failure(error))
         }
     }
-    
-    func createRequest(withToken token: String, link: String, method: String = "POST", callback: @escaping (Result<URLRequest, Error>) -> Void) {
-        guard let url = URL(string:  link) else {
+
+    func createRequest(
+        withToken token: String,
+        link: String,
+        method: String = "GET",
+        callback: @escaping (Result<URLRequest, Error>) -> Void
+    ) {
+        guard let url = URL(string: link) else {
             callback(.failure(NetworkError.failedURL()))
             return
         }
@@ -40,5 +45,5 @@ extension NetworkManager {
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
         callback(.success(request))
     }
-    
+
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CarColorBlockView: View {
-    
+
     @Binding var colorIndex: Int
-    
+
     var body: some View {
         Picker("", selection: $colorIndex) {
             ForEach(0..<CarColor.allCases.count, id: \.self) { index in
@@ -19,7 +19,7 @@ struct CarColorBlockView: View {
         }
         .pickerStyle(.segmented)
     }
-    
+
 }
 
 struct CarColorBlockView_Previews: PreviewProvider {

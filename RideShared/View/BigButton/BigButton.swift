@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct BigButton: View {
-    
+
     let title: String
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             HStack {
@@ -28,7 +28,7 @@ struct BigButton: View {
             )
         }
     }
-    
+
 }
 
 struct BigButton_Previews: PreviewProvider {

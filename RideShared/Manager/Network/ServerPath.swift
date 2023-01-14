@@ -8,18 +8,38 @@
 import Foundation
 
 enum ServerPath {
-    
+
     var path: String {
+        let path = EnviromentVariables.serverURL
         switch self {
         case .singIn:
-            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/signIn"
+            return path + "/auth/signIn"
         case .updateUser:
-            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "auth/updateUser"
+            return path + "/auth/updateUser"
         case .driverConfirmed:
-            return ProcessInfo.processInfo.environment[EnviromentVariables.serverURL]! + "driver/driverConfirmed"
+            return path + "/driver/driverConfirmed"
+        case .getDriver:
+            return path + "/trip/getDriver"
+        case .getClient:
+            return path + "/trip/getClient"
+        case.getAllTrips:
+            return path + "/history/getAllTrips"
+        case .confirmDriver:
+            return path + "/trip/confirmDriver"
+        case .confirmClient:
+            return path + "/trip/confirmClient"
+        case .getWay:
+            return path + "/trip/getWay"
+        case .getDriverLocation:
+            return path + "/trip/getDriverLocation"
+        case .postDriverLocation:
+            return path + "/trip/postDriverLocation"
+        case .postRating:
+            return path + "/trip/postRating"
         }
     }
-    
-    case singIn, updateUser, driverConfirmed
-    
+
+    case singIn, updateUser, driverConfirmed, getDriver, getClient, getAllTrips
+    case confirmDriver, confirmClient, getWay, getDriverLocation, postDriverLocation, postRating
+
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 enum EnviromentVariables {
-    static let googleClientID = "googleClientID"
-    static let serverURL = "serverURL"
+    static let googleClientID = ProcessInfo.processInfo.environment["googleClientID"]
+    static let serverURL = ProcessInfo.processInfo.environment["serverURL"]
 }
