@@ -9,5 +9,6 @@ import Foundation
 
 enum EnviromentVariables {
     static let googleClientID = ProcessInfo.processInfo.environment["googleClientID"]
-    static let serverURL = ProcessInfo.processInfo.environment["serverURL"]
+    ?? "1070319083094-rhfna9ibe6pgrun9ag7f90ogbcdmcm95.apps.googleusercontent.com"
+    static let serverURL = ProcessInfo.processInfo.environment["serverURL"] ?? "https://9f3b-95-135-190-201.eu.ngrok.io"
 }

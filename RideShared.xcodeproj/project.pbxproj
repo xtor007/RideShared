@@ -93,6 +93,7 @@
 		FFD92134294E27B800B89B35 /* GoogleAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */; };
 		FFD92137294E284D00B89B35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92136294E284D00B89B35 /* User.swift */; };
 		FFD92139294E295C00B89B35 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92138294E295C00B89B35 /* Padding.swift */; };
+		FFDC30642975F9BE00A71BC1 /* NSNotification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */; };
 		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */; };
 		FFE56202295D8F36000B0371 /* Date+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56201295D8F36000B0371 /* Date+description.swift */; };
@@ -194,6 +195,7 @@
 		FFD92133294E27B700B89B35 /* GoogleAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthButton.swift; sourceTree = "<group>"; };
 		FFD92136294E284D00B89B35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD92138294E295C00B89B35 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+extension.swift"; sourceTree = "<group>"; };
 		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataView.swift; sourceTree = "<group>"; };
 		FFE56201295D8F36000B0371 /* Date+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+description.swift"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				FFF88D3C29574E08007BA886 /* View+rootViewController.swift */,
 				FFE56201295D8F36000B0371 /* Date+description.swift */,
 				FFC858EF29649E09003E50EA /* Double+price.swift */,
+				FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				FFB87AED296191120020B8C1 /* MapViewRepresentable.swift in Sources */,
 				FF4D9B7E294F405700CA2B84 /* Speed.swift in Sources */,
 				FFB87AFF2961E2BD0020B8C1 /* SearchLocationViewModel.swift in Sources */,
+				FFDC30642975F9BE00A71BC1 /* NSNotification+extension.swift in Sources */,
 				FFD92132294E219100B89B35 /* Strings.generated.swift in Sources */,
 				FF2078F3295352AC00DFC4B9 /* ProfileView.swift in Sources */,
 				FF3BCC1F294F4C19001C0F17 /* Triangle.swift in Sources */,

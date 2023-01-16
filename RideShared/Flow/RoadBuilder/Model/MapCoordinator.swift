@@ -22,6 +22,16 @@ extension MapViewRepresentable {
         init(parent: MapViewRepresentable) {
             self.parent = parent
             super.init()
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(driverLocationUpdate),
+                name: .driverWasUpdatedNotification,
+                object: nil
+            )
+        }
+
+        deinit {
+            NotificationCenter.default.removeObserver(self)
         }
 
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -123,6 +133,17 @@ extension MapViewRepresentable {
             parent.mapView.removeOverlays(parent.mapView.overlays)
             if let currentRegion {
                 parent.mapView.setRegion(currentRegion, animated: true)
+            }
+        }
+
+        @objc private func driverLocationUpdate(_ notification: Notification) {
+            print("NOTIFICATION")
+            if let driverLocation = notification.userInfo?["driverLocation"] as? SharedLocation {
+                let driverCoordinate = CLLocation(
+                    latitude: driverLocation.latitude,
+                    longitude: driverLocation.longitude
+                ).coordinate
+                addDriver(withCoordinate: driverCoordinate)
             }
         }
 
