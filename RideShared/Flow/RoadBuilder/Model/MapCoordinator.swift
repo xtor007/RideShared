@@ -137,7 +137,6 @@ extension MapViewRepresentable {
         }
 
         @objc private func driverLocationUpdate(_ notification: Notification) {
-            print("NOTIFICATION")
             if let driverLocation = notification.userInfo?["driverLocation"] as? SharedLocation {
                 let driverCoordinate = CLLocation(
                     latitude: driverLocation.latitude,
