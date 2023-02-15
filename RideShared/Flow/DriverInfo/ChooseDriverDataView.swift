@@ -8,46 +8,46 @@
 import SwiftUI
 
 struct ChooseDriverDataView: View {
-    
+
     @ObservedObject var userManager: UserManager
     @Binding var isPresented: Bool
-    
+
     @State private var genderIndex = 0
     @State private var dateOfBirth = Date(timeIntervalSince1970: 0)
     @State private var yourCarColorIndex = 0
-    
+
     var body: some View {
         VStack(spacing: Paddings.padding30) {
-            
+
             Text(Strings.DriverInfo.questionnaire)
                 .font(.title)
-            
+
             HStack {
                 Text(Strings.DriverInfo.gender)
                 Spacer()
             }
-            
+
             GenderBlockView(genderIndex: $genderIndex)
-            
+
             DatePicker(Strings.DriverInfo.dateOfBirth, selection: $dateOfBirth, displayedComponents: [.date])
-            
+
             HStack {
                 Text(Strings.DriverInfo.carColor)
                 Spacer()
             }
-            
+
             CarColorBlockView(colorIndex: $yourCarColorIndex)
-            
+
             Spacer()
-            
+
             HStack {
-                
+
                 BigButton(title: Strings.Button.close) {
                     withAnimation {
                         isPresented = false
                     }
                 }
-                
+
                 BigButton(title: Strings.Button.finish.uppercased()) {
                     userManager.user.taxiData = TaxiData(
                         isConfirmed: false,
@@ -65,7 +65,7 @@ struct ChooseDriverDataView: View {
                         NetworkManager.shared.requestDriverPermission(user: userManager.user) { result in
                             DispatchQueue.main.async {
                                 switch result {
-                                case .success(_):
+                                case .success:
                                     return
                                 case .failure(let failure):
                                     userManager.user.taxiData = nil
@@ -76,12 +76,16 @@ struct ChooseDriverDataView: View {
                         }
                     }
                 }
-                
+
             }
-            
+
         }
         .overlay(
-            ErrorView(isShowing: $userManager.willShowError, title: Strings.Error.Error.title, message: userManager.errorMessage)
+            ErrorView(
+                isShowing: $userManager.willShowError,
+                title: Strings.Error.Error.title,
+                message: userManager.errorMessage
+            )
                 .transition(.opacity.animation(.default))
         )
         .foregroundColor(Asset.Colors.textColor.swiftUIColor)
@@ -90,7 +94,7 @@ struct ChooseDriverDataView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Asset.Colors.backgroundColor.swiftUIColor.ignoresSafeArea())
     }
-    
+
 }
 
 struct ChooseDriverDataView_Previews: PreviewProvider {

@@ -37,6 +37,6 @@ struct ScreenListElementView: View {
 
 struct ScreenListElementView_Previews: PreviewProvider {
     static var previews: some View {
-        ScreenListElementView(element: ProfileListElement.driver(userManager: UserManager(user: User.preview)))
+        ScreenListElementView(element: ProfileListElement.driver)
     }
 }
