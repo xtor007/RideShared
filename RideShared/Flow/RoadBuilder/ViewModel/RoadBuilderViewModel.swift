@@ -24,10 +24,23 @@ class RoadBuilderViewModel: ObservableObject {
             }
         }
     }
-    @Published var driverLocation: SharedLocation?
+
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear
     @Published var isLoadingInConfirmRoad = false
+
+    var driverLocation: SharedLocation? {
+        didSet {
+            if let driverLocation {
+                let userInfo = ["driverLocation": driverLocation]
+                NotificationCenter.default.post(Notification(
+                    name: .driverWasUpdatedNotification,
+                    object: nil,
+                    userInfo: userInfo
+                ))
+            }
+        }
+    }
 
     @Published var rating = 5.0
     @Published var musicRating = 5.0

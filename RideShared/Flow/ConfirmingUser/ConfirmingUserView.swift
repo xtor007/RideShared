@@ -14,6 +14,8 @@ struct ConfirmingUserView: View {
 
     @State private var avatar = Asset.Images.defaultAvatar.image
 
+    @State private var isLoading = false
+
     var body: some View {
         VStack(spacing: Paddings.padding20) {
 
@@ -56,6 +58,7 @@ struct ConfirmingUserView: View {
                     callback(false)
                 }
                 BigButton(title: Strings.Button.confirm) {
+                    isLoading = true
                     callback(true)
                 }
             }
@@ -63,6 +66,7 @@ struct ConfirmingUserView: View {
         }
         .padding(.horizontal, Paddings.padding16)
         .onAppear {
+            isLoading = false
             if let avatarLink = user.avatar {
                 DispatchQueue.global(qos: .background).async {
                     NetworkManager.shared.loadImage(link: avatarLink) { result in
@@ -81,6 +85,13 @@ struct ConfirmingUserView: View {
         .padding(.vertical, Paddings.padding16)
         .background(Asset.Colors.backgroundColor.swiftUIColor.ignoresSafeArea())
         .cornerRadius(20)
+        .disabled(isLoading)
+        .overlay {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }
     }
 
 }

@@ -32,7 +32,7 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         self.userLocation = location.coordinate
-        self.locationAdress = location.description
+        self.locationAdress = location.address
     }
 
 }

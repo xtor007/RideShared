@@ -51,7 +51,10 @@ extension DriverMapViewRepresentable {
             guard let userLocationCoordinate else { return }
             getRoute(from: userLocationCoordinate, to: coordinates) { route in
                 self.parent.mapView.addOverlay(route.polyline)
-                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect)
+                let rect = self.parent.mapView.mapRectThatFits(
+                    route.polyline.boundingMapRect,
+                    edgePadding: .init(top: 64, left: 32, bottom: 64, right: 32)
+                )
                 self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
