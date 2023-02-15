@@ -94,6 +94,7 @@
 		FFD92137294E284D00B89B35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92136294E284D00B89B35 /* User.swift */; };
 		FFD92139294E295C00B89B35 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD92138294E295C00B89B35 /* Padding.swift */; };
 		FFDC30642975F9BE00A71BC1 /* NSNotification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */; };
+		FFDC30662976195300A71BC1 /* CLLocation+adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC30652976195200A71BC1 /* CLLocation+adress.swift */; };
 		FFE561FE295CC1CE000B0371 /* DriverInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */; };
 		FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */; };
 		FFE56202295D8F36000B0371 /* Date+description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56201295D8F36000B0371 /* Date+description.swift */; };
@@ -196,6 +197,7 @@
 		FFD92136294E284D00B89B35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD92138294E295C00B89B35 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+extension.swift"; sourceTree = "<group>"; };
+		FFDC30652976195200A71BC1 /* CLLocation+adress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+adress.swift"; sourceTree = "<group>"; };
 		FFE561FD295CC1CE000B0371 /* DriverInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoView.swift; sourceTree = "<group>"; };
 		FFE561FF295CD0FF000B0371 /* ChooseDriverDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDriverDataView.swift; sourceTree = "<group>"; };
 		FFE56201295D8F36000B0371 /* Date+description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+description.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				FFE56201295D8F36000B0371 /* Date+description.swift */,
 				FFC858EF29649E09003E50EA /* Double+price.swift */,
 				FFDC30632975F9BE00A71BC1 /* NSNotification+extension.swift */,
+				FFDC30652976195200A71BC1 /* CLLocation+adress.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				FFE56200295CD0FF000B0371 /* ChooseDriverDataView.swift in Sources */,
 				FF31E04F29521EA300CC56BC /* SelectionParameters.swift in Sources */,
 				FF55552B29576302001B9646 /* ServerPath.swift in Sources */,
+				FFDC30662976195300A71BC1 /* CLLocation+adress.swift in Sources */,
 				FF4D9B69294F103700CA2B84 /* QuestionnaireBlockView.swift in Sources */,
 				FF2079072953762D00DFC4B9 /* ProfileListElement.swift in Sources */,
 				FF4D9B7B294F387400CA2B84 /* Gender.swift in Sources */,
