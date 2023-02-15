@@ -24,6 +24,7 @@ class RoadBuilderViewModel: ObservableObject {
             }
         }
     }
+
     @Published var willShowingSearchView = false
     @Published var state: RoadViewState = .clear
     @Published var isLoadingInConfirmRoad = false
